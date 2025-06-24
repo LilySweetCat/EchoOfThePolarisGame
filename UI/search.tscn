@@ -31,6 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_26kb5")
 expand_mode = 3
+stretch_mode = 5
 
 [node name="TopLeft" type="RichTextLabel" parent="."]
 layout_mode = 1

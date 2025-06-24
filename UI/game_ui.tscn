@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bblk7ag55p1wa"]
+[gd_scene load_steps=16 format=3 uid="uid://bblk7ag55p1wa"]
 
 [ext_resource type="PackedScene" uid="uid://bb68y7o6j65ju" path="res://UI/search.tscn" id="1_mp46i"]
 [ext_resource type="Script" uid="uid://byap0g2hl77cm" path="res://UI/game_ui.gd" id="1_ywmy4"]
@@ -184,6 +184,54 @@ tracks/14/path = NodePath("AnimationPlayer/SearchCursor/Eye:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("AnimationPlayer/SearchCursor/TopLeft:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("AnimationPlayer/SearchCursor/TopRight:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("AnimationPlayer/SearchCursor/BottomLeft:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("AnimationPlayer/SearchCursor/BottomRight:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -389,6 +437,105 @@ tracks/6/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_oohqu"]
+resource_name = "show_search_cursor_data"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/SearchCursor/TopLeft:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/SearchCursor/TopLeft:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/SearchCursor/TopRight:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/SearchCursor/TopRight:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/SearchCursor/BottomLeft:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/SearchCursor/BottomLeft:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/SearchCursor/BottomRight:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/SearchCursor/BottomRight:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bjx7l"]
 _data = {
 &"RESET": SubResource("Animation_jd38o"),
@@ -396,7 +543,8 @@ _data = {
 &"glitch": SubResource("Animation_ywmy4"),
 &"show_dialogue": SubResource("Animation_fy64h"),
 &"show_interactive_object_name": SubResource("Animation_v6n52"),
-&"show_search_cursor": SubResource("Animation_bjx7l")
+&"show_search_cursor": SubResource("Animation_bjx7l"),
+&"show_search_cursor_data": SubResource("Animation_oohqu")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h0rig"]
@@ -433,29 +581,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_bjx7l")
 }
 
-[node name="SearchCursor" parent="AnimationPlayer" instance=ExtResource("1_mp46i")]
-process_mode = 4
-visible = false
-
-[node name="Eye" parent="AnimationPlayer/SearchCursor" index="0"]
-modulate = Color(1, 1, 1, 0)
-
-[node name="TopLeft" parent="AnimationPlayer/SearchCursor" index="1"]
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="TopRight" parent="AnimationPlayer/SearchCursor" index="2"]
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="BottomLeft" parent="AnimationPlayer/SearchCursor" index="3"]
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="BottomRight" parent="AnimationPlayer/SearchCursor" index="4"]
-visible_characters = 0
-visible_ratio = 0.0
-
 [node name="Background" type="ColorRect" parent="AnimationPlayer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -490,6 +615,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="SearchCursor" parent="AnimationPlayer" instance=ExtResource("1_mp46i")]
+process_mode = 4
+visible = false
+
+[node name="Eye" parent="AnimationPlayer/SearchCursor" index="0"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="TopLeft" parent="AnimationPlayer/SearchCursor" index="1"]
+modulate = Color(1, 1, 1, 0)
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="TopRight" parent="AnimationPlayer/SearchCursor" index="2"]
+modulate = Color(1, 1, 1, 0)
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="BottomLeft" parent="AnimationPlayer/SearchCursor" index="3"]
+modulate = Color(1, 1, 1, 0)
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="BottomRight" parent="AnimationPlayer/SearchCursor" index="4"]
+modulate = Color(1, 1, 1, 0)
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="InteractiveObjectName" type="RichTextLabel" parent="AnimationPlayer"]
 anchors_preset = -1

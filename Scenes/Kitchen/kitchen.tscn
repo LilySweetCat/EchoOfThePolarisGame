@@ -1,14 +1,18 @@
-[gd_scene load_steps=29 format=3 uid="uid://ctdp85o7ltw6o"]
+[gd_scene load_steps=31 format=3 uid="uid://ctdp85o7ltw6o"]
 
 [ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
 [ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
 [ext_resource type="Material" uid="uid://b3tgja02t47ot" path="res://Materials/interactable.tres" id="2_r8i07"]
 [ext_resource type="PackedScene" uid="uid://4midgp1nsr81" path="res://Scenes/Characters/Morrigan/morrigan-player.tscn" id="3_i4o3x"]
 [ext_resource type="Script" uid="uid://btggpmagtigoc" path="res://Scripts/change_camera_trigger.gd" id="3_pd52i"]
+[ext_resource type="Script" uid="uid://cls5y4omrajv2" path="res://Scripts/Interaction/inspectable_cursor_object.gd" id="4_1nlu3"]
 [ext_resource type="Texture2D" uid="uid://dv8ofau56xdo7" path="res://Textures/fx_cloudalphas/FX_CloudAlpha02.png" id="6_ruj4t"]
 [ext_resource type="PackedScene" uid="uid://di6n0d8v7wwsv" path="res://Models/Props/Knife.blend" id="7_tfhfy"]
 [ext_resource type="Texture2D" uid="uid://cp4wepb1738n7" path="res://Textures/snow2.png" id="8_r8i07"]
-[ext_resource type="Script" uid="uid://1ejavo0tdki2" path="res://Scripts/Interaction/inspect.gd" id="9_neq1d"]
+[ext_resource type="Script" uid="uid://1ejavo0tdki2" path="res://Scripts/Interaction/inspectable.gd" id="9_neq1d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cg2du"]
+size = Vector3(0.185742, 0.1, 0.1)
 
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
@@ -23,7 +27,7 @@ adjustment_enabled = true
 adjustment_brightness = 0.95
 adjustment_saturation = 0.8
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_neq1d"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_1nlu3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ruj4t"]
 size = Vector3(4.5951, 1.70068, 5.25537)
@@ -128,6 +132,13 @@ surface_material_override/0 = ExtResource("2_r8i07")
 [node name="Knife" parent="." instance=ExtResource("7_tfhfy")]
 transform = Transform3D(0.758339, 0, -0.65186, 0, 1, 0, 0.65186, 0, 0.758339, -7.7106, 0.733483, 1.08424)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Knife"]
+script = ExtResource("4_1nlu3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Knife/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.042871, 0, 4.76837e-07)
+shape = SubResource("BoxShape3D_cg2du")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i4o3x")
 
@@ -159,28 +170,30 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.00653577, 0.935243, -0.00606084)
-bones/1/rotation = Quaternion(-0.00906804, 0.0135458, -0.0456331, 0.998825)
-bones/2/rotation = Quaternion(-0.0560592, -0.0129165, 0.0245398, 0.998042)
-bones/3/rotation = Quaternion(0.00481675, -0.00514299, 0.0516936, 0.998638)
-bones/4/rotation = Quaternion(0.00487232, -0.000395049, 0.0515249, 0.99866)
-bones/5/rotation = Quaternion(0.0747901, -0.00127167, -0.0191201, 0.997015)
-bones/6/rotation = Quaternion(0.0126617, 0.00577237, -0.0718132, 0.997321)
-bones/8/rotation = Quaternion(-0.628421, -0.400746, 0.493254, -0.448542)
-bones/9/rotation = Quaternion(0.603888, 0.07168, -0.07991, 0.789807)
-bones/12/rotation = Quaternion(0.585405, -0.44823, 0.534099, 0.413676)
-bones/13/rotation = Quaternion(0.487618, -0.0897196, 0.00466757, 0.868423)
-bones/14/rotation = Quaternion(-0.0104688, 0.0150266, -0.153872, 0.987921)
-bones/16/rotation = Quaternion(0.115008, 0.174578, 0.969304, -0.129407)
-bones/17/rotation = Quaternion(-0.282041, -0.0767573, 0.0279361, 0.955919)
-bones/18/rotation = Quaternion(0.516354, -0.0958911, -0.0152701, 0.850853)
-bones/21/rotation = Quaternion(-0.0432282, 0.0219174, 0.994809, -0.0894731)
-bones/22/rotation = Quaternion(-0.161419, 0.045324, 0.0334227, 0.985278)
-bones/23/rotation = Quaternion(0.560325, 0.00453304, -0.128494, 0.818233)
-bones/24/rotation = Quaternion(0.323281, 0.0224311, -0.00745929, 0.946008)
+bones/1/position = Vector3(0.0124326, 0.935772, -0.00286432)
+bones/1/rotation = Quaternion(-0.00598929, 0.012268, -0.0487903, 0.998716)
+bones/2/rotation = Quaternion(-0.0572669, -0.0127182, 0.0241755, 0.997985)
+bones/3/rotation = Quaternion(-1.68252e-05, -0.0057255, 0.0514211, 0.998661)
+bones/4/rotation = Quaternion(-7.92353e-06, -0.000516903, 0.0512834, 0.998684)
+bones/5/rotation = Quaternion(0.0775989, -0.00057354, -0.0196072, 0.996792)
+bones/6/rotation = Quaternion(0.0156246, 0.00732745, -0.070253, 0.99738)
+bones/8/rotation = Quaternion(-0.615385, -0.42078, 0.470275, -0.47232)
+bones/9/rotation = Quaternion(0.635736, 0.071356, -0.0823686, 0.764175)
+bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
+bones/12/rotation = Quaternion(0.574278, -0.470393, 0.510392, 0.434091)
+bones/13/rotation = Quaternion(0.52357, -0.0884981, 0.00708276, 0.847345)
+bones/14/rotation = Quaternion(-0.0104212, 0.0150284, -0.153178, 0.98803)
+bones/16/rotation = Quaternion(0.114257, 0.177763, 0.968857, -0.129084)
+bones/17/rotation = Quaternion(-0.287007, -0.0770841, 0.0285629, 0.954395)
+bones/18/rotation = Quaternion(0.519612, -0.0964482, -0.013333, 0.848836)
+bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
+bones/21/rotation = Quaternion(-0.042915, 0.0200038, 0.994894, -0.0891295)
+bones/22/rotation = Quaternion(-0.157, 0.0434673, 0.0339286, 0.986058)
+bones/23/rotation = Quaternion(0.559332, 0.00562287, -0.12567, 0.819343)
+bones/24/rotation = Quaternion(0.324222, 0.0225739, -0.00749125, 0.945682)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_neq1d")
+stream = SubResource("AudioStreamPolyphonic_1nlu3")
 
 [node name="Cameras" type="Node" parent="."]
 

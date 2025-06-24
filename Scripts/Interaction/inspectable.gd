@@ -18,6 +18,7 @@ func _input(event: InputEvent) -> void:
 		func():
 			current_camera.global_transform = inspect_camera.global_transform
 			player.can_move = false
+			player.visible = false
 			return
 	)
 	
