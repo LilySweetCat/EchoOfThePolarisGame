@@ -4,7 +4,25 @@ extends Control
 @onready var dialogue_panel: ColorRect = $AnimationPlayer/Background
 @onready var dialogue_text: RichTextLabel = $AnimationPlayer/DialogueText
 @onready var interactive_object_name: RichTextLabel = $AnimationPlayer/InteractiveObjectName
+
 @onready var search_cursor: Control = $AnimationPlayer/SearchCursor
+@onready var search_cursor_texts : Array[RichTextLabel] = [
+	$AnimationPlayer/SearchCursor/TopLeft,
+	$AnimationPlayer/SearchCursor/TopRight,
+	$AnimationPlayer/SearchCursor/BottomLeft,
+	$AnimationPlayer/SearchCursor/BottomRight
+]
+
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	return
+
+func show_cursor_data(texts: Array[String]) -> void:
+	for index in range(texts.size()):
+		search_cursor_texts[index].text = texts[index]
+		
+	animation_player.queue("show_search_cursor_data")
+	return
 
 func play_transition(inbetween: Callable) -> void:
 	animation_player.queue("glitch")

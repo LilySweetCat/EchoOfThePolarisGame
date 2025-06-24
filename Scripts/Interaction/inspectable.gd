@@ -14,6 +14,8 @@ func _input(event: InputEvent) -> void:
 		
 	_prev_camera_position = current_camera.global_transform
 	
+	_interactable_shader.set_shader_parameter("is_active", false)
+	
 	GameUi.play_transition(
 		func():
 			current_camera.global_transform = inspect_camera.global_transform

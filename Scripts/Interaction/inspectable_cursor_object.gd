@@ -8,10 +8,9 @@ func _ready() -> void:
 	return
 	
 func _on_mouse_entered() -> void:
-	print("mouse entered")
-	GameUi.animation_player.queue("show_search_cursor_data")
+	GameUi.show_cursor_data(display_data)
 	return
 	
 func _on_mouse_exited() -> void:
-	GameUi.animation_player.play_backwards("show_search_cursor_data")
+	GameUi.animation_player.play("hide_search_cursor_data")
 	return
