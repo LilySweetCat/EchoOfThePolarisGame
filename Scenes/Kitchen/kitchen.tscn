@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://ctdp85o7ltw6o"]
+[gd_scene load_steps=43 format=3 uid="uid://ctdp85o7ltw6o"]
 
 [ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
 [ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
@@ -11,59 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://di6n0d8v7wwsv" path="res://Models/Props/Knife.blend" id="7_tfhfy"]
 [ext_resource type="Texture2D" uid="uid://cp4wepb1738n7" path="res://Textures/snow2.png" id="8_r8i07"]
 [ext_resource type="Script" uid="uid://1ejavo0tdki2" path="res://Scripts/Interaction/inspectable.gd" id="9_neq1d"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cg2du"]
-size = Vector3(0.315527, 0.214062, 0.307382)
-
-[sub_resource type="Curve" id="Curve_cg2du"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.492647, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_r1bav"]
-width = 64
-curve = SubResource("Curve_cg2du")
-
-[sub_resource type="Curve" id="Curve_kec5u"]
-_limits = [-360.0, 360.0, 0.0, 1.0]
-_data = [Vector2(0, -30), 0.0, 0.0, 0, 0, Vector2(1, 30), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_a8bds"]
-width = 64
-curve = SubResource("Curve_kec5u")
-
-[sub_resource type="Curve" id="Curve_0tag2"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.507353, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_a0rdj"]
-width = 64
-curve = SubResource("Curve_0tag2")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d5v74"]
-angle_min = -0.999989
-angle_max = 1.00001
-angle_curve = SubResource("CurveTexture_a8bds")
-gravity = Vector3(0, 0, 0)
-scale_min = 0.1
-scale_curve = SubResource("CurveTexture_a0rdj")
-alpha_curve = SubResource("CurveTexture_r1bav")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skia2"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("5_yxvdf")
-billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="QuadMesh" id="QuadMesh_1u351"]
-material = SubResource("StandardMaterial3D_skia2")
-size = Vector2(0.1, 0.1)
 
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
@@ -78,7 +25,7 @@ adjustment_enabled = true
 adjustment_brightness = 0.95
 adjustment_saturation = 0.8
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_yxvdf"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_kec5u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ruj4t"]
 size = Vector3(4.5951, 1.70068, 5.25537)
@@ -172,6 +119,71 @@ material = SubResource("StandardMaterial3D_r1bav")
 [sub_resource type="BoxShape3D" id="BoxShape3D_yxvdf"]
 size = Vector3(1.77531, 1, 2.15918)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_cg2du"]
+size = Vector3(0.315527, 0.214062, 0.307382)
+
+[sub_resource type="Curve" id="Curve_cg2du"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.492647, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_r1bav"]
+width = 64
+curve = SubResource("Curve_cg2du")
+
+[sub_resource type="Curve" id="Curve_kec5u"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, -30), 0.0, 0.0, 0, 0, Vector2(1, 30), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_a8bds"]
+width = 64
+curve = SubResource("Curve_kec5u")
+
+[sub_resource type="Curve" id="Curve_0tag2"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.507353, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_a0rdj"]
+width = 64
+curve = SubResource("Curve_0tag2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r1bav"]
+lifetime_randomness = 1.0
+angle_min = -0.999989
+angle_max = 1.00001
+angle_curve = SubResource("CurveTexture_a8bds")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_curve = SubResource("CurveTexture_a0rdj")
+alpha_curve = SubResource("CurveTexture_r1bav")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skia2"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.215686)
+albedo_texture = ExtResource("5_yxvdf")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_1u351"]
+material = SubResource("StandardMaterial3D_skia2")
+size = Vector2(0.07, 0.07)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r1bav"]
+size = Vector3(0.15, 0.15, 0.15)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d5v74"]
+angle_min = -0.999989
+angle_max = 1.00001
+angle_curve = SubResource("CurveTexture_a8bds")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_curve = SubResource("CurveTexture_a0rdj")
+alpha_curve = SubResource("CurveTexture_r1bav")
+
 [node name="Node3D" type="Node3D"]
 
 [node name="kitchen" parent="." instance=ExtResource("1_j055r")]
@@ -182,21 +194,6 @@ surface_material_override/0 = ExtResource("2_r8i07")
 
 [node name="Knife" parent="." instance=ExtResource("7_tfhfy")]
 transform = Transform3D(0.758339, 0, -0.65186, 0, 1, 0, 0.65186, 0, 0.758339, -7.7106, 0.733483, 1.08424)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Knife"]
-script = ExtResource("4_1nlu3")
-display_data = Array[String](["Кухонный нож", "Весь в крови", "Подреберная рана", "Нанесено точечно"])
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Knife/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107762, 0.0570313, 0.0195107)
-shape = SubResource("BoxShape3D_cg2du")
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Knife"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0197036, 0.0315216, 3.72529e-09)
-amount = 1
-lifetime = 3.0
-process_material = SubResource("ParticleProcessMaterial_d5v74")
-draw_pass_1 = SubResource("QuadMesh_1u351")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i4o3x")
@@ -229,30 +226,30 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.0117745, 0.935824, -0.00268654)
-bones/1/rotation = Quaternion(-0.00569318, 0.0122913, -0.0484614, 0.998733)
-bones/2/rotation = Quaternion(-0.0568967, -0.0124948, 0.0241052, 0.998011)
-bones/3/rotation = Quaternion(0.000749346, -0.005572, 0.0514708, 0.998659)
-bones/4/rotation = Quaternion(0.000766347, -0.000443694, 0.0513286, 0.998681)
-bones/5/rotation = Quaternion(0.0778888, -0.000532536, -0.0196302, 0.996769)
-bones/6/rotation = Quaternion(0.0155138, 0.00759277, -0.0704877, 0.997363)
-bones/8/rotation = Quaternion(-0.617845, -0.417163, 0.474349, -0.468225)
-bones/9/rotation = Quaternion(0.630066, 0.0709243, -0.0819377, 0.768943)
+bones/1/position = Vector3(0.0105942, 0.935829, -0.00325026)
+bones/1/rotation = Quaternion(-0.00661639, 0.0127203, -0.0473099, 0.998777)
+bones/2/rotation = Quaternion(-0.0569608, -0.0129993, 0.0242581, 0.997997)
+bones/3/rotation = Quaternion(0.00256543, -0.00545033, 0.0514899, 0.998655)
+bones/4/rotation = Quaternion(0.00259807, -0.000477803, 0.0513364, 0.998678)
+bones/5/rotation = Quaternion(0.0748557, -0.00115369, -0.0192386, 0.997008)
+bones/6/rotation = Quaternion(0.013405, 0.00531101, -0.0707329, 0.997391)
+bones/8/rotation = Quaternion(-0.622323, -0.410594, 0.482137, -0.460077)
+bones/9/rotation = Quaternion(0.619936, 0.0702798, -0.0800015, 0.777393)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/12/rotation = Quaternion(0.576821, -0.465976, 0.514508, 0.430611)
-bones/13/rotation = Quaternion(0.517269, -0.0886152, 0.0073261, 0.851191)
-bones/14/rotation = Quaternion(-0.0104254, 0.0150282, -0.153238, 0.98802)
-bones/16/rotation = Quaternion(0.114211, 0.177848, 0.96886, -0.128984)
-bones/17/rotation = Quaternion(-0.286091, -0.0770554, 0.0284513, 0.954675)
-bones/18/rotation = Quaternion(0.519383, -0.0965968, -0.0133502, 0.84896)
+bones/12/rotation = Quaternion(0.579594, -0.459811, 0.522347, 0.424026)
+bones/13/rotation = Quaternion(0.505503, -0.0882557, 0.00377747, 0.858291)
+bones/14/rotation = Quaternion(-0.0104621, 0.0150267, -0.153774, 0.987936)
+bones/16/rotation = Quaternion(0.114409, 0.175393, 0.969346, -0.128516)
+bones/17/rotation = Quaternion(-0.283076, -0.0777285, 0.0286406, 0.955514)
+bones/18/rotation = Quaternion(0.51827, -0.0955729, -0.0149144, 0.849729)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0428618, 0.0203028, 0.99489, -0.0891364)
-bones/22/rotation = Quaternion(-0.156337, 0.0432084, 0.0339656, 0.986174)
-bones/23/rotation = Quaternion(0.559376, 0.00556679, -0.125844, 0.819287)
-bones/24/rotation = Quaternion(0.324136, 0.0225608, -0.00748833, 0.945712)
+bones/21/rotation = Quaternion(-0.0430032, 0.0209399, 0.994871, -0.0891317)
+bones/22/rotation = Quaternion(-0.157338, 0.0434095, 0.0332588, 0.98603)
+bones/23/rotation = Quaternion(0.559498, 0.00523793, -0.126758, 0.819065)
+bones/24/rotation = Quaternion(0.323219, 0.0224216, -0.00745715, 0.946029)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_yxvdf")
+stream = SubResource("AudioStreamPolyphonic_kec5u")
 
 [node name="Cameras" type="Node" parent="."]
 
@@ -343,6 +340,38 @@ shape = SubResource("BoxShape3D_yxvdf")
 process_mode = 4
 transform = Transform3D(-0.596106, 0.609928, -0.522156, -0.0300914, 0.632904, 0.773645, 0.802342, 0.476887, -0.358924, -0.727591, 2.04641, -1.09739)
 fov = 74.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Interactions"]
+transform = Transform3D(0.758339, 0, -0.65186, 0, 1, 0, 0.65186, 0, 0.758339, -7.7106, 0.733483, 1.08424)
+script = ExtResource("4_1nlu3")
+display_data = Array[String](["Кухонный нож", "Весь в крови", "Подреберная рана", "Нанесено точечно"])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107762, 0.0570313, 0.0195107)
+shape = SubResource("BoxShape3D_cg2du")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Interactions/StaticBody3D"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -0.0197039, 0.0315216, 4.76837e-07)
+amount = 1
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_r1bav")
+draw_pass_1 = SubResource("QuadMesh_1u351")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Interactions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7784, 1.24912, 1.23867)
+script = ExtResource("4_1nlu3")
+display_data = Array[String](["Много крови", "Кровь растеклась по столу", "Сзади синяк", "Похоже на удар по голове"])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.057202, 0)
+shape = SubResource("BoxShape3D_r1bav")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Interactions/StaticBody3D2"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -0.0197039, -0.059882, 4.76837e-07)
+amount = 1
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_d5v74")
+draw_pass_1 = SubResource("QuadMesh_1u351")
 
 [editable path="kitchen"]
 [editable path="Player"]
