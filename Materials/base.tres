@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://lhkb7c6hbkj2"]
+
+[resource]
+resource_name = "base"
+albedo_color = Color(0.639236, 0.639236, 0.639236, 1)
+ao_enabled = true

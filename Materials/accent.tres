@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bkiyv827ru6uk"]
+
+[resource]
+resource_name = "accent"
+albedo_color = Color(0.398732, 0.398732, 0.398732, 1)
+ao_enabled = true

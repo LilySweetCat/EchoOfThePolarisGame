@@ -1,0 +1,277 @@
+[gd_scene load_steps=29 format=3 uid="uid://ctdp85o7ltw6o"]
+
+[ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
+[ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
+[ext_resource type="Material" uid="uid://b3tgja02t47ot" path="res://Materials/interactable.tres" id="2_r8i07"]
+[ext_resource type="PackedScene" uid="uid://4midgp1nsr81" path="res://Scenes/Characters/Morrigan/morrigan-player.tscn" id="3_i4o3x"]
+[ext_resource type="Script" uid="uid://btggpmagtigoc" path="res://Scripts/change_camera_trigger.gd" id="3_pd52i"]
+[ext_resource type="Texture2D" uid="uid://dv8ofau56xdo7" path="res://Textures/fx_cloudalphas/FX_CloudAlpha02.png" id="6_ruj4t"]
+[ext_resource type="PackedScene" uid="uid://di6n0d8v7wwsv" path="res://Models/Props/Knife.blend" id="7_tfhfy"]
+[ext_resource type="Texture2D" uid="uid://cp4wepb1738n7" path="res://Textures/snow2.png" id="8_r8i07"]
+[ext_resource type="Script" uid="uid://1ejavo0tdki2" path="res://Scripts/Interaction/inspect.gd" id="9_neq1d"]
+
+[sub_resource type="Environment" id="Environment_i4o3x"]
+background_mode = 1
+ambient_light_source = 2
+tonemap_mode = 4
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+fog_enabled = true
+volumetric_fog_emission = Color(0.641934, 0.641934, 0.641934, 1)
+adjustment_enabled = true
+adjustment_brightness = 0.95
+adjustment_saturation = 0.8
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_neq1d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ruj4t"]
+size = Vector3(4.5951, 1.70068, 5.25537)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tfhfy"]
+size = Vector3(1.69344, 1.70068, 4.28242)
+
+[sub_resource type="Gradient" id="Gradient_neq1d"]
+offsets = PackedFloat32Array(0, 0.318182, 0.640909, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0.509804, 1, 1, 1, 0.509804, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1nlu3"]
+gradient = SubResource("Gradient_neq1d")
+
+[sub_resource type="Curve" id="Curve_neq1d"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_enabled = true
+
+[sub_resource type="CurveTexture" id="CurveTexture_1nlu3"]
+curve = SubResource("Curve_neq1d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yxvdf"]
+lifetime_randomness = 0.4
+emission_shape = 3
+emission_box_extents = Vector3(4, 2, 3)
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 0.2
+initial_velocity_max = 0.5
+gravity = Vector3(0, -0.1, 0)
+damping_max = 0.5
+scale_min = 0.01
+scale_max = 0.03
+scale_curve = SubResource("CurveTexture_1nlu3")
+color_ramp = SubResource("GradientTexture1D_1nlu3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cg2du"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.533333)
+albedo_texture = ExtResource("8_r8i07")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_r1bav"]
+material = SubResource("StandardMaterial3D_cg2du")
+
+[sub_resource type="Curve" id="Curve_tfhfy"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_r8i07"]
+width = 128
+curve = SubResource("Curve_tfhfy")
+
+[sub_resource type="Curve" id="Curve_1nlu3"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.243902, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_yxvdf"]
+width = 64
+curve = SubResource("Curve_1nlu3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cg2du"]
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_box_extents = Vector3(4.4, 0.16, 3)
+initial_velocity_max = 0.05
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_yxvdf")
+alpha_curve = SubResource("CurveTexture_r8i07")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1bav"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("6_ruj4t")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_kec5u"]
+material = SubResource("StandardMaterial3D_r1bav")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yxvdf"]
+size = Vector3(1.77531, 1, 2.15918)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="kitchen" parent="." instance=ExtResource("1_j055r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.723568, 0.372988, -0.649199)
+
+[node name="body" parent="kitchen" index="1"]
+surface_material_override/0 = ExtResource("2_r8i07")
+
+[node name="Knife" parent="." instance=ExtResource("7_tfhfy")]
+transform = Transform3D(0.758339, 0, -0.65186, 0, 1, 0, 0.65186, 0, 0.758339, -7.7106, 0.733483, 1.08424)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i4o3x")
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+interior = true
+light_data = ExtResource("2_77rxy")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.22144, 3.89078, -6.91924e-09)
+light_energy = 3.0
+light_size = 0.1
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 80.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.55884, 3.89078, -6.91924e-09)
+visible = false
+light_size = 0.1
+spot_range = 10.0
+spot_angle = 80.0
+
+[node name="Player" parent="." node_paths=PackedStringArray("current_camera") instance=ExtResource("3_i4o3x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.10062, 0.372992, 0.2099)
+collision_layer = 3
+collision_mask = 3
+input_ray_pickable = false
+current_camera = NodePath("../Cameras/MainCamera")
+
+[node name="Skeleton3D" parent="Player/morrigan" index="0"]
+bones/1/position = Vector3(0.00653577, 0.935243, -0.00606084)
+bones/1/rotation = Quaternion(-0.00906804, 0.0135458, -0.0456331, 0.998825)
+bones/2/rotation = Quaternion(-0.0560592, -0.0129165, 0.0245398, 0.998042)
+bones/3/rotation = Quaternion(0.00481675, -0.00514299, 0.0516936, 0.998638)
+bones/4/rotation = Quaternion(0.00487232, -0.000395049, 0.0515249, 0.99866)
+bones/5/rotation = Quaternion(0.0747901, -0.00127167, -0.0191201, 0.997015)
+bones/6/rotation = Quaternion(0.0126617, 0.00577237, -0.0718132, 0.997321)
+bones/8/rotation = Quaternion(-0.628421, -0.400746, 0.493254, -0.448542)
+bones/9/rotation = Quaternion(0.603888, 0.07168, -0.07991, 0.789807)
+bones/12/rotation = Quaternion(0.585405, -0.44823, 0.534099, 0.413676)
+bones/13/rotation = Quaternion(0.487618, -0.0897196, 0.00466757, 0.868423)
+bones/14/rotation = Quaternion(-0.0104688, 0.0150266, -0.153872, 0.987921)
+bones/16/rotation = Quaternion(0.115008, 0.174578, 0.969304, -0.129407)
+bones/17/rotation = Quaternion(-0.282041, -0.0767573, 0.0279361, 0.955919)
+bones/18/rotation = Quaternion(0.516354, -0.0958911, -0.0152701, 0.850853)
+bones/21/rotation = Quaternion(-0.0432282, 0.0219174, 0.994809, -0.0894731)
+bones/22/rotation = Quaternion(-0.161419, 0.045324, 0.0334227, 0.985278)
+bones/23/rotation = Quaternion(0.560325, 0.00453304, -0.128494, 0.818233)
+bones/24/rotation = Quaternion(0.323281, 0.0224311, -0.00745929, 0.946008)
+
+[node name="FootstepPlayer" parent="Player" index="5"]
+stream = SubResource("AudioStreamPolyphonic_neq1d")
+
+[node name="Cameras" type="Node" parent="."]
+
+[node name="VCams" type="Node" parent="Cameras"]
+
+[node name="Camera3D" type="Camera3D" parent="Cameras/VCams"]
+process_mode = 4
+transform = Transform3D(-0.999323, -0.0326409, -0.016963, -0.0334058, 0.998338, 0.0469648, 0.0154018, 0.0474998, -0.998753, -1.79387, 2.31863, -2.56782)
+
+[node name="Camera3D2" type="Camera3D" parent="Cameras/VCams"]
+process_mode = 4
+transform = Transform3D(-0.999323, -0.0365683, -0.00399147, -0.0334059, 0.947586, -0.31775, 0.0154018, -0.317401, -0.948166, -7.69541, 0.488111, -2.78577)
+
+[node name="MainCamera" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-1, -0.000435147, -0.000226815, -0.000435257, 1, 0.00049657, 0.000226603, 0.000496666, -1, -7.33031, 0.817044, -2.73235)
+current = true
+
+[node name="CameraTriggers" type="Node" parent="Cameras"]
+
+[node name="TablesArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.411543, 0)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("3_pd52i")
+player = NodePath("../../../Player")
+main_camera = NodePath("../../MainCamera")
+virtual_camera = NodePath("../../VCams/Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/TablesArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.798456, 0.350342, -0.310791)
+shape = SubResource("BoxShape3D_ruj4t")
+debug_color = Color(2.88785e-06, 0.819078, 0.952524, 0.42)
+
+[node name="BodyArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6637, 0.411543, 0)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("3_pd52i")
+is_tracking = false
+player = NodePath("../../../Player")
+main_camera = NodePath("../../MainCamera")
+virtual_camera = NodePath("../../VCams/Camera3D2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/BodyArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.275077, 0.350342, -0.797264)
+shape = SubResource("BoxShape3D_tfhfy")
+debug_color = Color(2.88785e-06, 0.819078, 0.952524, 0.42)
+
+[node name="DustParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.72381, 2.15766, -0.281633)
+amount = 150
+lifetime = 4.0
+preprocess = 3.0
+process_material = SubResource("ParticleProcessMaterial_yxvdf")
+draw_pass_1 = SubResource("QuadMesh_r1bav")
+
+[node name="Fog" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10942, 0.527987, -0.294432)
+amount = 100
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_cg2du")
+draw_pass_1 = SubResource("QuadMesh_kec5u")
+
+[node name="Interactions" type="Node" parent="."]
+
+[node name="Body" type="Area3D" parent="Interactions" node_paths=PackedStringArray("current_camera", "inspect_camera", "player", "inspectable_mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48803, 0, 1.22802)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("9_neq1d")
+current_camera = NodePath("../../Cameras/MainCamera")
+inspect_camera = NodePath("Camera3D")
+player = NodePath("../../Player")
+display_name = "Тело"
+inspectable_mesh = NodePath("../../kitchen/body")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107521, 0.8633, -0.57959)
+shape = SubResource("BoxShape3D_yxvdf")
+
+[node name="Camera3D" type="Camera3D" parent="Interactions/Body"]
+process_mode = 4
+transform = Transform3D(-0.596106, 0.609928, -0.522156, -0.0300914, 0.632904, 0.773645, 0.802342, 0.476887, -0.358924, -0.727591, 2.04641, -1.09739)
+fov = 74.0
+
+[editable path="kitchen"]
+[editable path="Player"]
+[editable path="Player/morrigan"]

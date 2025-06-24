@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c31pirrqr7qg7"]
+
+[ext_resource type="Texture2D" uid="uid://bsv2i6uj8st4x" path="res://Scenes/Characters/Morrigan/joanna_handshands.png" id="1_u06kr"]
+
+[resource]
+resource_name = "hands"
+albedo_texture = ExtResource("1_u06kr")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+texture_filter = 0
+texture_repeat = false

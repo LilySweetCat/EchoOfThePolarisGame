@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://q8hccahawy3s"]
+
+[ext_resource type="FontFile" uid="uid://d3m3qhl7irled" path="res://Fonts/courier-prime.ttf" id="1_o7fm2"]
+[ext_resource type="StyleBox" uid="uid://d2xwifs2xoq23" path="res://Themes/simple-select-button.tres" id="2_j5piu"]
+[ext_resource type="FontFile" uid="uid://ci0uec7g6a46c" path="res://Fonts/courier-prime-bold.ttf" id="3_foxv4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5piu"]
+
+[resource]
+Button/constants/h_separation = 8
+Button/constants/outline_size = 1
+Button/font_sizes/font_size = 26
+Button/fonts/font = ExtResource("1_o7fm2")
+Button/styles/focus = ExtResource("2_j5piu")
+Button/styles/hover = ExtResource("2_j5piu")
+Button/styles/normal = SubResource("StyleBoxEmpty_j5piu")
+Button/styles/pressed = ExtResource("2_j5piu")
+RichTextLabel/fonts/bold_font = ExtResource("3_foxv4")
+RichTextLabel/fonts/normal_font = ExtResource("1_o7fm2")

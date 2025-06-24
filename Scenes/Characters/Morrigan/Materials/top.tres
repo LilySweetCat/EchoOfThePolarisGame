@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bcx5i41n8svm1"]
+
+[ext_resource type="Texture2D" uid="uid://4ngin7scw2m7" path="res://Scenes/Characters/Morrigan/joanna_top.png" id="1_o13tj"]
+
+[resource]
+resource_name = "top"
+albedo_texture = ExtResource("1_o13tj")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+ao_enabled = true
+texture_filter = 0
+texture_repeat = false

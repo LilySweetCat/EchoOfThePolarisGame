@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c3f3s0hpu5i2u"]
+
+[ext_resource type="Shader" uid="uid://blwx2jont87am" path="res://Shaders/psx_models.gdshader" id="1_fxbas"]
+[ext_resource type="Texture2D" uid="uid://2iqxjuuhilh" path="res://Scenes/Polar-Station-Entrance/Models/hatch.png" id="2_jaa4j"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_fxbas")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("2_jaa4j")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)

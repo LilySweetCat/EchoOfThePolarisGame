@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d4kymtwgtjtie"]
+
+[ext_resource type="Texture2D" uid="uid://dtlpsuy68nh45" path="res://Scenes/Characters/Morrigan/joanna_pants_combined.png" id="1_clxym"]
+
+[resource]
+resource_name = "pants_and_shoes"
+albedo_texture = ExtResource("1_clxym")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+ao_enabled = true
+texture_filter = 0
+texture_repeat = false

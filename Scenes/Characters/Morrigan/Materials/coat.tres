@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://pxe1ctaykgvq"]
+
+[ext_resource type="Texture2D" uid="uid://c7cibdvnrkepf" path="res://Scenes/Characters/Morrigan/joanna_coat.png" id="1_j7xch"]
+
+[resource]
+resource_name = "coat"
+albedo_texture = ExtResource("1_j7xch")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+ao_enabled = true
+texture_filter = 0
+texture_repeat = false

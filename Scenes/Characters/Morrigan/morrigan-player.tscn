@@ -1,0 +1,153 @@
+[gd_scene load_steps=18 format=3 uid="uid://4midgp1nsr81"]
+
+[ext_resource type="Script" uid="uid://behakniycmju4" path="res://Scripts/character_controller.gd" id="1_4silv"]
+[ext_resource type="AnimationLibrary" uid="uid://bfsr3g4m2rv0w" path="res://Scenes/Characters/Morrigan/morrigan@Idle.fbx" id="2_mulx5"]
+[ext_resource type="PackedScene" uid="uid://dle82lybhq2dc" path="res://Scenes/Characters/Morrigan/morrigan.fbx" id="2_w0idn"]
+[ext_resource type="AnimationLibrary" uid="uid://c75ubcqr73fwf" path="res://Scenes/Characters/Morrigan/morrigan@Walking.fbx" id="4_o5t8k"]
+[ext_resource type="Texture2D" uid="uid://dvmcng2ligeek" path="res://Textures/fx_cloudalphas/FX_CloudAlpha08.png" id="5_o5t8k"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mulx5"]
+radius = 0.3
+height = 1.7
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w0idn"]
+animation = &"morrigan@Idle/mixamo_com"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o5t8k"]
+animation = &"morrigan@Walking/mixamo_com"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_cv81l"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_w0idn")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_o5t8k")
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_61wuc"]
+nodes/movement/node = SubResource("AnimationNodeBlendSpace1D_cv81l")
+nodes/movement/position = Vector2(20, 120)
+node_connections = [&"output", 0, &"movement"]
+
+[sub_resource type="Curve" id="Curve_75ofj"]
+_data = [Vector2(0.00406504, 0.011236), 0.0, 0.0, 0, 0, Vector2(0.256098, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_8we0h"]
+width = 64
+curve = SubResource("Curve_75ofj")
+
+[sub_resource type="Curve" id="Curve_o5t8k"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.495935, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_61wuc"]
+width = 64
+curve = SubResource("Curve_o5t8k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2d4fn"]
+lifetime_randomness = 0.2
+direction = Vector3(0, 0.3, -1)
+initial_velocity_min = 0.1
+initial_velocity_max = 0.2
+gravity = Vector3(0, 0.5, 0)
+damping_max = 0.3
+scale_min = 0.1
+scale_curve = SubResource("CurveTexture_61wuc")
+alpha_curve = SubResource("CurveTexture_8we0h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxdox"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("5_o5t8k")
+texture_filter = 0
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_cpgg5"]
+material = SubResource("StandardMaterial3D_qxdox")
+size = Vector2(0.05, 0.05)
+
+[node name="Player" type="CharacterBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("1_4silv")
+speed = 2.0
+acceleration = 4.0
+
+[node name="TrackTarget" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11172, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.854485, 0)
+shape = SubResource("CapsuleShape3D_mulx5")
+
+[node name="morrigan" parent="." instance=ExtResource("2_w0idn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="morrigan" index="0"]
+bones/1/position = Vector3(0.0130934, 0.935719, -0.00304279)
+bones/1/rotation = Quaternion(-0.00635554, 0.0123357, -0.0490992, 0.998698)
+bones/2/rotation = Quaternion(-0.0576386, -0.0129424, 0.0242461, 0.997959)
+bones/3/position = Vector3(0, 0.103905, -2.77556e-17)
+bones/3/rotation = Quaternion(-0.00070022, -0.00584663, 0.0514034, 0.998661)
+bones/4/rotation = Quaternion(-0.000699172, -0.000563177, 0.0512701, 0.998685)
+bones/5/rotation = Quaternion(0.0773078, -0.000614704, -0.0195841, 0.996815)
+bones/6/rotation = Quaternion(0.0157047, 0.00709757, -0.0700656, 0.997394)
+bones/8/rotation = Quaternion(-0.612808, -0.424495, 0.466678, -0.475901)
+bones/9/position = Vector3(-4.16334e-17, 0.102497, -2.22045e-16)
+bones/9/rotation = Quaternion(0.641273, 0.0718764, -0.0830278, 0.759414)
+bones/10/position = Vector3(0, 0.252016, 4.44089e-16)
+bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
+bones/11/position = Vector3(-2.77556e-17, 0.246386, 0)
+bones/11/rotation = Quaternion(-2.37223e-16, 6.59195e-17, -2.77556e-17, 1)
+bones/12/rotation = Quaternion(0.571976, -0.474408, 0.506537, 0.437265)
+bones/13/position = Vector3(2.77556e-17, 0.102497, -2.22045e-16)
+bones/13/rotation = Quaternion(0.529315, -0.0889157, 0.00675244, 0.843726)
+bones/14/position = Vector3(0, 0.252094, 6.66134e-16)
+bones/14/rotation = Quaternion(-0.010417, 0.0150285, -0.153117, 0.988039)
+bones/15/position = Vector3(9.02056e-17, 0.246876, -4.44089e-16)
+bones/15/rotation = Quaternion(-4.03323e-17, -1.73472e-17, -1.38778e-17, 1)
+bones/16/rotation = Quaternion(0.114276, 0.177497, 0.968888, -0.1292)
+bones/17/position = Vector3(0, 0.427752, 0)
+bones/17/rotation = Quaternion(-0.287639, -0.0771035, 0.0286557, 0.9542)
+bones/18/position = Vector3(1.11022e-16, 0.400439, -1.38778e-17)
+bones/18/rotation = Quaternion(0.519843, -0.096299, -0.0133159, 0.848712)
+bones/19/position = Vector3(-5.55112e-17, 0.145615, 0)
+bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
+bones/21/rotation = Quaternion(-0.0429685, 0.0197036, 0.994898, -0.0891226)
+bones/22/position = Vector3(2.77556e-17, 0.427712, -1.73472e-18)
+bones/22/rotation = Quaternion(-0.156706, 0.0436987, 0.0337939, 0.986099)
+bones/23/position = Vector3(8.32667e-17, 0.40043, 1.38778e-17)
+bones/23/rotation = Quaternion(0.559266, 0.00574196, -0.125377, 0.819432)
+bones/24/position = Vector3(2.77556e-17, 0.145188, -6.93889e-18)
+bones/24/rotation = Quaternion(0.324308, 0.022587, -0.00749417, 0.945652)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../morrigan")
+tree_root = SubResource("AnimationNodeBlendTree_61wuc")
+anim_player = NodePath("../AnimationPlayer")
+parameters/movement/blend_position = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../morrigan")
+libraries = {
+&"morrigan@Idle": ExtResource("2_mulx5"),
+&"morrigan@Walking": ExtResource("4_o5t8k")
+}
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="."]
+playback_type = 2
+doppler_tracking = 1
+
+[node name="BreathSteam" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0105952, 1.46497, -0.110851)
+emitting = false
+amount = 3
+lifetime = 0.4
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_2d4fn")
+draw_pass_1 = SubResource("QuadMesh_cpgg5")
+
+[editable path="morrigan"]
