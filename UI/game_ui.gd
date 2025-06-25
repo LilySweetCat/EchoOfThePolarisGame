@@ -83,11 +83,11 @@ func show_interactive_object_name(name: String) -> void:
 	typewriter.play()
 	
 	var tween = create_tween()
-	tween.tween_property(interactive_object_name, "visible_ratio", 1.0, name.length()/4)
+	tween.tween_property(interactive_object_name, "visible_ratio", 1.0, name.length()/5)
 	tween.finished.connect(func(): typewriter.stop())
 	return
 	
 func hide_interactive_object_name() -> void:
 	var tween = create_tween()
-	tween.tween_property(interactive_object_name, "visible_ratio", 0.0, name.length()/4)
+	tween.tween_property(interactive_object_name, "visible_ratio", 0.0, name.length()/5)
 	return
