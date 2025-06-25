@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://gn3wbf0nck7i"]
+
+[ext_resource type="Theme" uid="uid://q8hccahawy3s" path="res://Themes/DocumentTheme.tres" id="1_6yno4"]
+
+[node name="Button1" type="Button"]
+theme = ExtResource("1_6yno4")
+text = "1"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bblk7ag55p1wa"]
+[gd_scene load_steps=14 format=3 uid="uid://bblk7ag55p1wa"]
 
 [ext_resource type="PackedScene" uid="uid://bb68y7o6j65ju" path="res://UI/search.tscn" id="1_mp46i"]
 [ext_resource type="Script" uid="uid://byap0g2hl77cm" path="res://UI/game_ui.gd" id="1_ywmy4"]
@@ -48,7 +48,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/Background:visible")
+tracks/3/path = NodePath("Background:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -60,7 +60,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/Background:color")
+tracks/4/path = NodePath("Background:color")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -72,7 +72,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPlayer/DialogueText:visible_ratio")
+tracks/5/path = NodePath("Background/DialogueText:visible_ratio")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -84,7 +84,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("AnimationPlayer/InteractiveObjectName:visible_ratio")
+tracks/6/path = NodePath("InteractiveObjectName:visible_ratio")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -96,7 +96,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("AnimationPlayer/Typewriter:playing")
+tracks/7/path = NodePath("Typewriter:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -238,37 +238,9 @@ tracks/18/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_dbpsm"]
-resource_name = "blackout"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Background:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Background:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_ywmy4"]
 resource_name = "glitch"
-length = 0.2
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -276,10 +248,10 @@ tracks/0/path = NodePath("AnimationPlayer/PostProcess:material:shader_parameter/
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.2, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false, false]
+"values": [true, false, false, false, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -288,10 +260,10 @@ tracks/1/path = NodePath("AnimationPlayer/PostProcess:material:shader_parameter/
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.2, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, true]
+"values": [false, true, true, true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -300,10 +272,10 @@ tracks/2/path = NodePath("AnimationPlayer/PostProcess:material:shader_parameter/
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.260877, 0.327283, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [1, 2, 3, 6]
+"values": [1, 2, 3, 6, 3, 2, 1]
 }
 
 [sub_resource type="Animation" id="Animation_q8rbd"]
@@ -404,50 +376,6 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_fy64h"]
-resource_name = "show_dialogue"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/DialogueText:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_v6n52"]
-resource_name = "show_interactive_object_name"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/InteractiveObjectName:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Typewriter:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_bjx7l"]
@@ -640,11 +568,8 @@ tracks/7/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bjx7l"]
 _data = {
 &"RESET": SubResource("Animation_jd38o"),
-&"blackout": SubResource("Animation_dbpsm"),
 &"glitch": SubResource("Animation_ywmy4"),
 &"hide_search_cursor_data": SubResource("Animation_q8rbd"),
-&"show_dialogue": SubResource("Animation_fy64h"),
-&"show_interactive_object_name": SubResource("Animation_v6n52"),
 &"show_search_cursor": SubResource("Animation_bjx7l"),
 &"show_search_cursor_data": SubResource("Animation_oohqu")
 }
@@ -676,23 +601,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_ywmy4")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_bjx7l")
-}
-
-[node name="Background" type="ColorRect" parent="AnimationPlayer"]
+[node name="Background" type="ColorRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 color = Color(0, 0, 0, 0)
 
-[node name="DialogueText" type="RichTextLabel" parent="AnimationPlayer"]
+[node name="ButtonsContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="DialogueText" type="RichTextLabel" parent="Background"]
 visible = false
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3
 anchor_top = 0.45
@@ -702,14 +639,51 @@ offset_left = -0.5
 offset_right = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("5_dbpsm")
 bbcode_enabled = true
 text = "Thats why it isn't working"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PostProcess" type="ColorRect" parent="AnimationPlayer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bjx7l")
+}
+
+[node name="SearchCursor" parent="AnimationPlayer" instance=ExtResource("1_mp46i")]
 process_mode = 4
+visible = false
+mouse_filter = 1
+
+[node name="Eye" parent="AnimationPlayer/SearchCursor" index="0"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="TopLeft" parent="AnimationPlayer/SearchCursor" index="1"]
+modulate = Color(1, 1, 1, 0)
+mouse_filter = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="TopRight" parent="AnimationPlayer/SearchCursor" index="2"]
+modulate = Color(1, 1, 1, 0)
+mouse_filter = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="BottomLeft" parent="AnimationPlayer/SearchCursor" index="3"]
+modulate = Color(1, 1, 1, 0)
+mouse_filter = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="BottomRight" parent="AnimationPlayer/SearchCursor" index="4"]
+modulate = Color(1, 1, 1, 0)
+mouse_filter = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="PostProcess" type="ColorRect" parent="AnimationPlayer"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_h0rig")
 anchors_preset = 15
@@ -717,37 +691,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="SearchCursor" parent="AnimationPlayer" instance=ExtResource("1_mp46i")]
-process_mode = 4
-visible = false
 mouse_filter = 2
 
-[node name="Eye" parent="AnimationPlayer/SearchCursor" index="0"]
-modulate = Color(1, 1, 1, 0)
-
-[node name="TopLeft" parent="AnimationPlayer/SearchCursor" index="1"]
-modulate = Color(1, 1, 1, 0)
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="TopRight" parent="AnimationPlayer/SearchCursor" index="2"]
-modulate = Color(1, 1, 1, 0)
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="BottomLeft" parent="AnimationPlayer/SearchCursor" index="3"]
-modulate = Color(1, 1, 1, 0)
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="BottomRight" parent="AnimationPlayer/SearchCursor" index="4"]
-modulate = Color(1, 1, 1, 0)
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="InteractiveObjectName" type="RichTextLabel" parent="AnimationPlayer"]
+[node name="InteractiveObjectName" type="RichTextLabel" parent="."]
+z_index = 1
 clip_contents = false
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.8
 anchor_top = 0.88
@@ -755,6 +704,7 @@ anchor_right = 0.9
 anchor_bottom = 0.92
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 1
 theme = ExtResource("5_dbpsm")
 bbcode_enabled = true
 text = "knife"
@@ -764,7 +714,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="Typewriter" type="AudioStreamPlayer" parent="AnimationPlayer"]
+[node name="Typewriter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_fy64h")
 volume_db = -12.0
 mix_target = 2

@@ -13,7 +13,7 @@ var is_current : bool
 func _ready() -> void:
 	connect("body_entered", _on_body_entered)
 	connect("body_exited", _on_body_exited)
-	print(tracking_target.name)
+	#print(tracking_target.name)
 	pass
 
 func _on_body_entered(body: Node3D) -> void:
@@ -23,12 +23,9 @@ func _on_body_entered(body: Node3D) -> void:
 	#var tween = create_tween()
 	#tween.tween_property(main_camera, "transform", virtual_camera.transform, 0.5)
 	
-	GameUi.play_transition(
-		func():
-			main_camera.transform = virtual_camera.transform
-			is_current = true
-			return
-			)
+	GameUi.play_transition()
+	main_camera.transform = virtual_camera.transform
+	is_current = true
 	return # Replace with function body.
 
 func _on_body_exited(body: Node3D) -> void:

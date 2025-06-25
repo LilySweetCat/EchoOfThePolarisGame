@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://ctdp85o7ltw6o"]
+[gd_scene load_steps=51 format=3 uid="uid://ctdp85o7ltw6o"]
 
 [ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
 [ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
@@ -11,12 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://dv8ofau56xdo7" path="res://Textures/fx_cloudalphas/FX_CloudAlpha02.png" id="6_ruj4t"]
 [ext_resource type="Shader" uid="uid://cq48lxr3088uy" path="res://Shaders/interactable.gdshader" id="7_0tag2"]
 [ext_resource type="PackedScene" uid="uid://di6n0d8v7wwsv" path="res://Models/Props/Knife.blend" id="7_tfhfy"]
+[ext_resource type="Material" uid="uid://lhkb7c6hbkj2" path="res://Materials/base.tres" id="8_0tag2"]
 [ext_resource type="Texture2D" uid="uid://cp4wepb1738n7" path="res://Textures/snow2.png" id="8_r8i07"]
 [ext_resource type="Script" uid="uid://1ejavo0tdki2" path="res://Scripts/Interaction/inspectable.gd" id="9_neq1d"]
 [ext_resource type="AudioStream" uid="uid://cyfdptiohatxl" path="res://Audio/Sounds/Wind/pedaling-prince__windy-window.wav" id="12_cg2du"]
 [ext_resource type="AudioStream" uid="uid://bdbv3tspmnk13" path="res://Audio/Music/gustavo_alivera__gloomy-background-atmosphere-3.mp3" id="13_r1bav"]
+[ext_resource type="Script" uid="uid://cp86nrwycs52w" path="res://Scripts/Interaction/dialogue.gd" id="17_a0rdj"]
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_r1bav"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_a0rdj"]
 
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
@@ -198,6 +200,9 @@ scale_min = 0.1
 scale_curve = SubResource("CurveTexture_a0rdj")
 alpha_curve = SubResource("CurveTexture_r1bav")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_skia2"]
+size = Vector3(1, 1.39795, 1)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("current_camera") instance=ExtResource("3_i4o3x")]
@@ -208,45 +213,45 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.0127262, 0.936203, -0.000593377)
-bones/1/rotation = Quaternion(-0.0077742, 0.0129098, -0.0481984, 0.998724)
-bones/2/rotation = Quaternion(-0.0590837, -0.0133934, 0.0242834, 0.997868)
+bones/1/position = Vector3(0.0058774, 0.935609, -0.00470679)
+bones/1/rotation = Quaternion(-0.00809842, 0.0136226, -0.0451857, 0.998853)
+bones/2/rotation = Quaternion(-0.0590221, -0.0130136, 0.0237569, 0.997889)
 bones/3/position = Vector3(0, 0.103905, -2.77556e-17)
-bones/3/rotation = Quaternion(-0.00154888, -0.00608744, 0.0514148, 0.998658)
-bones/4/rotation = Quaternion(-0.00156307, -0.000667555, 0.051289, 0.998682)
-bones/5/rotation = Quaternion(0.0755624, -0.000973157, -0.0190584, 0.996958)
-bones/6/rotation = Quaternion(0.0181424, 0.00639986, -0.0688474, 0.997442)
-bones/8/rotation = Quaternion(-0.605202, -0.434894, 0.455549, -0.486901)
+bones/3/rotation = Quaternion(-0.00166726, -0.00609914, 0.0515061, 0.998653)
+bones/4/rotation = Quaternion(-0.00168597, -0.000644397, 0.051383, 0.998677)
+bones/5/rotation = Quaternion(0.0740494, -0.00131012, -0.0192269, 0.997068)
+bones/6/rotation = Quaternion(0.0135572, 0.00480326, -0.0713959, 0.997344)
+bones/8/rotation = Quaternion(-0.605799, -0.434008, 0.455823, -0.486694)
 bones/9/position = Vector3(-4.16334e-17, 0.102497, -2.22045e-16)
-bones/9/rotation = Quaternion(0.65729, 0.0752029, -0.0834473, 0.745219)
+bones/9/rotation = Quaternion(0.657788, 0.0754609, -0.082278, 0.744883)
 bones/10/position = Vector3(0, 0.252016, 4.44089e-16)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
 bones/11/position = Vector3(-2.77556e-17, 0.246386, 0)
 bones/11/rotation = Quaternion(-2.37223e-16, 6.59195e-17, -2.77556e-17, 1)
-bones/12/rotation = Quaternion(0.565234, -0.485558, 0.496018, 0.445769)
+bones/12/rotation = Quaternion(0.56523, -0.485305, 0.496857, 0.445115)
 bones/13/position = Vector3(2.77556e-17, 0.102497, -2.22045e-16)
-bones/13/rotation = Quaternion(0.544457, -0.0915385, 0.00399691, 0.833769)
+bones/13/rotation = Quaternion(0.541375, -0.0924852, 0.0026272, 0.835675)
 bones/14/position = Vector3(0, 0.252094, 6.66134e-16)
-bones/14/rotation = Quaternion(-0.0104016, 0.0150289, -0.152891, 0.988074)
+bones/14/rotation = Quaternion(-0.0104653, 0.0150267, -0.153822, 0.987929)
 bones/15/position = Vector3(9.02056e-17, 0.246876, -4.44089e-16)
 bones/15/rotation = Quaternion(-4.03323e-17, -1.73472e-17, -1.38778e-17, 1)
-bones/16/rotation = Quaternion(0.114876, 0.173899, 0.969528, -0.128756)
+bones/16/rotation = Quaternion(0.115267, 0.173386, 0.969581, -0.128702)
 bones/17/position = Vector3(0, 0.427752, 0)
-bones/17/rotation = Quaternion(-0.285415, -0.0773825, 0.0283562, 0.954854)
+bones/17/rotation = Quaternion(-0.279698, -0.0774129, 0.0278404, 0.956557)
 bones/18/position = Vector3(1.11022e-16, 0.400439, -1.38778e-17)
-bones/18/rotation = Quaternion(0.520354, -0.0952787, -0.0139948, 0.848503)
+bones/18/rotation = Quaternion(0.515811, -0.0959798, -0.0154208, 0.851169)
 bones/19/position = Vector3(-5.55112e-17, 0.145615, 0)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0428169, 0.0149748, 0.995053, -0.0883881)
+bones/21/rotation = Quaternion(-0.0427421, 0.0198243, 0.994848, -0.0897664)
 bones/22/position = Vector3(2.77556e-17, 0.427712, -1.73472e-18)
-bones/22/rotation = Quaternion(-0.152272, 0.0428938, 0.0335895, 0.986836)
+bones/22/rotation = Quaternion(-0.159013, 0.0450653, 0.0329395, 0.985697)
 bones/23/position = Vector3(8.32667e-17, 0.40043, 1.38778e-17)
-bones/23/rotation = Quaternion(0.558544, 0.00577251, -0.125346, 0.819929)
+bones/23/rotation = Quaternion(0.559584, 0.00456773, -0.128509, 0.818737)
 bones/24/position = Vector3(2.77556e-17, 0.145188, -6.93889e-18)
-bones/24/rotation = Quaternion(0.323845, 0.0225167, -0.00747842, 0.945813)
+bones/24/rotation = Quaternion(0.323249, 0.0224263, -0.00745819, 0.946019)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_r1bav")
+stream = SubResource("AudioStreamPolyphonic_a0rdj")
 
 [node name="EnviromentLightGeometry" type="Node" parent="."]
 
@@ -289,6 +294,7 @@ transform = Transform3D(-0.398269, 0, -0.917269, 0, 1, 0, 0.917269, 0, -0.398269
 
 [node name="book" parent="EnviromentLightGeometry/Geometry/book2" index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_a0rdj")
+surface_material_override/1 = ExtResource("8_0tag2")
 
 [node name="Particles" type="Node" parent="."]
 
@@ -376,7 +382,7 @@ debug_color = Color(2.88785e-06, 0.819078, 0.952524, 0.42)
 
 [node name="Interactions" type="Node" parent="."]
 
-[node name="Body" type="Area3D" parent="Interactions" node_paths=PackedStringArray("current_camera", "inspect_camera", "player", "inspectable_mesh")]
+[node name="Body" type="Area3D" parent="Interactions" node_paths=PackedStringArray("current_camera", "inspect_camera", "inspectable_mesh", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48803, 0, 1.22802)
 collision_layer = 2
 collision_mask = 2
@@ -385,9 +391,10 @@ monitorable = false
 script = ExtResource("9_neq1d")
 current_camera = NodePath("../../Cameras/MainCamera")
 inspect_camera = NodePath("Camera3D")
-player = NodePath("../../Player")
-display_name = "Тело"
+object_display_name = "Тело"
+action_name = "Осмотреть"
 inspectable_mesh = NodePath("../../EnviromentLightGeometry/Geometry/kitchen/body")
+player = NodePath("../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107521, 0.8633, -0.57959)
@@ -429,6 +436,20 @@ amount = 1
 lifetime = 3.0
 process_material = SubResource("ParticleProcessMaterial_d5v74")
 draw_pass_1 = SubResource("QuadMesh_1u351")
+
+[node name="Manual" type="Area3D" parent="Interactions" node_paths=PackedStringArray("inspectable_mesh", "player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94265, 1.36772, 1.32149)
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("17_a0rdj")
+object_display_name = "Книга"
+action_name = "Прочитать"
+inspectable_mesh = NodePath("../../EnviromentLightGeometry/Geometry/book2/book")
+player = NodePath("../../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Manual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.198975, 0)
+shape = SubResource("BoxShape3D_skia2")
 
 [editable path="Player"]
 [editable path="Player/morrigan"]
