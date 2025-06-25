@@ -14,6 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://cyfdptiohatxl" path="res://Audio/Sounds/Wind/pedaling-prince__windy-window.wav" id="12_cg2du"]
 [ext_resource type="AudioStream" uid="uid://bdbv3tspmnk13" path="res://Audio/Music/gustavo_alivera__gloomy-background-atmosphere-3.mp3" id="13_r1bav"]
 
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_r1bav"]
+
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
 ambient_light_source = 2
@@ -26,14 +28,6 @@ volumetric_fog_emission = Color(0.641934, 0.641934, 0.641934, 1)
 adjustment_enabled = true
 adjustment_brightness = 0.95
 adjustment_saturation = 0.8
-
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_cg2du"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ruj4t"]
-size = Vector3(4.5951, 1.70068, 5.25537)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tfhfy"]
-size = Vector3(1.69344, 1.70068, 4.28242)
 
 [sub_resource type="Gradient" id="Gradient_neq1d"]
 offsets = PackedFloat32Array(0, 0.318182, 0.640909, 1)
@@ -70,6 +64,7 @@ shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 1, 1, 0.533333)
 albedo_texture = ExtResource("8_r8i07")
+texture_filter = 5
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -117,6 +112,12 @@ particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_kec5u"]
 material = SubResource("StandardMaterial3D_r1bav")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ruj4t"]
+size = Vector3(4.5951, 1.70068, 5.25537)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tfhfy"]
+size = Vector3(1.69344, 1.70068, 4.28242)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yxvdf"]
 size = Vector3(1.77531, 1, 2.15918)
@@ -188,38 +189,6 @@ alpha_curve = SubResource("CurveTexture_r1bav")
 
 [node name="Node3D" type="Node3D"]
 
-[node name="kitchen" parent="." instance=ExtResource("1_j055r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.723568, 0.372988, -0.649199)
-
-[node name="body" parent="kitchen" index="1"]
-surface_material_override/0 = ExtResource("2_r8i07")
-
-[node name="Knife" parent="." instance=ExtResource("7_tfhfy")]
-transform = Transform3D(0.758339, 0, -0.65186, 0, 1, 0, 0.65186, 0, 0.758339, -7.7106, 0.733483, 1.08424)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_i4o3x")
-
-[node name="LightmapGI" type="LightmapGI" parent="."]
-interior = true
-light_data = ExtResource("2_77rxy")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.22144, 3.89078, -6.91924e-09)
-light_energy = 3.0
-light_size = 0.1
-light_bake_mode = 1
-shadow_enabled = true
-spot_range = 10.0
-spot_angle = 80.0
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.55884, 3.89078, -6.91924e-09)
-visible = false
-light_size = 0.1
-spot_range = 10.0
-spot_angle = 80.0
-
 [node name="Player" parent="." node_paths=PackedStringArray("current_camera") instance=ExtResource("3_i4o3x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.10062, 0.372992, 0.2099)
 collision_layer = 3
@@ -228,30 +197,99 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.0119111, 0.9362, -0.000768373)
-bones/1/rotation = Quaternion(-0.00755748, 0.0118951, -0.0476322, 0.998766)
-bones/2/rotation = Quaternion(-0.0586568, -0.0132509, 0.024317, 0.997894)
-bones/3/rotation = Quaternion(-0.000260235, -0.00593849, 0.0515134, 0.998655)
-bones/4/rotation = Quaternion(-0.000262455, -0.000637889, 0.0513804, 0.998679)
-bones/5/rotation = Quaternion(0.075157, -0.000975962, -0.0190507, 0.996989)
-bones/6/rotation = Quaternion(0.0175987, 0.00653645, -0.069293, 0.99742)
-bones/8/rotation = Quaternion(-0.611506, -0.426269, 0.464529, -0.478089)
-bones/9/rotation = Quaternion(0.644424, 0.07422, -0.0818902, 0.756639)
+bones/1/position = Vector3(0.0130963, 0.935719, -0.00304358)
+bones/1/rotation = Quaternion(-0.00635804, 0.0123371, -0.0491003, 0.998698)
+bones/2/rotation = Quaternion(-0.0576402, -0.0129434, 0.0242465, 0.997959)
+bones/3/rotation = Quaternion(-0.000703172, -0.00584714, 0.0514034, 0.998661)
+bones/4/rotation = Quaternion(-0.000702158, -0.000563355, 0.05127, 0.998685)
+bones/5/rotation = Quaternion(0.0773065, -0.000614887, -0.019584, 0.996815)
+bones/6/rotation = Quaternion(0.015705, 0.00709655, -0.0700647, 0.997394)
+bones/8/rotation = Quaternion(-0.612797, -0.424511, 0.466662, -0.475916)
+bones/9/rotation = Quaternion(0.641297, 0.0718791, -0.0830317, 0.759393)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/12/rotation = Quaternion(0.570288, -0.476792, 0.504801, 0.438882)
-bones/13/rotation = Quaternion(0.531602, -0.0916327, 0.0032764, 0.842017)
-bones/14/rotation = Quaternion(-0.0104186, 0.0150283, -0.153139, 0.988035)
-bones/16/rotation = Quaternion(0.115162, 0.173619, 0.969519, -0.128949)
-bones/17/rotation = Quaternion(-0.284406, -0.0775361, 0.0282174, 0.955147)
-bones/18/rotation = Quaternion(0.51992, -0.0960862, -0.013907, 0.84868)
+bones/12/rotation = Quaternion(0.571966, -0.474425, 0.50652, 0.437278)
+bones/13/rotation = Quaternion(0.52934, -0.0889178, 0.00675096, 0.843711)
+bones/14/rotation = Quaternion(-0.010417, 0.0150285, -0.153116, 0.988039)
+bones/16/rotation = Quaternion(0.114276, 0.177495, 0.968888, -0.129201)
+bones/17/rotation = Quaternion(-0.287638, -0.0771037, 0.0286557, 0.9542)
+bones/18/rotation = Quaternion(0.519844, -0.0962984, -0.0133158, 0.848712)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0429442, 0.0162518, 0.995065, -0.0879583)
-bones/22/rotation = Quaternion(-0.153304, 0.0415331, 0.0340931, 0.986717)
-bones/23/rotation = Quaternion(0.558802, 0.00553326, -0.125937, 0.819664)
-bones/24/rotation = Quaternion(0.323628, 0.0224837, -0.00747104, 0.945888)
+bones/21/rotation = Quaternion(-0.0429687, 0.0197023, 0.994898, -0.0891226)
+bones/22/rotation = Quaternion(-0.156705, 0.0436997, 0.0337933, 0.986099)
+bones/23/rotation = Quaternion(0.559266, 0.00574248, -0.125376, 0.819433)
+bones/24/rotation = Quaternion(0.324308, 0.022587, -0.00749418, 0.945652)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_cg2du")
+stream = SubResource("AudioStreamPolyphonic_r1bav")
+
+[node name="EnviromentAndLight" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="EnviromentAndLight"]
+environment = SubResource("Environment_i4o3x")
+
+[node name="LightmapGI" type="LightmapGI" parent="EnviromentAndLight"]
+interior = true
+light_data = ExtResource("2_77rxy")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="EnviromentAndLight"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.22144, 3.89078, -6.91924e-09)
+light_energy = 3.0
+light_size = 0.1
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 80.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="EnviromentAndLight"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.55884, 3.89078, -6.91924e-09)
+visible = false
+light_size = 0.1
+spot_range = 10.0
+spot_angle = 80.0
+
+[node name="Particles" type="Node" parent="."]
+
+[node name="DustParticles" type="GPUParticles3D" parent="Particles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.72381, 2.15766, -0.281633)
+amount = 150
+lifetime = 4.0
+preprocess = 3.0
+process_material = SubResource("ParticleProcessMaterial_yxvdf")
+draw_pass_1 = SubResource("QuadMesh_r1bav")
+
+[node name="Fog" type="GPUParticles3D" parent="Particles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10942, 0.527987, -0.294432)
+amount = 100
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_cg2du")
+draw_pass_1 = SubResource("QuadMesh_kec5u")
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Pedaling-princeWindy-window" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53573, 2.39841, 2.52079)
+stream = ExtResource("12_cg2du")
+autoplay = true
+max_distance = 6.0
+doppler_tracking = 1
+
+[node name="UniversfieldGloomy-reverie" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13_r1bav")
+volume_db = -8.0
+pitch_scale = 0.8
+autoplay = true
+parameters/looping = true
+
+[node name="Geometry" type="Node" parent="."]
+
+[node name="kitchen" parent="Geometry" instance=ExtResource("1_j055r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.723568, 0.372988, -0.649199)
+
+[node name="body" parent="Geometry/kitchen" index="1"]
+surface_material_override/0 = ExtResource("2_r8i07")
+
+[node name="Knife" parent="Geometry" instance=ExtResource("7_tfhfy")]
+transform = Transform3D(0.758339, 0, -0.65186, 0, 1, 0, 0.65186, 0, 0.758339, -7.7106, 0.733483, 1.08424)
 
 [node name="Cameras" type="Node" parent="."]
 
@@ -304,21 +342,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.275077, 0.350342, -0.797264
 shape = SubResource("BoxShape3D_tfhfy")
 debug_color = Color(2.88785e-06, 0.819078, 0.952524, 0.42)
 
-[node name="DustParticles" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.72381, 2.15766, -0.281633)
-amount = 150
-lifetime = 4.0
-preprocess = 3.0
-process_material = SubResource("ParticleProcessMaterial_yxvdf")
-draw_pass_1 = SubResource("QuadMesh_r1bav")
-
-[node name="Fog" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10942, 0.527987, -0.294432)
-amount = 100
-lifetime = 3.0
-process_material = SubResource("ParticleProcessMaterial_cg2du")
-draw_pass_1 = SubResource("QuadMesh_kec5u")
-
 [node name="Interactions" type="Node" parent="."]
 
 [node name="Body" type="Area3D" parent="Interactions" node_paths=PackedStringArray("current_camera", "inspect_camera", "player", "inspectable_mesh")]
@@ -332,7 +355,7 @@ current_camera = NodePath("../../Cameras/MainCamera")
 inspect_camera = NodePath("Camera3D")
 player = NodePath("../../Player")
 display_name = "Тело"
-inspectable_mesh = NodePath("../../kitchen/body")
+inspectable_mesh = NodePath("../../Geometry/kitchen/body")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107521, 0.8633, -0.57959)
@@ -375,20 +398,6 @@ lifetime = 3.0
 process_material = SubResource("ParticleProcessMaterial_d5v74")
 draw_pass_1 = SubResource("QuadMesh_1u351")
 
-[node name="Pedaling-princeWindy-window" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53573, 2.39841, 2.52079)
-stream = ExtResource("12_cg2du")
-autoplay = true
-max_distance = 6.0
-doppler_tracking = 1
-
-[node name="UniversfieldGloomy-reverie" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_r1bav")
-volume_db = -8.0
-pitch_scale = 0.8
-autoplay = true
-parameters/looping = true
-
-[editable path="kitchen"]
 [editable path="Player"]
 [editable path="Player/morrigan"]
+[editable path="Geometry/kitchen"]
