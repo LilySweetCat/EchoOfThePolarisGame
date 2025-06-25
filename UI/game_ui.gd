@@ -25,8 +25,6 @@ func _ready() -> void:
 	return
 	
 func play_dialogue(dialogue: Array[String]) -> void:
-	dialogue_text.visible_ratio = 0
-	
 	var tween = create_tween()
 	tween.tween_property(background, "color", Color.BLACK, 0.2)
 	
