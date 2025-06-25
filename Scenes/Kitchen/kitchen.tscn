@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://ctdp85o7ltw6o"]
+[gd_scene load_steps=45 format=3 uid="uid://ctdp85o7ltw6o"]
 
 [ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
 [ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://di6n0d8v7wwsv" path="res://Models/Props/Knife.blend" id="7_tfhfy"]
 [ext_resource type="Texture2D" uid="uid://cp4wepb1738n7" path="res://Textures/snow2.png" id="8_r8i07"]
 [ext_resource type="Script" uid="uid://1ejavo0tdki2" path="res://Scripts/Interaction/inspectable.gd" id="9_neq1d"]
+[ext_resource type="AudioStream" uid="uid://cyfdptiohatxl" path="res://Audio/Sounds/Wind/pedaling-prince__windy-window.wav" id="12_cg2du"]
+[ext_resource type="AudioStream" uid="uid://bdbv3tspmnk13" path="res://Audio/Music/gustavo_alivera__gloomy-background-atmosphere-3.mp3" id="13_r1bav"]
 
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
@@ -25,7 +27,7 @@ adjustment_enabled = true
 adjustment_brightness = 0.95
 adjustment_saturation = 0.8
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_kec5u"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_cg2du"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ruj4t"]
 size = Vector3(4.5951, 1.70068, 5.25537)
@@ -226,30 +228,30 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.0105942, 0.935829, -0.00325026)
-bones/1/rotation = Quaternion(-0.00661639, 0.0127203, -0.0473099, 0.998777)
-bones/2/rotation = Quaternion(-0.0569608, -0.0129993, 0.0242581, 0.997997)
-bones/3/rotation = Quaternion(0.00256543, -0.00545033, 0.0514899, 0.998655)
-bones/4/rotation = Quaternion(0.00259807, -0.000477803, 0.0513364, 0.998678)
-bones/5/rotation = Quaternion(0.0748557, -0.00115369, -0.0192386, 0.997008)
-bones/6/rotation = Quaternion(0.013405, 0.00531101, -0.0707329, 0.997391)
-bones/8/rotation = Quaternion(-0.622323, -0.410594, 0.482137, -0.460077)
-bones/9/rotation = Quaternion(0.619936, 0.0702798, -0.0800015, 0.777393)
+bones/1/position = Vector3(0.0119111, 0.9362, -0.000768373)
+bones/1/rotation = Quaternion(-0.00755748, 0.0118951, -0.0476322, 0.998766)
+bones/2/rotation = Quaternion(-0.0586568, -0.0132509, 0.024317, 0.997894)
+bones/3/rotation = Quaternion(-0.000260235, -0.00593849, 0.0515134, 0.998655)
+bones/4/rotation = Quaternion(-0.000262455, -0.000637889, 0.0513804, 0.998679)
+bones/5/rotation = Quaternion(0.075157, -0.000975962, -0.0190507, 0.996989)
+bones/6/rotation = Quaternion(0.0175987, 0.00653645, -0.069293, 0.99742)
+bones/8/rotation = Quaternion(-0.611506, -0.426269, 0.464529, -0.478089)
+bones/9/rotation = Quaternion(0.644424, 0.07422, -0.0818902, 0.756639)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/12/rotation = Quaternion(0.579594, -0.459811, 0.522347, 0.424026)
-bones/13/rotation = Quaternion(0.505503, -0.0882557, 0.00377747, 0.858291)
-bones/14/rotation = Quaternion(-0.0104621, 0.0150267, -0.153774, 0.987936)
-bones/16/rotation = Quaternion(0.114409, 0.175393, 0.969346, -0.128516)
-bones/17/rotation = Quaternion(-0.283076, -0.0777285, 0.0286406, 0.955514)
-bones/18/rotation = Quaternion(0.51827, -0.0955729, -0.0149144, 0.849729)
+bones/12/rotation = Quaternion(0.570288, -0.476792, 0.504801, 0.438882)
+bones/13/rotation = Quaternion(0.531602, -0.0916327, 0.0032764, 0.842017)
+bones/14/rotation = Quaternion(-0.0104186, 0.0150283, -0.153139, 0.988035)
+bones/16/rotation = Quaternion(0.115162, 0.173619, 0.969519, -0.128949)
+bones/17/rotation = Quaternion(-0.284406, -0.0775361, 0.0282174, 0.955147)
+bones/18/rotation = Quaternion(0.51992, -0.0960862, -0.013907, 0.84868)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0430032, 0.0209399, 0.994871, -0.0891317)
-bones/22/rotation = Quaternion(-0.157338, 0.0434095, 0.0332588, 0.98603)
-bones/23/rotation = Quaternion(0.559498, 0.00523793, -0.126758, 0.819065)
-bones/24/rotation = Quaternion(0.323219, 0.0224216, -0.00745715, 0.946029)
+bones/21/rotation = Quaternion(-0.0429442, 0.0162518, 0.995065, -0.0879583)
+bones/22/rotation = Quaternion(-0.153304, 0.0415331, 0.0340931, 0.986717)
+bones/23/rotation = Quaternion(0.558802, 0.00553326, -0.125937, 0.819664)
+bones/24/rotation = Quaternion(0.323628, 0.0224837, -0.00747104, 0.945888)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_kec5u")
+stream = SubResource("AudioStreamPolyphonic_cg2du")
 
 [node name="Cameras" type="Node" parent="."]
 
@@ -372,6 +374,20 @@ amount = 1
 lifetime = 3.0
 process_material = SubResource("ParticleProcessMaterial_d5v74")
 draw_pass_1 = SubResource("QuadMesh_1u351")
+
+[node name="Pedaling-princeWindy-window" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53573, 2.39841, 2.52079)
+stream = ExtResource("12_cg2du")
+autoplay = true
+max_distance = 6.0
+doppler_tracking = 1
+
+[node name="UniversfieldGloomy-reverie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_r1bav")
+volume_db = -8.0
+pitch_scale = 0.8
+autoplay = true
+parameters/looping = true
 
 [editable path="kitchen"]
 [editable path="Player"]
