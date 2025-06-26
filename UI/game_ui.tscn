@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bblk7ag55p1wa"]
+[gd_scene load_steps=16 format=3 uid="uid://bblk7ag55p1wa"]
 
 [ext_resource type="PackedScene" uid="uid://bb68y7o6j65ju" path="res://UI/search.tscn" id="1_mp46i"]
 [ext_resource type="Script" uid="uid://byap0g2hl77cm" path="res://UI/game_ui.gd" id="1_ywmy4"]
@@ -6,6 +6,10 @@
 [ext_resource type="Theme" uid="uid://q8hccahawy3s" path="res://Themes/DocumentTheme.tres" id="5_dbpsm"]
 [ext_resource type="AudioStream" uid="uid://f8mni3sdh5vi" path="res://Audio/Sounds/Typing/trollarch2__keyboard-typing.mp3" id="6_fy64h"]
 [ext_resource type="Shader" uid="uid://06e508g2xwwo" path="res://Shaders/combined_postprocesses.gdshader" id="8_ywmy4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fy64h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6n52"]
 
 [sub_resource type="Animation" id="Animation_jd38o"]
 length = 0.001
@@ -628,23 +632,49 @@ size_flags_vertical = 6
 alignment = 1
 
 [node name="DialogueText" type="RichTextLabel" parent="Background"]
-visible = false
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.45
-anchor_right = 0.7
-anchor_bottom = 0.55
-offset_left = -0.5
-offset_right = 0.5
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 0.25
+anchor_top = 0.3
+anchor_right = 0.75
+anchor_bottom = 0.7
+size_flags_horizontal = 3
 mouse_filter = 1
 theme = ExtResource("5_dbpsm")
 bbcode_enabled = true
-text = "Thats why it isn't working"
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[p]hmmmm
+[p]wow"
+fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PreviousDialogue" type="Button" parent="Background"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.7
+anchor_right = 0.2
+anchor_bottom = 0.7
+offset_right = 19.0
+offset_bottom = 23.0
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fy64h")
+text = "<<"
+
+[node name="NextDialogue" type="Button" parent="Background"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.7
+anchor_right = 0.75
+anchor_bottom = 0.7
+size_flags_horizontal = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v6n52")
+text = ">>"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

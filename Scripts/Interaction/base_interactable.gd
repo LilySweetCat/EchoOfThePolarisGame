@@ -43,6 +43,8 @@ func _input(event: InputEvent) -> void:
 	if !event.is_action_pressed("interact") || !_can_be_activated:
 		return
 	
+	_can_be_activated = false
+	
 	var options : Dictionary = {
 		action_name : on_interact,
 		"Отмена": on_cancel
@@ -51,13 +53,15 @@ func _input(event: InputEvent) -> void:
 	player.can_move = false
 	player.visible = false
 	
-	GameUi.show_actions(options, true)
+	GameUi.call_deferred("show_actions", options, true)
+	#GameUi.show_actions(options, true)
 	return
 	
 func on_cancel() -> void:
 	print("cancel action")
 	player.can_move = true
 	player.visible = true
+	_can_be_activated = true
 	return
 	
 func on_interact() -> void:

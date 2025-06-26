@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://ctdp85o7ltw6o"]
+[gd_scene load_steps=52 format=3 uid="uid://ctdp85o7ltw6o"]
 
 [ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
 [ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
@@ -17,8 +17,9 @@
 [ext_resource type="AudioStream" uid="uid://cyfdptiohatxl" path="res://Audio/Sounds/Wind/pedaling-prince__windy-window.wav" id="12_cg2du"]
 [ext_resource type="AudioStream" uid="uid://bdbv3tspmnk13" path="res://Audio/Music/gustavo_alivera__gloomy-background-atmosphere-3.mp3" id="13_r1bav"]
 [ext_resource type="Script" uid="uid://cp86nrwycs52w" path="res://Scripts/Interaction/dialogue.gd" id="17_a0rdj"]
+[ext_resource type="JSON" uid="uid://bben8vlh81gnd" path="res://Dialogues/Kitchen/manual.tres" id="18_d5v74"]
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_a0rdj"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_d5v74"]
 
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
@@ -206,52 +207,35 @@ size = Vector3(1, 1.39795, 1)
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("current_camera") instance=ExtResource("3_i4o3x")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.10062, 0.372992, 0.2099)
+transform = Transform3D(0.996876, 0, 0.0789811, 0, 1, 0, -0.0789811, 0, 0.996876, -4.16844, 0.372992, 0.341078)
 collision_layer = 3
 collision_mask = 3
 input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.0116373, 0.935835, -0.0026495)
-bones/1/rotation = Quaternion(-0.00563149, 0.0122961, -0.0483929, 0.998737)
-bones/2/rotation = Quaternion(-0.0568196, -0.0124483, 0.0240905, 0.998016)
-bones/3/position = Vector3(0, 0.103905, -2.77556e-17)
-bones/3/rotation = Quaternion(0.00090898, -0.00554002, 0.0514811, 0.998658)
-bones/4/rotation = Quaternion(0.000927668, -0.000428443, 0.051338, 0.998681)
-bones/5/rotation = Quaternion(0.0779492, -0.000523993, -0.019635, 0.996764)
-bones/6/rotation = Quaternion(0.0154051, 0.00774812, -0.0706689, 0.997351)
-bones/8/rotation = Quaternion(-0.618337, -0.416428, 0.475254, -0.467312)
-bones/9/position = Vector3(-4.16334e-17, 0.102497, -2.22045e-16)
-bones/9/rotation = Quaternion(0.628849, 0.0708557, -0.081904, 0.769948)
-bones/10/position = Vector3(0, 0.252016, 4.44089e-16)
-bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/11/position = Vector3(-2.77556e-17, 0.246386, 0)
-bones/11/rotation = Quaternion(-2.37223e-16, 6.59195e-17, -2.77556e-17, 1)
-bones/12/rotation = Quaternion(0.577334, -0.46506, 0.515376, 0.429874)
-bones/13/position = Vector3(2.77556e-17, 0.102497, -2.22045e-16)
-bones/13/rotation = Quaternion(0.515924, -0.0886616, 0.00736773, 0.852002)
-bones/14/position = Vector3(0, 0.252094, 6.66134e-16)
-bones/14/rotation = Quaternion(-0.0104262, 0.0150282, -0.153251, 0.988018)
-bones/15/position = Vector3(9.02056e-17, 0.246876, -4.44089e-16)
-bones/15/rotation = Quaternion(-4.03323e-17, -1.73472e-17, -1.38778e-17, 1)
-bones/16/rotation = Quaternion(0.114191, 0.177796, 0.968874, -0.128969)
-bones/17/position = Vector3(0, 0.427752, 0)
-bones/17/rotation = Quaternion(-0.285899, -0.077048, 0.0284301, 0.954734)
-bones/18/position = Vector3(1.11022e-16, 0.400439, -1.38778e-17)
-bones/18/rotation = Quaternion(0.519335, -0.0966277, -0.0133537, 0.848985)
-bones/19/position = Vector3(-5.55112e-17, 0.145615, 0)
-bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0428507, 0.0203651, 0.994889, -0.0891379)
-bones/22/position = Vector3(2.77556e-17, 0.427712, -1.73472e-18)
-bones/22/rotation = Quaternion(-0.156179, 0.0431539, 0.0339712, 0.986201)
-bones/23/position = Vector3(8.32667e-17, 0.40043, 1.38778e-17)
-bones/23/rotation = Quaternion(0.559385, 0.00555647, -0.125878, 0.819276)
-bones/24/position = Vector3(2.77556e-17, 0.145188, -6.93889e-18)
-bones/24/rotation = Quaternion(0.324118, 0.0225581, -0.00748773, 0.945718)
+bones/1/position = Vector3(0.0118713, 0.935817, -0.00271271)
+bones/1/rotation = Quaternion(-0.00573677, 0.0122878, -0.0485098, 0.998731)
+bones/2/rotation = Quaternion(-0.0569512, -0.0125277, 0.0241155, 0.998007)
+bones/3/rotation = Quaternion(0.000636559, -0.0055946, 0.0514635, 0.998659)
+bones/4/rotation = Quaternion(0.000652368, -0.000454471, 0.0513219, 0.998682)
+bones/5/rotation = Quaternion(0.0778461, -0.000538572, -0.0196268, 0.996772)
+bones/6/rotation = Quaternion(0.0155566, 0.00752272, -0.0704122, 0.997368)
+bones/8/rotation = Quaternion(-0.617497, -0.417682, 0.473709, -0.46887)
+bones/9/rotation = Quaternion(0.630924, 0.0709726, -0.0819613, 0.768232)
+bones/12/rotation = Quaternion(0.576447, -0.466633, 0.513893, 0.431134)
+bones/13/rotation = Quaternion(0.518218, -0.0885823, 0.00729663, 0.850618)
+bones/14/rotation = Quaternion(-0.0104248, 0.0150282, -0.153229, 0.988021)
+bones/16/rotation = Quaternion(0.114225, 0.177885, 0.96885, -0.128995)
+bones/17/rotation = Quaternion(-0.286227, -0.0770607, 0.0284662, 0.954634)
+bones/18/rotation = Quaternion(0.519416, -0.0965749, -0.0133476, 0.848942)
+bones/21/rotation = Quaternion(-0.0428696, 0.0202588, 0.99489, -0.0891354)
+bones/22/rotation = Quaternion(-0.156449, 0.043247, 0.0339616, 0.986154)
+bones/23/rotation = Quaternion(0.55937, 0.0055741, -0.125821, 0.819295)
+bones/24/rotation = Quaternion(0.324148, 0.0225627, -0.00748876, 0.945707)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_a0rdj")
+stream = SubResource("AudioStreamPolyphonic_d5v74")
 
 [node name="EnviromentLightGeometry" type="Node" parent="."]
 
@@ -442,6 +426,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94265, 1.36772, 1.32149)
 input_ray_pickable = false
 monitorable = false
 script = ExtResource("17_a0rdj")
+dialogue = ExtResource("18_d5v74")
 object_display_name = "Книга"
 action_name = "Прочитать"
 inspectable_mesh = NodePath("../../EnviromentLightGeometry/Geometry/book2/book")
