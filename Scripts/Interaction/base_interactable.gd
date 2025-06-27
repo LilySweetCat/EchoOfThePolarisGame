@@ -21,6 +21,7 @@ func _on_body_entered(body: Node3D) -> bool:
 	if body is not CharacterController or !_interactable_shader:
 		return false
 	
+	print("Player entered")
 	_interactable_shader.set_shader_parameter("is_active", true)
 	GameUi.show_interactive_object_name(object_display_name)
 	

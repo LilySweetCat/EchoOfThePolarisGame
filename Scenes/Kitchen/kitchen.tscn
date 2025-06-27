@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bv8n7gcxb85k1" path="res://Textures/sparkle.png" id="5_yxvdf"]
 [ext_resource type="PackedScene" uid="uid://ca7gocj6jj8hs" path="res://Models/Props/book.blend" id="6_a8bds"]
 [ext_resource type="Texture2D" uid="uid://dv8ofau56xdo7" path="res://Textures/fx_cloudalphas/FX_CloudAlpha02.png" id="6_ruj4t"]
-[ext_resource type="Shader" uid="uid://cq48lxr3088uy" path="res://Shaders/interactable.gdshader" id="7_0tag2"]
+[ext_resource type="Material" uid="uid://bkvof2dupuamp" path="res://Materials/inspectable_red.tres" id="7_skia2"]
 [ext_resource type="PackedScene" uid="uid://di6n0d8v7wwsv" path="res://Models/Props/Knife.blend" id="7_tfhfy"]
 [ext_resource type="Material" uid="uid://lhkb7c6hbkj2" path="res://Materials/base.tres" id="8_0tag2"]
 [ext_resource type="Texture2D" uid="uid://cp4wepb1738n7" path="res://Textures/snow2.png" id="8_r8i07"]
@@ -18,8 +18,9 @@
 [ext_resource type="AudioStream" uid="uid://bdbv3tspmnk13" path="res://Audio/Music/gustavo_alivera__gloomy-background-atmosphere-3.mp3" id="13_r1bav"]
 [ext_resource type="Script" uid="uid://cp86nrwycs52w" path="res://Scripts/Interaction/dialogue.gd" id="17_a0rdj"]
 [ext_resource type="JSON" uid="uid://bben8vlh81gnd" path="res://Dialogues/Kitchen/manual.tres" id="18_d5v74"]
+[ext_resource type="PackedScene" uid="uid://d38oxddcdcafm" path="res://Scenes/Characters/Echo/Echo.tscn" id="19_skia2"]
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_d5v74"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_skia2"]
 
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
@@ -33,15 +34,6 @@ volumetric_fog_emission = Color(0.641934, 0.641934, 0.641934, 1)
 adjustment_enabled = true
 adjustment_brightness = 0.95
 adjustment_saturation = 0.8
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a0rdj"]
-render_priority = 0
-shader = ExtResource("7_0tag2")
-shader_parameter/base_color = Color(0.431373, 0.0784314, 0.113725, 1)
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/pulse_speed = 2.0
-shader_parameter/pulse_strength = 0.5
-shader_parameter/is_active = false
 
 [sub_resource type="Gradient" id="Gradient_neq1d"]
 offsets = PackedFloat32Array(0, 0.318182, 0.640909, 1)
@@ -214,28 +206,28 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.0118713, 0.935817, -0.00271271)
-bones/1/rotation = Quaternion(-0.00573677, 0.0122878, -0.0485098, 0.998731)
-bones/2/rotation = Quaternion(-0.0569512, -0.0125277, 0.0241155, 0.998007)
-bones/3/rotation = Quaternion(0.000636559, -0.0055946, 0.0514635, 0.998659)
-bones/4/rotation = Quaternion(0.000652368, -0.000454471, 0.0513219, 0.998682)
-bones/5/rotation = Quaternion(0.0778461, -0.000538572, -0.0196268, 0.996772)
-bones/6/rotation = Quaternion(0.0155566, 0.00752272, -0.0704122, 0.997368)
-bones/8/rotation = Quaternion(-0.617497, -0.417682, 0.473709, -0.46887)
-bones/9/rotation = Quaternion(0.630924, 0.0709726, -0.0819613, 0.768232)
-bones/12/rotation = Quaternion(0.576447, -0.466633, 0.513893, 0.431134)
-bones/13/rotation = Quaternion(0.518218, -0.0885823, 0.00729663, 0.850618)
-bones/14/rotation = Quaternion(-0.0104248, 0.0150282, -0.153229, 0.988021)
-bones/16/rotation = Quaternion(0.114225, 0.177885, 0.96885, -0.128995)
-bones/17/rotation = Quaternion(-0.286227, -0.0770607, 0.0284662, 0.954634)
-bones/18/rotation = Quaternion(0.519416, -0.0965749, -0.0133476, 0.848942)
-bones/21/rotation = Quaternion(-0.0428696, 0.0202588, 0.99489, -0.0891354)
-bones/22/rotation = Quaternion(-0.156449, 0.043247, 0.0339616, 0.986154)
-bones/23/rotation = Quaternion(0.55937, 0.0055741, -0.125821, 0.819295)
-bones/24/rotation = Quaternion(0.324148, 0.0225627, -0.00748876, 0.945707)
+bones/1/position = Vector3(0.0120244, 0.935804, -0.00275405)
+bones/1/rotation = Quaternion(-0.00580563, 0.0122824, -0.0485863, 0.998727)
+bones/2/rotation = Quaternion(-0.0570373, -0.0125797, 0.0241319, 0.998001)
+bones/3/rotation = Quaternion(0.000458376, -0.0056303, 0.0514519, 0.99866)
+bones/4/rotation = Quaternion(0.000472301, -0.000471497, 0.0513114, 0.998682)
+bones/5/rotation = Quaternion(0.0777787, -0.000548108, -0.0196215, 0.996777)
+bones/6/rotation = Quaternion(0.0155751, 0.00746947, -0.0703688, 0.997372)
+bones/8/rotation = Quaternion(-0.616942, -0.418505, 0.472704, -0.46988)
+bones/9/rotation = Quaternion(0.632272, 0.0710537, -0.0820113, 0.76711)
+bones/12/rotation = Quaternion(0.57584, -0.467687, 0.512917, 0.431964)
+bones/13/rotation = Quaternion(0.519716, -0.08853, 0.00725006, 0.849709)
+bones/14/rotation = Quaternion(-0.0104238, 0.0150283, -0.153215, 0.988024)
+bones/16/rotation = Quaternion(0.114245, 0.177927, 0.968837, -0.129013)
+bones/17/rotation = Quaternion(-0.286442, -0.077069, 0.0284899, 0.954568)
+bones/18/rotation = Quaternion(0.51947, -0.0965403, -0.0133436, 0.848913)
+bones/21/rotation = Quaternion(-0.042882, 0.0201892, 0.994891, -0.0891338)
+bones/22/rotation = Quaternion(-0.156627, 0.0433079, 0.0339554, 0.986124)
+bones/23/rotation = Quaternion(0.55936, 0.00558563, -0.125783, 0.819307)
+bones/24/rotation = Quaternion(0.324168, 0.0225658, -0.00748944, 0.945701)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_d5v74")
+stream = SubResource("AudioStreamPolyphonic_skia2")
 
 [node name="EnviromentLightGeometry" type="Node" parent="."]
 
@@ -277,7 +269,7 @@ transform = Transform3D(0.758339, 0, -0.65186, 0, 1, 0, 0.65186, 0, 0.758339, -7
 transform = Transform3D(-0.398269, 0, -0.917269, 0, 1, 0, 0.917269, 0, -0.398269, -2.93404, 1.31984, 1.40495)
 
 [node name="book" parent="EnviromentLightGeometry/Geometry/book2" index="0"]
-surface_material_override/0 = SubResource("ShaderMaterial_a0rdj")
+surface_material_override/0 = ExtResource("7_skia2")
 surface_material_override/1 = ExtResource("8_0tag2")
 
 [node name="Particles" type="Node" parent="."]
@@ -423,6 +415,8 @@ draw_pass_1 = SubResource("QuadMesh_1u351")
 
 [node name="Manual" type="Area3D" parent="Interactions" node_paths=PackedStringArray("inspectable_mesh", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94265, 1.36772, 1.32149)
+collision_layer = 2
+collision_mask = 2
 input_ray_pickable = false
 monitorable = false
 script = ExtResource("17_a0rdj")
@@ -435,6 +429,11 @@ player = NodePath("../../Player")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Manual"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.198975, 0)
 shape = SubResource("BoxShape3D_skia2")
+
+[node name="Echo" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_skia2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49815, 1.74712, 1.72339)
+player_detection_radius = 4.0
+player = NodePath("../Player")
 
 [editable path="Player"]
 [editable path="Player/morrigan"]
