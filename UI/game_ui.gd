@@ -11,6 +11,7 @@ extends Control
 ]
 
 @onready var typewriter: AudioStreamPlayer = $Typewriter
+@onready var page_turn: AudioStreamPlayer = $KoopsPageTurn24
 
 @onready var interactive_object_name: RichTextLabel = $InteractiveObjectName
 
@@ -103,6 +104,8 @@ func play_dialogue_line() -> void:
 	next_dialogue.call_deferred("grab_focus")
 	
 	if is_reading:
+		page_turn.play()
+		
 		dialogue_text.self_modulate = Color.WHITE
 		dialogue_text.visible_ratio = 1.0
 		
