@@ -64,15 +64,7 @@ _subresources={
 "save_to_file/enabled": false,
 "save_to_file/path": ""
 },
-"kitchen_Circle_001": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Circle_002": {
+"kitchen_Circle_003": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -88,167 +80,7 @@ _subresources={
 "save_to_file/enabled": false,
 "save_to_file/path": ""
 },
-"kitchen_Cube_001": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_002": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_003": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_004": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_005": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_006": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_007": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_008": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_009": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_010": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_011": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
 "kitchen_Cube_012": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_013": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_014": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_015": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_016": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_017": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_018": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_019": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_020": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_021": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -259,7 +91,7 @@ _subresources={
 "kitchen_Cube_022": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
-"generate/shadow_meshes": 0,
+"generate/shadow_meshes": 1,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": false,
 "save_to_file/path": ""
@@ -275,7 +107,7 @@ _subresources={
 "kitchen_Cube_024": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
-"generate/shadow_meshes": 0,
+"generate/shadow_meshes": 1,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": false,
 "save_to_file/path": ""
@@ -296,151 +128,7 @@ _subresources={
 "save_to_file/enabled": false,
 "save_to_file/path": ""
 },
-"kitchen_Cube_027": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_028": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_029": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_030": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_031": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_032": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_033": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_034": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_035": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_036": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_037": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_038": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_039": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_040": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_041": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
 "kitchen_Cube_042": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_043": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_044": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_045": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -456,23 +144,7 @@ _subresources={
 "save_to_file/enabled": false,
 "save_to_file/path": ""
 },
-"kitchen_Cube_047": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_048": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_050": {
+"kitchen_Cube_049": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -488,39 +160,7 @@ _subresources={
 "save_to_file/enabled": false,
 "save_to_file/path": ""
 },
-"kitchen_Cube_052": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_053": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
 "kitchen_Cube_054": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_055": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_056": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -544,223 +184,7 @@ _subresources={
 "save_to_file/enabled": false,
 "save_to_file/path": ""
 },
-"kitchen_Cube_059": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
 "kitchen_Cube_060": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_072": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_073": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_076": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_077": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_078": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_079": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_082": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_083": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_084": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_085": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_088": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_089": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_093": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_094": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_095": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_096": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_097": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_098": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_099": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_101": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_102": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_103": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_104": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_105": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_106": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_107": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -776,191 +200,7 @@ _subresources={
 "save_to_file/enabled": false,
 "save_to_file/path": ""
 },
-"kitchen_Cube_109": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_110": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_111": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_112": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_113": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_114": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_115": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_116": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_117": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_118": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_119": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_120": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_121": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_122": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_123": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_124": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_125": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_126": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_127": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
 "kitchen_Cube_128": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_129": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_130": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_131": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"kitchen_Cube_132": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -989,7 +229,44 @@ _subresources={
 "PATH:body": {
 "generate/physics": true
 },
-"PATH:geometry": {
+"PATH:boxes": {
+"generate/physics": true
+},
+"PATH:cooking_area": {
+"generate/physics": true
+},
+"PATH:door_active": {
+"generate/physics": true,
+"physics/body_type": 1
+},
+"PATH:doors": {
+"generate/physics": true
+},
+"PATH:floor": {
+"generate/physics": true
+},
+"PATH:holder": {
+"generate/physics": true
+},
+"PATH:seats": {
+"generate/physics": true
+},
+"PATH:shelfs": {
+"generate/physics": true
+},
+"PATH:sink_and_mirror": {
+"generate/physics": true
+},
+"PATH:toilet": {
+"generate/physics": true
+},
+"PATH:toilet_doors": {
+"generate/physics": true
+},
+"PATH:trash_bins": {
+"generate/physics": true
+},
+"PATH:walls": {
 "generate/physics": true
 }
 }

@@ -7,6 +7,7 @@ render_priority = 0
 shader = ExtResource("1_0g8np")
 shader_parameter/base_color = Color(0.431373, 0.0784314, 0.113725, 1)
 shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/use_emission = true
 shader_parameter/pulse_speed = 2.0
 shader_parameter/pulse_strength = 0.5
 shader_parameter/is_active = false

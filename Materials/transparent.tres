@@ -2,6 +2,5 @@
 
 [resource]
 transparency = 1
-shading_mode = 2
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.258824, 0.478431, 1, 0.533333)
+cull_mode = 2
+albedo_color = Color(0.612899, 0.74041, 1, 0.486275)
