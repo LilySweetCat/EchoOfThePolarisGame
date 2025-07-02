@@ -18,7 +18,7 @@ void fragment() {
     }
 
     ALBEDO = color.rgb;
-	
+
 	if(use_emission){
 		EMISSION = color.rgb;
 	}

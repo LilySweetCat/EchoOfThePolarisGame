@@ -1,3 +1,4 @@
+class_name EchoController
 extends BaseInteractable
 
 @export var float_speed : float = 1.5
@@ -5,6 +6,9 @@ extends BaseInteractable
 
 @export var player_detection_radius = 2.0
 @export var rotation_speed = 3.0
+
+@export var pause: bool
+@export var particle_system: GPUParticles3D
 
 var _base_position : Vector3 = Vector3.ZERO
 var _initial_rotation : Basis
@@ -15,6 +19,9 @@ func _ready():
 	_initial_rotation = global_transform.basis
 
 func _process(delta: float):
+	if pause:
+		return
+	
 	move()
 	look_at_player_if_near(delta)
 	return

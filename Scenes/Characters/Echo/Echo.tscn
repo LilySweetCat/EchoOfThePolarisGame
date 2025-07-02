@@ -107,12 +107,13 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_k834d")
 size = Vector2(0.1, 0.1)
 
-[node name="Echo" type="Area3D" node_paths=PackedStringArray("inspectable_mesh")]
+[node name="Echo" type="Area3D" node_paths=PackedStringArray("particle_system", "inspectable_mesh")]
 collision_layer = 2
 collision_mask = 2
 input_ray_pickable = false
 monitorable = false
 script = ExtResource("1_fb086")
+particle_system = NodePath("GPUParticles3D")
 object_display_name = "Эхо"
 action_name = "Поговорить"
 inspectable_mesh = NodePath("mask2/mask")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://ctdp85o7ltw6o"]
+[gd_scene load_steps=46 format=3 uid="uid://ctdp85o7ltw6o"]
 
 [ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
 [ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
@@ -35,7 +35,7 @@ adjustment_brightness = 0.95
 adjustment_saturation = 0.8
 
 [sub_resource type="BoxMesh" id="BoxMesh_a0rdj"]
-size = Vector3(30, 10, 30)
+size = Vector3(44, 10, 30)
 
 [sub_resource type="Gradient" id="Gradient_neq1d"]
 offsets = PackedFloat32Array(0, 0.318182, 0.640909, 1)
@@ -125,7 +125,7 @@ material = SubResource("StandardMaterial3D_r1bav")
 size = Vector3(11.6654, 1.70068, 7.47678)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0rdj"]
-size = Vector3(3.37671, 1, 5.43765)
+size = Vector3(3.03546, 1, 4.97174)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0tag2"]
 size = Vector3(2.59424, 1, 3.92157)
@@ -133,10 +133,22 @@ size = Vector3(2.59424, 1, 3.92157)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1u351"]
 size = Vector3(2.86145, 1, 4.77649)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gpren"]
+size = Vector3(11.5072, 1, 5.79688)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ug0ea"]
+size = Vector3(3.14202, 1, 7.66217)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_skia2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5v74"]
 size = Vector3(1.82083, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y5von"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bf6x7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iy72m"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -153,42 +165,27 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.00676279, 0.935252, -0.00599973)
-bones/1/rotation = Quaternion(-0.00887954, 0.0134647, -0.0457532, 0.998823)
-bones/2/rotation = Quaternion(-0.055573, -0.0128524, 0.0245606, 0.99807)
-bones/3/position = Vector3(0, 0.103905, -2.77556e-17)
-bones/3/rotation = Quaternion(0.00546391, -0.0050423, 0.0516873, 0.998636)
-bones/4/rotation = Quaternion(0.00552677, -0.000363784, 0.0515137, 0.998657)
-bones/5/rotation = Quaternion(0.0748863, -0.00126668, -0.0191062, 0.997008)
-bones/6/rotation = Quaternion(0.0126718, 0.0056655, -0.0715604, 0.99734)
-bones/8/rotation = Quaternion(-0.630815, -0.396886, 0.496832, -0.444649)
-bones/9/position = Vector3(-4.16334e-17, 0.102497, -2.22045e-16)
-bones/9/rotation = Quaternion(0.59791, 0.0716071, -0.0789553, 0.794445)
-bones/10/position = Vector3(0, 0.252016, 4.44089e-16)
+bones/1/position = Vector3(0.00755669, 0.935287, -0.0052626)
+bones/1/rotation = Quaternion(-0.0083683, 0.0134871, -0.0462785, 0.998803)
+bones/2/rotation = Quaternion(-0.0549984, -0.012359, 0.0245991, 0.998107)
+bones/3/rotation = Quaternion(0.00626617, -0.0048781, 0.0516669, 0.998633)
+bones/4/rotation = Quaternion(0.00633687, -0.000277733, 0.0514885, 0.998653)
+bones/5/rotation = Quaternion(0.0751717, -0.00116443, -0.0190568, 0.996988)
+bones/6/rotation = Quaternion(0.0133257, 0.00642793, -0.0712657, 0.997348)
+bones/8/rotation = Quaternion(-0.632974, -0.393121, 0.500549, -0.440739)
+bones/9/rotation = Quaternion(0.592344, 0.071135, -0.0777395, 0.798764)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/11/position = Vector3(-2.77556e-17, 0.246386, 0)
-bones/11/rotation = Quaternion(-2.37223e-16, 6.59195e-17, -2.77556e-17, 1)
-bones/12/rotation = Quaternion(0.586947, -0.444705, 0.537637, 0.410703)
-bones/13/position = Vector3(2.77556e-17, 0.102497, -2.22045e-16)
-bones/13/rotation = Quaternion(0.482619, -0.089348, 0.00427764, 0.87125)
-bones/14/position = Vector3(0, 0.252094, 6.66134e-16)
-bones/14/rotation = Quaternion(-0.0104692, 0.0150266, -0.153878, 0.98792)
-bones/15/position = Vector3(9.02056e-17, 0.246876, -4.44089e-16)
-bones/15/rotation = Quaternion(-4.03323e-17, -1.73472e-17, -1.38778e-17, 1)
-bones/16/rotation = Quaternion(0.11497, 0.174742, 0.969269, -0.129477)
-bones/17/position = Vector3(0, 0.427752, 0)
-bones/17/rotation = Quaternion(-0.282518, -0.0766782, 0.0280712, 0.95578)
-bones/18/position = Vector3(1.11022e-16, 0.400439, -1.38778e-17)
-bones/18/rotation = Quaternion(0.516471, -0.095889, -0.0152218, 0.850783)
-bones/19/position = Vector3(-5.55112e-17, 0.145615, 0)
+bones/12/rotation = Quaternion(0.589737, -0.439705, 0.540655, 0.408121)
+bones/13/rotation = Quaternion(0.477072, -0.0894717, 0.00536664, 0.874282)
+bones/14/rotation = Quaternion(-0.0104621, 0.015027, -0.153775, 0.987936)
+bones/16/rotation = Quaternion(0.114522, 0.175375, 0.969277, -0.128959)
+bones/17/rotation = Quaternion(-0.282717, -0.0766309, 0.028151, 0.955723)
+bones/18/rotation = Quaternion(0.517142, -0.0963843, -0.0144267, 0.850333)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0432851, 0.0219747, 0.994813, -0.0893882)
-bones/22/position = Vector3(2.77556e-17, 0.427712, -1.73472e-18)
-bones/22/rotation = Quaternion(-0.161374, 0.0453219, 0.0334692, 0.985284)
-bones/23/position = Vector3(8.32667e-17, 0.40043, 1.38778e-17)
-bones/23/rotation = Quaternion(0.560341, 0.00458115, -0.12837, 0.818241)
-bones/24/position = Vector3(2.77556e-17, 0.145188, -6.93889e-18)
-bones/24/rotation = Quaternion(0.323286, 0.0224318, -0.00745944, 0.946006)
+bones/21/rotation = Quaternion(-0.0433673, 0.0214577, 0.99483, -0.0892815)
+bones/22/rotation = Quaternion(-0.160445, 0.0452512, 0.033537, 0.985437)
+bones/23/rotation = Quaternion(0.560381, 0.00476155, -0.127955, 0.818277)
+bones/24/rotation = Quaternion(0.323377, 0.0224457, -0.00746263, 0.945975)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
 stream = SubResource("AudioStreamPolyphonic_a0rdj")
@@ -234,6 +231,14 @@ shadow_enabled = true
 spot_range = 10.0
 spot_angle = 80.0
 
+[node name="SpotLight3D5" type="SpotLight3D" parent="EnviromentLightGeometry"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 14.3039, 3.89078, -6.91924e-09)
+light_size = 0.1
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 80.0
+
 [node name="Geometry" type="Node" parent="EnviromentLightGeometry"]
 
 [node name="Kitchen" type="Node" parent="EnviromentLightGeometry/Geometry"]
@@ -251,7 +256,7 @@ surface_material_override/0 = ExtResource("2_r8i07")
 transform = Transform3D(0.758339, 0, -0.65186, 0, 1, 0, 0.65186, 0, 0.758339, -8.19003, 0.407221, -7.82039)
 
 [node name="background" type="MeshInstance3D" parent="EnviromentLightGeometry/Geometry/Kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21698, 0, -4.52515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1305, 0, -4.52515)
 mesh = SubResource("BoxMesh_a0rdj")
 
 [node name="Particles" type="Node" parent="."]
@@ -318,6 +323,14 @@ visible = false
 transform = Transform3D(-0.796072, 0.213965, -0.566117, 0, 0.935419, 0.353542, 0.605202, 0.281445, -0.74466, -15.2801, 3.05098, -8.65432)
 visible = false
 
+[node name="Camera3D5" type="Camera3D" parent="Cameras/VCams"]
+transform = Transform3D(-0.579291, 0.0831097, 0.810873, 0, 0.994789, -0.10196, -0.815121, -0.0590645, -0.576272, 14.0565, 0.839531, -3.42024)
+visible = false
+
+[node name="Camera3D6" type="Camera3D" parent="Cameras/VCams"]
+transform = Transform3D(0.999703, 0.000469161, 0.0243867, 0, 0.999815, -0.0192348, -0.0243912, 0.0192291, 0.999518, -14.2545, 1.77445, 3.91882)
+visible = false
+
 [node name="MainCamera" type="Camera3D" parent="Cameras"]
 transform = Transform3D(-1, -0.000435147, -0.000226815, -0.000435257, 1, 0.00049657, 0.000226603, 0.000496666, -1, -7.33031, 0.817044, -2.73235)
 visible = false
@@ -341,22 +354,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75602, 0.350342, 0.607497)
 shape = SubResource("BoxShape3D_ruj4t")
 debug_color = Color(2.88785e-06, 0.819078, 0.952524, 0.42)
 
-[node name="KitchenEntranceArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera")]
-transform = Transform3D(0.99976, 0.00112821, -0.0218609, 0, 0.998671, 0.0515397, 0.02189, -0.0515274, 0.998432, -9.60265, 0.667258, -6.68289)
+[node name="KitchenEntranceArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera", "Echo", "EchoLocation")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.93462, 0.786079, -6.68969)
 collision_layer = 2
 collision_mask = 2
+input_ray_pickable = false
 monitorable = false
 script = ExtResource("3_pd52i")
-is_tracking = false
 player = NodePath("../../../Player")
 main_camera = NodePath("../../MainCamera")
 virtual_camera = NodePath("../../VCams/Camera3D2")
+Echo = NodePath("../../../Echo")
+EchoLocation = NodePath("EchoLocation")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/KitchenEntranceArea"]
-transform = Transform3D(1.00004, -1.01281e-08, -5.58794e-09, -5.70435e-09, 1.00002, -1.40071e-06, -2.12342e-07, 1.18092e-06, 1.00002, -0.232311, -3.57628e-07, -0.0423427)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.166168, 0, -0.0462952)
 shape = SubResource("BoxShape3D_a0rdj")
 
-[node name="BodyArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera")]
+[node name="EchoLocation" type="Node3D" parent="Cameras/CameraTriggers/KitchenEntranceArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.865993, 1.04349, -1.93977)
+
+[node name="BodyArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera", "Echo", "EchoLocation")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.07503, 0.464043, -7.40603)
 collision_layer = 2
 collision_mask = 2
@@ -366,10 +384,15 @@ is_tracking = false
 player = NodePath("../../../Player")
 main_camera = NodePath("../../MainCamera")
 virtual_camera = NodePath("../../VCams/Camera3D3")
+Echo = NodePath("../../../Echo")
+EchoLocation = NodePath("EchoLocation")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/BodyArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.797119, 0, 0.921723)
 shape = SubResource("BoxShape3D_0tag2")
+
+[node name="EchoLocation" type="Node3D" parent="Cameras/CameraTriggers/BodyArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100509, 0.850162, 2.24188)
 
 [node name="StorageArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1348, 0.828894, -6.35231)
@@ -385,6 +408,36 @@ virtual_camera = NodePath("../../VCams/Camera3D4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/StorageArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299377, 0, -0.577087)
 shape = SubResource("BoxShape3D_1u351")
+
+[node name="ExitArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9864, 0.828894, -1.37604)
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+script = ExtResource("3_pd52i")
+player = NodePath("../../../Player")
+main_camera = NodePath("../../MainCamera")
+virtual_camera = NodePath("../../VCams/Camera3D5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/ExitArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21002, 0, 0.650391)
+shape = SubResource("BoxShape3D_gpren")
+
+[node name="ToiletArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0222, 0.84657, -0.437583)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("3_pd52i")
+is_tracking = false
+player = NodePath("../../../Player")
+main_camera = NodePath("../../MainCamera")
+virtual_camera = NodePath("../../VCams/Camera3D6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/ToiletArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108099, 0, 0.590912)
+shape = SubResource("BoxShape3D_ug0ea")
 
 [node name="Interactions" type="Node" parent="."]
 
@@ -416,6 +469,7 @@ surface_material_override/1 = ExtResource("8_0tag2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7952, 1.81628, -6.67214)
 collision_layer = 2
 collision_mask = 2
+input_ray_pickable = false
 monitorable = false
 script = ExtResource("17_d5v74")
 location_in = NodePath("Storage")
@@ -434,6 +488,71 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97937, -1.35388, -0.134026)
 
 [node name="Storage" type="Node3D" parent="Interactions/DoorToStorage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83784, -1.47586, 0)
+
+[node name="DoorToExit" type="Area3D" parent="Interactions" node_paths=PackedStringArray("location_in", "inspectable_mesh", "player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.092553, 1.54314, -0.83906)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("17_d5v74")
+use_only_in = true
+location_in = NodePath("Target")
+object_display_name = "Приоткрытая дверь"
+action_name = "Войти"
+inspectable_mesh = NodePath("../../EnviromentLightGeometry/Geometry/Kitchen/kitchen/doors")
+player = NodePath("../../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/DoorToExit"]
+shape = SubResource("BoxShape3D_y5von")
+
+[node name="Target" type="Node3D" parent="Interactions/DoorToExit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4308, -1.03679, 0)
+
+[node name="DoorToKitchen" type="Area3D" parent="Interactions" node_paths=PackedStringArray("location_in", "inspectable_mesh", "player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.36993, 1.58106, 0)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("17_d5v74")
+use_only_in = true
+location_in = NodePath("Target")
+object_display_name = "Приоткрытая дверь"
+action_name = "Войти"
+inspectable_mesh = NodePath("../../EnviromentLightGeometry/Geometry/Kitchen/kitchen/doors")
+player = NodePath("../../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/DoorToKitchen"]
+shape = SubResource("BoxShape3D_bf6x7")
+
+[node name="Target" type="Node3D" parent="Interactions/DoorToKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1838, -1.1094, -0.755087)
+
+[node name="DoorToToilet" type="Area3D" parent="Interactions" node_paths=PackedStringArray("location_in", "location_out", "inspectable_mesh", "player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8959, 1.74366, -0.632095)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("17_d5v74")
+location_in = NodePath("In")
+location_out = NodePath("Out")
+object_display_name = "Дверь"
+action_name = "Войти"
+inspectable_mesh = NodePath("../../EnviromentLightGeometry/Geometry/Kitchen/kitchen/doors")
+player = NodePath("../../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/DoorToToilet"]
+shape = SubResource("BoxShape3D_iy72m")
+
+[node name="In" type="Node3D" parent="Interactions/DoorToToilet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26932, -1.29881, 0)
+
+[node name="Out" type="Node3D" parent="Interactions/DoorToToilet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17308, -1.29881, 0)
+
+[node name="EchoNavPoints" type="Node" parent="."]
 
 [editable path="Player"]
 [editable path="Player/morrigan"]

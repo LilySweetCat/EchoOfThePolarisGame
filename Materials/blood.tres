@@ -3,5 +3,5 @@
 [resource]
 resource_name = "blood"
 cull_mode = 2
-albedo_color = Color(0.734873, 0.0804724, 0.142756, 1)
-roughness = 0.552786
+shading_mode = 0
+albedo_color = Color(0.261931, 0.0099097, 0.0256015, 1)
