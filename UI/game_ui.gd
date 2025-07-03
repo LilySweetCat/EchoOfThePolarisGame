@@ -188,16 +188,23 @@ func show_cursor() -> void:
 	return
 
 func show_interactive_object_name(object_name: String) -> void:
+	if _tween:
+		typewriter.stop()
+		_tween.kill()
+	
 	interactive_object_name.text = object_name
 	
 	typewriter.play()
 	
-	var tween = create_tween()
-	tween.tween_property(interactive_object_name, "visible_ratio", 1.0, object_name.length()/4)
-	tween.finished.connect(func(): typewriter.stop())
+	_tween = create_tween()
+	_tween.tween_property(interactive_object_name, "visible_ratio", 1.0, object_name.length()/4)
+	_tween.finished.connect(func(): typewriter.stop())
 	return
 	
 func hide_interactive_object_name() -> void:
-	var tween = create_tween()
-	tween.tween_property(interactive_object_name, "visible_ratio", 0.0, 0.2)
+	if _tween:
+		typewriter.stop()
+		_tween.kill()
+	_tween = create_tween()
+	_tween.tween_property(interactive_object_name, "visible_ratio", 0.0, 0.2)
 	return

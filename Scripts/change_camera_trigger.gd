@@ -33,22 +33,15 @@ func _on_body_entered(body: Node3D) -> void:
 	if Echo and EchoLocation:
 		Echo.pause = true
 		
-		var tween = create_tween()
-		tween.tween_property(Echo.particle_system, "amount_ratio", 0, 1)
-		
-		tween.step_finished.connect(
-			func(idx: int):
-				print(idx)
-				Echo.global_transform = EchoLocation.global_transform
-				return
-		)
-		
-		tween.tween_property(Echo.particle_system, "amount_ratio", 1, 1)
-		tween.finished.connect(
-			func():
-				Echo.pause = false
-				return
-		)
+		for particle in Echo.particle_systems:
+			particle.amount_ratio = 0
+			
+			var tween = create_tween()
+			tween.tween_property(particle, "amount_ratio", 1, 2)
+			
+		Echo.global_position = EchoLocation.global_position
+		Echo.update_base_position(EchoLocation.global_position)
+		Echo.pause = false
 	return # Replace with function body.
 
 func _on_body_exited(body: Node3D) -> void:

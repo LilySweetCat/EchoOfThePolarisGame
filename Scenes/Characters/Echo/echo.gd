@@ -8,7 +8,7 @@ extends BaseInteractable
 @export var rotation_speed = 3.0
 
 @export var pause: bool
-@export var particle_system: GPUParticles3D
+@export var particle_systems: Array[GPUParticles3D]
 
 var _base_position : Vector3 = Vector3.ZERO
 var _initial_rotation : Basis
@@ -24,6 +24,10 @@ func _process(delta: float):
 	
 	move()
 	look_at_player_if_near(delta)
+	return
+	
+func update_base_position(new_position: Vector3) -> void:
+	_base_position = new_position
 	return
 	
 func move() -> void:
