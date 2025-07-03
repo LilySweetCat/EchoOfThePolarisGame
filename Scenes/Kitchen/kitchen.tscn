@@ -19,7 +19,7 @@
 [ext_resource type="JSON" uid="uid://bben8vlh81gnd" path="res://Dialogues/Kitchen/manual.tres" id="18_d5v74"]
 [ext_resource type="PackedScene" uid="uid://d38oxddcdcafm" path="res://Scenes/Characters/Echo/Echo.tscn" id="19_skia2"]
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_a0rdj"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_d5v74"]
 
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
@@ -166,30 +166,30 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.00707217, 0.935264, -0.00591647)
-bones/1/rotation = Quaternion(-0.00862266, 0.0133542, -0.0459169, 0.998819)
-bones/2/rotation = Quaternion(-0.0551608, -0.012642, 0.024612, 0.998094)
-bones/3/rotation = Quaternion(0.00609201, -0.00493858, 0.0516752, 0.998633)
-bones/4/rotation = Quaternion(0.00616133, -0.000322821, 0.0514974, 0.998654)
-bones/5/rotation = Quaternion(0.0750174, -0.00125987, -0.0190873, 0.996999)
-bones/6/rotation = Quaternion(0.0131124, 0.0055913, -0.0711955, 0.997361)
-bones/8/rotation = Quaternion(-0.632869, -0.393544, 0.499647, -0.441534)
-bones/9/rotation = Quaternion(0.593309, 0.0714139, -0.0785291, 0.797946)
+bones/1/position = Vector3(0.00730558, 0.935257, -0.00580283)
+bones/1/rotation = Quaternion(-0.00843864, 0.0133369, -0.0460645, 0.998814)
+bones/2/rotation = Quaternion(-0.0548605, -0.0124462, 0.0246642, 0.998112)
+bones/3/rotation = Quaternion(0.00644696, -0.00487371, 0.0516707, 0.998631)
+bones/4/rotation = Quaternion(0.00651922, -0.000288277, 0.0514911, 0.998652)
+bones/5/rotation = Quaternion(0.075082, -0.00124423, -0.0190506, 0.996995)
+bones/6/rotation = Quaternion(0.0134442, 0.00563217, -0.0709197, 0.997376)
+bones/8/rotation = Quaternion(-0.63355, -0.39236, 0.500602, -0.440528)
+bones/9/rotation = Quaternion(0.591728, 0.0713735, -0.0777869, 0.799195)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/12/rotation = Quaternion(0.588744, -0.441195, 0.540183, 0.408571)
-bones/13/rotation = Quaternion(0.478436, -0.0891584, 0.00500377, 0.87357)
-bones/14/rotation = Quaternion(-0.0104699, 0.0150266, -0.153887, 0.987919)
-bones/16/rotation = Quaternion(0.114728, 0.17498, 0.969307, -0.129089)
-bones/17/rotation = Quaternion(-0.282377, -0.0766621, 0.028064, 0.955824)
-bones/18/rotation = Quaternion(0.516578, -0.0963246, -0.0147449, 0.850677)
+bones/12/rotation = Quaternion(0.589737, -0.439489, 0.540976, 0.407928)
+bones/13/rotation = Quaternion(0.47667, -0.089477, 0.0053558, 0.874501)
+bones/14/rotation = Quaternion(-0.0104672, 0.0150268, -0.15385, 0.987925)
+bones/16/rotation = Quaternion(0.114567, 0.175181, 0.969323, -0.128839)
+bones/17/rotation = Quaternion(-0.28236, -0.0766481, 0.0280584, 0.95583)
+bones/18/rotation = Quaternion(0.516847, -0.096537, -0.0144313, 0.850495)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0433625, 0.0220527, 0.994819, -0.0892725)
-bones/22/rotation = Quaternion(-0.161312, 0.045319, 0.0335324, 0.985292)
-bones/23/rotation = Quaternion(0.560336, 0.00462996, -0.128248, 0.818263)
-bones/24/rotation = Quaternion(0.323291, 0.0224326, -0.00745963, 0.946004)
+bones/21/rotation = Quaternion(-0.0434267, 0.0220984, 0.99482, -0.0892112)
+bones/22/rotation = Quaternion(-0.161314, 0.0453224, 0.033578, 0.98529)
+bones/23/rotation = Quaternion(0.560381, 0.00467395, -0.128148, 0.818248)
+bones/24/rotation = Quaternion(0.323312, 0.0224358, -0.00746039, 0.945997)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_a0rdj")
+stream = SubResource("AudioStreamPolyphonic_d5v74")
 
 [node name="EnviromentLightGeometry" type="Node" parent="."]
 
@@ -373,7 +373,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.166168, 0, -0.0462952)
 shape = SubResource("BoxShape3D_a0rdj")
 
 [node name="EchoLocation" type="Node3D" parent="Cameras/CameraTriggers/KitchenEntranceArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.865993, 1.04349, -1.93977)
+transform = Transform3D(0.703866, 0, -0.710333, 0, 1, 0, 0.710333, 0, 0.703866, -0.865993, 1.04349, -1.93977)
 
 [node name="BodyArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera", "Echo", "EchoLocation")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.07503, 0.464043, -7.40603)
