@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameUi="*res://UI/game_ui.tscn"
+Storage="*res://Scripts/singletons/storage.gd"
 
 [input]
 
@@ -94,3 +95,4 @@ interact={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"

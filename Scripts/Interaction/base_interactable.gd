@@ -6,6 +6,7 @@ extends Area3D
 
 # mesh с материалом который унаследован от interactable
 @export var inspectable_mesh : MeshInstance3D
+@export var player : CharacterController
 
 var _interactable_shader : ShaderMaterial
 var _can_be_activated : bool
@@ -37,8 +38,6 @@ func _on_body_exited(body: Node3D) -> bool:
 	
 	_can_be_activated = false
 	return true
-
-@export var player : CharacterController
 	
 func _input(event: InputEvent) -> void:
 	if !event.is_action_pressed("interact") || !_can_be_activated:

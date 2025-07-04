@@ -23,11 +23,12 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is not CharacterController and is_current:
 		return
 		
+	print("Changing camera to position", name)
 	#var tween = create_tween()
 	#tween.tween_property(main_camera, "transform", virtual_camera.transform, 0.5)
 	
 	GameUi.play_transition()
-	main_camera.transform = virtual_camera.transform
+	main_camera.global_transform = virtual_camera.global_transform
 	is_current = true
 	
 	if Echo and EchoLocation:

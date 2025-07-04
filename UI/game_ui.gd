@@ -1,5 +1,7 @@
 extends Control
 
+@onready var interact_instructions: RichTextLabel = $InteractInstructions
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var search_cursor: Control = $AnimationPlayer/SearchCursor
@@ -43,7 +45,12 @@ func _ready() -> void:
 #		return
 #	_on_input.call_deferred()
 #	return
-
+func show_interact_instructions() -> void:
+	var tween = create_tween()
+	interact_instructions.visible_ratio = 0
+	tween.tween_property(interact_instructions, "visible_ratio", 1.0, 0.5)
+	return
+	
 func blackout() -> Tween:
 	var tween = create_tween()
 	tween.tween_property(background, "color", Color.BLACK, 0.2)

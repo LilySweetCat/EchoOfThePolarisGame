@@ -1,0 +1,288 @@
+[gd_scene load_steps=3 format=3 uid="uid://mefno6fehk7k"]
+
+[ext_resource type="Theme" uid="uid://q8hccahawy3s" path="res://Themes/DocumentTheme.tres" id="1_ydefs"]
+[ext_resource type="Theme" uid="uid://h3v1h0ggeghj" path="res://Themes/inventory.tres" id="2_7d37g"]
+
+[node name="pause_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ydefs")
+
+[node name="Exit" type="Button" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.03
+anchor_right = 0.95
+anchor_bottom = 0.095
+offset_left = 0.0720215
+offset_top = -0.200001
+offset_right = -0.00805664
+offset_bottom = -0.208
+text = "X"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.95
+anchor_bottom = 0.1
+offset_left = -0.472004
+offset_top = 0.0159988
+offset_right = 0.471924
+offset_bottom = -0.240005
+grow_horizontal = 2
+theme = ExtResource("1_ydefs")
+
+[node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.128
+anchor_right = 0.951
+anchor_bottom = 0.95
+offset_left = -65.0
+offset_top = 0.0559998
+offset_right = -0.552002
+offset_bottom = 0.400024
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Current_Possessions" type="Button" parent="Main"]
+layout_mode = 2
+text = "Current possessions"
+
+[node name="Mental_notes" type="Button" parent="Main"]
+layout_mode = 2
+text = "Mental notes"
+
+[node name="Personal_history" type="Button" parent="Main"]
+layout_mode = 2
+text = "Personal history"
+
+[node name="Possessions" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.12
+anchor_right = 0.65
+anchor_bottom = 0.95
+offset_left = -0.448002
+offset_top = -0.0560074
+offset_right = 0.0479736
+offset_bottom = 0.231995
+
+[node name="Items" type="GridContainer" parent="Possessions"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 5
+
+[node name="1" type="Button" parent="Possessions/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_7d37g")
+text = "item"
+
+[node name="2" type="Button" parent="Possessions/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_7d37g")
+text = "item"
+
+[node name="3" type="Button" parent="Possessions/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_7d37g")
+text = "item"
+
+[node name="4" type="Button" parent="Possessions/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_7d37g")
+text = "item"
+
+[node name="5" type="Button" parent="Possessions/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_7d37g")
+text = "item"
+
+[node name="6" type="Button" parent="Possessions/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_7d37g")
+text = "item"
+
+[node name="7" type="Button" parent="Possessions/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_7d37g")
+text = "item"
+
+[node name="8" type="Button" parent="Possessions/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_7d37g")
+text = "item"
+
+[node name="9" type="Button" parent="Possessions/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_7d37g")
+text = "item"
+
+[node name="10" type="Button" parent="Possessions/Items"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_7d37g")
+text = "item"
+
+[node name="ItemName" type="Label" parent="Possessions"]
+layout_mode = 2
+text = "Item name"
+
+[node name="HSeparator" type="HSeparator" parent="Possessions"]
+layout_mode = 2
+theme = ExtResource("1_ydefs")
+
+[node name="ItemDescription" type="RichTextLabel" parent="Possessions"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "Item description"
+fit_content = true
+
+[node name="MentalNotes" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_left = 0.05
+anchor_top = 0.12
+anchor_right = 0.95
+anchor_bottom = 0.95
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MentalNotes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.247
+anchor_bottom = 1.0
+offset_right = -0.0896301
+offset_bottom = 0.160034
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MentalNotes/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ydefs")
+
+[node name="Button" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="Button2" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="Button3" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="Button4" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="Button5" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="Button6" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="Button7" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="Button8" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="Button9" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="Button10" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="Button11" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="Button12" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="Button13" type="Button" parent="MentalNotes/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "some note"
+
+[node name="VSeparator" type="VSeparator" parent="MentalNotes"]
+layout_mode = 2
+anchor_left = 0.261
+anchor_right = 0.261
+anchor_bottom = 0.999
+offset_left = -0.204834
+offset_top = -0.759995
+offset_right = 5.79517
+offset_bottom = -0.0621948
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MentalNotes"]
+layout_mode = 2
+anchor_left = 0.279
+anchor_right = 0.935
+anchor_bottom = 1.01
+offset_left = -0.267242
+offset_right = -0.408081
+offset_bottom = -0.218384
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "some mental notes"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PersonalHistory" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.12
+anchor_right = 0.9
+anchor_bottom = 0.95
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PersonalHistory"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_ydefs")
+bbcode_enabled = true
+text = "* Opened door
+* Woke up
+* Eat some spaghetti"
