@@ -1,8 +1,9 @@
-[gd_scene load_steps=47 format=3 uid="uid://ctdp85o7ltw6o"]
+[gd_scene load_steps=48 format=3 uid="uid://ctdp85o7ltw6o"]
 
 [ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
 [ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
 [ext_resource type="Material" uid="uid://b3tgja02t47ot" path="res://Materials/interactable.tres" id="2_r8i07"]
+[ext_resource type="JSON" uid="uid://cnhjwj60dc781" path="res://Dialogues/Kitchen/echo_near_body.tres" id="2_skia2"]
 [ext_resource type="PackedScene" uid="uid://4midgp1nsr81" path="res://Scenes/Characters/Morrigan/morrigan-player.tscn" id="3_i4o3x"]
 [ext_resource type="Script" uid="uid://btggpmagtigoc" path="res://Scripts/change_camera_trigger.gd" id="3_pd52i"]
 [ext_resource type="Script" uid="uid://ckfo4ectn2y3j" path="res://Scripts/flickering_light.gd" id="4_d5v74"]
@@ -19,7 +20,7 @@
 [ext_resource type="JSON" uid="uid://bben8vlh81gnd" path="res://Dialogues/Kitchen/manual.tres" id="18_d5v74"]
 [ext_resource type="PackedScene" uid="uid://d38oxddcdcafm" path="res://Scenes/Characters/Echo/Echo.tscn" id="19_skia2"]
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_d5v74"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_skia2"]
 
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
@@ -155,6 +156,7 @@ size = Vector3(1.82083, 1, 1)
 
 [node name="Echo" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_skia2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6129, 1.74712, -4.43483)
+dialogue = ExtResource("2_skia2")
 player_detection_radius = 4.0
 player = NodePath("../Player")
 
@@ -166,30 +168,28 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.00730558, 0.935257, -0.00580283)
-bones/1/rotation = Quaternion(-0.00843864, 0.0133369, -0.0460645, 0.998814)
-bones/2/rotation = Quaternion(-0.0548605, -0.0124462, 0.0246642, 0.998112)
-bones/3/rotation = Quaternion(0.00644696, -0.00487371, 0.0516707, 0.998631)
-bones/4/rotation = Quaternion(0.00651922, -0.000288277, 0.0514911, 0.998652)
-bones/5/rotation = Quaternion(0.075082, -0.00124423, -0.0190506, 0.996995)
-bones/6/rotation = Quaternion(0.0134442, 0.00563217, -0.0709197, 0.997376)
-bones/8/rotation = Quaternion(-0.63355, -0.39236, 0.500602, -0.440528)
-bones/9/rotation = Quaternion(0.591728, 0.0713735, -0.0777869, 0.799195)
-bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/12/rotation = Quaternion(0.589737, -0.439489, 0.540976, 0.407928)
-bones/13/rotation = Quaternion(0.47667, -0.089477, 0.0053558, 0.874501)
-bones/14/rotation = Quaternion(-0.0104672, 0.0150268, -0.15385, 0.987925)
-bones/16/rotation = Quaternion(0.114567, 0.175181, 0.969323, -0.128839)
-bones/17/rotation = Quaternion(-0.28236, -0.0766481, 0.0280584, 0.95583)
-bones/18/rotation = Quaternion(0.516847, -0.096537, -0.0144313, 0.850495)
-bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0434267, 0.0220984, 0.99482, -0.0892112)
-bones/22/rotation = Quaternion(-0.161314, 0.0453224, 0.033578, 0.98529)
-bones/23/rotation = Quaternion(0.560381, 0.00467395, -0.128148, 0.818248)
-bones/24/rotation = Quaternion(0.323312, 0.0224358, -0.00746039, 0.945997)
+bones/1/position = Vector3(0.0100134, 0.93574, -0.0027351)
+bones/1/rotation = Quaternion(-0.00632921, 0.0125933, -0.0470938, 0.998791)
+bones/2/rotation = Quaternion(-0.0565432, -0.0128169, 0.0243888, 0.99802)
+bones/3/rotation = Quaternion(0.00452982, -0.00515867, 0.0515259, 0.998648)
+bones/4/rotation = Quaternion(0.00458279, -0.000383359, 0.0513595, 0.99867)
+bones/5/rotation = Quaternion(0.0750809, -0.00111494, -0.0192364, 0.996991)
+bones/6/rotation = Quaternion(0.0132385, 0.00557691, -0.0707964, 0.997387)
+bones/8/rotation = Quaternion(-0.628215, -0.401248, 0.491702, -0.450084)
+bones/9/rotation = Quaternion(0.605406, 0.0690615, -0.0785821, 0.789011)
+bones/12/rotation = Quaternion(0.584815, -0.449514, 0.53197, 0.415855)
+bones/13/rotation = Quaternion(0.490915, -0.0884409, 0.00303666, 0.866702)
+bones/14/rotation = Quaternion(-0.0104614, 0.0150267, -0.153765, 0.987938)
+bones/16/rotation = Quaternion(0.11429, 0.175606, 0.969337, -0.128397)
+bones/17/rotation = Quaternion(-0.283293, -0.077806, 0.0286814, 0.955442)
+bones/18/rotation = Quaternion(0.51841, -0.0956943, -0.0149267, 0.84963)
+bones/21/rotation = Quaternion(-0.0430819, 0.0206545, 0.994885, -0.0890046)
+bones/22/rotation = Quaternion(-0.157226, 0.0431165, 0.0334374, 0.986054)
+bones/23/rotation = Quaternion(0.55951, 0.00528674, -0.126643, 0.819074)
+bones/24/rotation = Quaternion(0.323213, 0.0224208, -0.00745695, 0.946031)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_d5v74")
+stream = SubResource("AudioStreamPolyphonic_skia2")
 
 [node name="EnviromentLightGeometry" type="Node" parent="."]
 
