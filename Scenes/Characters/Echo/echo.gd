@@ -34,7 +34,6 @@ func _process(delta: float):
 
 func on_interact() -> void:
 	super.on_interact()
-	GameUi.dialogue_ended.disconnect(on_dialogue_ended)
 	actions = {}
 	
 	#print(dialogue.data[0]["text"])
