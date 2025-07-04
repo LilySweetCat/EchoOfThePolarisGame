@@ -2,7 +2,7 @@ class_name BaseInteractable
 extends Area3D
 
 @export var object_display_name : String
-@export var action_name : String
+@export var action_name : String = "Осмотреть"
 
 # mesh с материалом который унаследован от interactable
 @export var inspectable_mesh : MeshInstance3D
