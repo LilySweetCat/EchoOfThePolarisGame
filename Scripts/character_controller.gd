@@ -22,6 +22,7 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if !can_move:
+		anim_tree.set("parameters/movement/blend_position", 0)
 		return
 	
 	move_and_animate(delta)
