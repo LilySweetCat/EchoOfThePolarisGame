@@ -10,3 +10,4 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_3btcv")
 icon_alignment = 1
+expand_icon = true

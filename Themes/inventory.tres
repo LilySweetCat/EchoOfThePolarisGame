@@ -25,6 +25,7 @@ border_color = Color(0.396889, 0.396889, 0.396889, 1)
 anti_aliasing = false
 
 [resource]
+Button/font_sizes/font_size = 16
 Button/styles/focus = SubResource("StyleBoxFlat_w421r")
 Button/styles/hover = SubResource("StyleBoxFlat_gvwug")
 Button/styles/normal = SubResource("StyleBoxFlat_lc3u1")

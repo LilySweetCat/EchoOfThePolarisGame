@@ -128,14 +128,29 @@ func play_dialogue_line() -> void:
 		previous_dialogue.visible = true
 		return
 	
+	#var words = split_text_preserving_bbcode(current_dialogue_text)
+	#var how_many_words : int = words.size()
+	
 	_tween = create_tween().set_parallel(true)
 	
 	_tween.tween_property(dialogue_text, "self_modulate", Color.WHITE, 0.5)
-	_tween.tween_property(dialogue_text, "visible_ratio", 1.0, current_dialogue_text.length()/12)
+	_tween.tween_property(dialogue_text, "visible_ratio", 1.0, current_dialogue_text.length()/30)
 	
 	_tween.chain().tween_property(next_dialogue, "self_modulate", Color.WHITE, 0.5)
 	
 	return
+	
+#func split_text_preserving_bbcode(text: String) -> Array:
+	#var regex = RegEx.new()
+	#regex.compile("(\\[.+?\\].*?\\[\\/.+?\\]|\\S+)")  # Ищет BBCode-теги или слова
+	#var words = []
+	#for match in regex.search_all(text):
+		#words.append(match.get_string())
+	#return words
+#
+#func write_dialogue_line(idx: int, words: Array):
+	#dialogue_text.text += words[idx]
+	#return
 
 func play_dialogue(dialogue: Array) -> void:
 	blackout()

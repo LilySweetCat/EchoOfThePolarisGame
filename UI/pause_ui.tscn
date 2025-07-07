@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://mefno6fehk7k"]
+[gd_scene load_steps=6 format=3 uid="uid://mefno6fehk7k"]
 
 [ext_resource type="Theme" uid="uid://q8hccahawy3s" path="res://Themes/DocumentTheme.tres" id="1_ydefs"]
 [ext_resource type="Script" uid="uid://bsihhxstigs43" path="res://UI/pause_ui.gd" id="2_hq2fy"]
 [ext_resource type="Theme" uid="uid://neesdxvxgxjo" path="res://Themes/UITheme.tres" id="3_hq2fy"]
+[ext_resource type="Script" uid="uid://dlr4bqta2w4x" path="res://Scripts/input_rotator.gd" id="4_wtodg"]
+
+[sub_resource type="Environment" id="Environment_hq2fy"]
+background_mode = 1
 
 [node name="pause_ui" type="Control"]
 layout_mode = 3
@@ -34,9 +38,9 @@ anchor_left = 0.839
 anchor_top = 0.097
 anchor_right = 0.888
 anchor_bottom = 0.162
-offset_left = -0.528076
+offset_left = -0.527954
 offset_top = 0.143997
-offset_right = 0.543945
+offset_right = 0.544067
 offset_bottom = 0.136002
 theme = ExtResource("3_hq2fy")
 text = "X"
@@ -113,6 +117,7 @@ columns = 5
 [node name="ItemName" type="Label" parent="Possessions"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Item name"
 
 [node name="HSeparator" type="HSeparator" parent="Possessions"]
@@ -244,3 +249,61 @@ bbcode_enabled = true
 text = "* Opened door
 * Woke up
 * Eat some spaghetti"
+
+[node name="itemInspector" type="SubViewportContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="itemInspector"]
+own_world_3d = true
+handle_input_locally = false
+canvas_cull_mask = 4294967294
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="itemInspector/SubViewport"]
+environment = SubResource("Environment_hq2fy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="itemInspector/SubViewport/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.530585, 0.847632, 0, -0.847632, 0.530585, 0, 0, 0)
+layers = 2
+sky_mode = 1
+
+[node name="RayCast3D" type="RayCast3D" parent="itemInspector/SubViewport/Camera3D"]
+target_position = Vector3(0, 0, -1)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="LookLocation" type="Node3D" parent="itemInspector/SubViewport/Camera3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+script = ExtResource("4_wtodg")
+
+[node name="Hints" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.089
+anchor_top = 0.815
+anchor_right = 0.888
+anchor_bottom = 0.887
+offset_left = -0.528
+offset_top = -0.120056
+offset_right = 0.0239258
+offset_bottom = 0.223999
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[WASD] - вращать | [Esc] - выйти"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0

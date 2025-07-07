@@ -4,6 +4,7 @@ extends Control
 enum pause_menu_page {
 	main,
 	possessions,
+	item_inspect,
 	mental_notes,
 	personal_history
 }
@@ -48,11 +49,16 @@ func toggle_possessions() -> void:
 		
 		var storage_inventory: Array[InventoryItem] = Storage.inventory
 		for item_idx in range(Storage.inventory.size()):
-			var inventory_button = inventory_button_prefab.instantiate()
+			var inventory_button = inventory_button_prefab.instantiate() as Button
 			var storage_inventory_item = storage_inventory[item_idx]
 			
 			inventory_button.icon = storage_inventory_item.texture
 			inventory_button.pressed.connect(
+				func():
+					show_item(storage_inventory_item.inspect_mesh)
+					return
+			)
+			inventory_button.focus_entered.connect(
 				func():
 					%ItemName.visible_ratio = 0
 					%ItemDescription.visible_ratio = 0
@@ -66,32 +72,28 @@ func toggle_possessions() -> void:
 					button_tween.tween_property(%ItemDescription, "visible_ratio", 1, 0.5)
 					return
 			)
+			inventory_button.focus_exited.connect(
+				func():
+					var button_tween = create_tween()
+					button_tween.set_parallel(true)
+					button_tween.tween_property(%ItemName, "visible_ratio", 0, 0.2)
+					button_tween.tween_property(%ItemDescription, "visible_ratio", 0, 0.2)
+					return
+			)
+			
 			%Items.add_child(inventory_button)
+			inventory_button.call_deferred("grab_focus")
 			
 		if storage_inventory.size() < min_possession_items:
 			var diff = min_possession_items - storage_inventory.size()
 			for idx in diff:
 				var inventory_button = inventory_button_prefab.instantiate()
-				inventory_button.pressed.connect(
-				func():
-					%ItemName.text = "Пусто"
-					%ItemDescription.text = "Ничего не выбрано"
-					return
-			)
 				%Items.add_child(inventory_button)
 		
 		tween.tween_property(%Possessions, "modulate", Color.WHITE, 0.5)
 		tween.tween_property(%Main, "modulate", Color.TRANSPARENT, 0.5)
 		tween.tween_property(%ItemName, "visible_ratio", 1, 0.5)
 		tween.tween_property(%ItemDescription, "visible_ratio", 1, 0.5)
-		
-		buttons = %Items.get_children()
-		tween.finished.connect(
-			func():
-				%Main.visible = false
-				buttons[0].call_deferred("grab_focus")
-				return
-		)
 	else:
 		for button in buttons:
 			button.queue_free()
@@ -111,10 +113,50 @@ func toggle_possessions() -> void:
 		)
 	return
 
+func show_item(item_scene: PackedScene) -> void:
+	print("show_item")
+	var buttons = %Items.get_children()
+	for button in buttons:
+		button.queue_free()
+		
+	%ItemName.visible_ratio = 0
+	%ItemDescription.visible_ratio = 0
+	%Possessions.modulate = Color.TRANSPARENT
+	
+	var tween = create_tween()
+	#tween.tween_property(%Possessions, "modulate", Color.TRANSPARENT, 0.5)
+	tween.tween_property(%Hints, "visible_ratio", 1.0, 0.5)
+	
+	tween.finished.connect(
+		func():
+			%Possessions.visible = false
+			_current_menu = pause_menu_page.item_inspect
+			
+			var item = item_scene.instantiate() as Node3D
+			item.scale = Vector3.ZERO
+			%LookLocation.add_child(item)
+			
+			var scale_tween = create_tween()
+			scale_tween.tween_property(item, "scale", Vector3.ONE, 0.5)
+			%itemInspector.visible = true
+			return
+	)
+	return
+
 func exit_pressed() -> void:
 	if _current_menu == pause_menu_page.main:
 		toggle_pause_menu()
 	if _current_menu == pause_menu_page.possessions:
+		toggle_possessions()
+	if _current_menu == pause_menu_page.item_inspect:
+		%itemInspector.visible = false
+		
+		var insts = %LookLocation.get_children()
+		for inst in insts:
+			inst.queue_free()
+		
+		var tween = create_tween()
+		tween.tween_property(%Hints, "visible_ratio", 0, 0.5)
 		toggle_possessions()
 	return
 

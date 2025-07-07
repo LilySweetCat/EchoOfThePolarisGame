@@ -624,6 +624,7 @@ offset_top = 0.0879517
 offset_bottom = -0.0320435
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("5_dbpsm")
 bbcode_enabled = true
 text = "[WASD] - вращать | [E] - забрать"
 fit_content = true
