@@ -24,7 +24,8 @@ func _on_body_entered(body: Node3D) -> bool:
 	
 	print("Player entered")
 	_interactable_shader.set_shader_parameter("is_active", true)
-	GameUi.show_interactive_object_name(object_display_name)
+	
+	GameUi.call_deferred("show_interactive_object_name", object_display_name)
 	
 	_can_be_activated = true
 	return true
@@ -34,7 +35,7 @@ func _on_body_exited(body: Node3D) -> bool:
 		return false
 	
 	_interactable_shader.set_shader_parameter("is_active", false)
-	GameUi.hide_interactive_object_name()
+	GameUi.call_deferred("hide_interactive_object_name")
 	
 	_can_be_activated = false
 	return true
@@ -51,7 +52,7 @@ func _input(event: InputEvent) -> void:
 	}
 	
 	player.can_move = false
-	player.visible = false
+	#player.visible = false
 	
 	GameUi.call_deferred("show_actions", options, true)
 	#GameUi.show_actions(options, true)

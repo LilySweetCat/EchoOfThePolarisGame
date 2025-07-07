@@ -46,6 +46,11 @@ func _input(event: InputEvent) -> void:
 	
 	return
 	
+func hide_interact_instructions() -> void:
+	var tween = create_tween()
+	tween.tween_property(interact_instructions, "visible_ratio", 0, 0.5)
+	return
+	
 func show_interact_instructions() -> void:
 	var tween = create_tween()
 	interact_instructions.visible_ratio = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://ctdp85o7ltw6o"]
+[gd_scene load_steps=54 format=3 uid="uid://ctdp85o7ltw6o"]
 
 [ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
 [ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
@@ -20,8 +20,10 @@
 [ext_resource type="JSON" uid="uid://bben8vlh81gnd" path="res://Dialogues/Kitchen/manual.tres" id="18_d5v74"]
 [ext_resource type="PackedScene" uid="uid://d38oxddcdcafm" path="res://Scenes/Characters/Echo/Echo.tscn" id="19_skia2"]
 [ext_resource type="Script" uid="uid://cyoeq5gu3ahsa" path="res://Scripts/Interaction/pickable_item.gd" id="20_1u351"]
+[ext_resource type="JSON" uid="uid://blox0bnafgymt" path="res://Dialogues/Kitchen/pickable_item.tres" id="21_gpren"]
+[ext_resource type="Script" uid="uid://dvlve4h4ufq8p" path="res://Scripts/types/inventory_item.gd" id="21_y5von"]
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_1u351"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_y5von"]
 
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
@@ -157,6 +159,14 @@ size = Vector3(1.82083, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iy72m"]
 
+[sub_resource type="Resource" id="Resource_bf6x7"]
+script = ExtResource("21_y5von")
+id = "item"
+name = "Нож"
+description = "Окровавленный нож"
+inspect_mesh = ExtResource("7_tfhfy")
+metadata/_custom_type_script = "uid://dvlve4h4ufq8p"
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_wl3yd"]
 
 [node name="Node3D" type="Node3D"]
@@ -175,30 +185,30 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.00515362, 0.935329, -0.00537764)
-bones/1/rotation = Quaternion(-0.00871805, 0.0136155, -0.045381, 0.998839)
-bones/2/rotation = Quaternion(-0.0580129, -0.0128545, 0.0240448, 0.997944)
-bones/3/rotation = Quaternion(0.00130693, -0.00564662, 0.0515855, 0.998652)
-bones/4/rotation = Quaternion(0.00132228, -0.000516562, 0.0514427, 0.998675)
-bones/5/rotation = Quaternion(0.0744176, -0.00129101, -0.0191738, 0.997042)
-bones/6/rotation = Quaternion(0.0132804, 0.00577237, -0.0723515, 0.997274)
-bones/8/rotation = Quaternion(-0.616839, -0.418715, 0.473802, -0.468721)
-bones/9/rotation = Quaternion(0.632665, 0.0731438, -0.0817762, 0.766615)
+bones/1/position = Vector3(0.0100847, 0.935859, -0.00148707)
+bones/1/rotation = Quaternion(-0.00801803, 0.0117402, -0.0471262, 0.998788)
+bones/2/rotation = Quaternion(-0.057434, -0.0129196, 0.0246595, 0.997961)
+bones/3/rotation = Quaternion(0.00294367, -0.005437, 0.0515655, 0.998651)
+bones/4/rotation = Quaternion(0.00297527, -0.000467954, 0.0514121, 0.998673)
+bones/5/rotation = Quaternion(0.0742897, -0.00117084, -0.0187537, 0.99706)
+bones/6/rotation = Quaternion(0.0145535, 0.00597524, -0.0698811, 0.997431)
+bones/8/rotation = Quaternion(-0.622107, -0.410843, 0.481351, -0.460968)
+bones/9/rotation = Quaternion(0.620141, 0.0722268, -0.0805432, 0.776995)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/12/rotation = Quaternion(0.574889, -0.468455, 0.514662, 0.43032)
-bones/13/rotation = Quaternion(0.51635, -0.0910519, 0.00371118, 0.851516)
-bones/14/rotation = Quaternion(-0.0104671, 0.0150266, -0.153847, 0.987925)
-bones/16/rotation = Quaternion(0.115158, 0.173944, 0.969436, -0.129135)
-bones/17/rotation = Quaternion(-0.280494, -0.0770847, 0.0278661, 0.95635)
-bones/18/rotation = Quaternion(0.515898, -0.0958994, -0.0154568, 0.851125)
+bones/12/rotation = Quaternion(0.57935, -0.460153, 0.522129, 0.424258)
+bones/13/rotation = Quaternion(0.506403, -0.0905348, 0.00330389, 0.857525)
+bones/14/rotation = Quaternion(-0.0104417, 0.0150274, -0.153478, 0.987983)
+bones/16/rotation = Quaternion(0.115487, 0.173386, 0.969493, -0.129167)
+bones/17/rotation = Quaternion(-0.283735, -0.0777043, 0.0282704, 0.955331)
+bones/18/rotation = Quaternion(0.519597, -0.095816, -0.0146396, 0.848896)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0430081, 0.0216959, 0.994794, -0.0898017)
-bones/22/rotation = Quaternion(-0.160536, 0.0452255, 0.0332912, 0.985431)
-bones/23/rotation = Quaternion(0.560069, 0.00422863, -0.129309, 0.818281)
-bones/24/rotation = Quaternion(0.323265, 0.0224287, -0.00745874, 0.946013)
+bones/21/rotation = Quaternion(-0.0430574, 0.0172292, 0.995002, -0.088432)
+bones/22/rotation = Quaternion(-0.155603, 0.0419146, 0.0341243, 0.98634)
+bones/23/rotation = Quaternion(0.559608, 0.00511116, -0.127021, 0.81895)
+bones/24/rotation = Quaternion(0.323331, 0.0224386, -0.00746094, 0.945991)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_1u351")
+stream = SubResource("AudioStreamPolyphonic_y5von")
 
 [node name="EnviromentLightGeometry" type="Node" parent="."]
 
@@ -579,6 +589,8 @@ collision_mask = 2
 input_ray_pickable = false
 monitorable = false
 script = ExtResource("20_1u351")
+inventory_item = SubResource("Resource_bf6x7")
+dialogue_when_pick = ExtResource("21_gpren")
 pickable_item = NodePath("../../EnviromentLightGeometry/Geometry/Kitchen/Knife")
 look_item_location = NodePath("../../Cameras/MainCamera/LookItemLocation")
 main_camera = NodePath("../../Cameras/MainCamera")

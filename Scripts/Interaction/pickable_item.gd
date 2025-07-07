@@ -1,5 +1,8 @@
 extends BaseInteractable
 
+@export var inventory_item: InventoryItem
+@export var dialogue_when_pick: JSON
+
 @export var pickable_item: Node3D
 @export var look_item_location: Node3D
 @export var main_camera: Camera3D
@@ -13,8 +16,43 @@ var _target_rotation_y: float = 0.0
 var _enable_input: bool
 var _initial_rotation_differs: bool
 
+var _viewing: bool
+
+func _input(event: InputEvent) -> void:
+	super._input(event)
+	
+	if !event.is_action_pressed("interact") || !_viewing:
+		return
+		
+	_viewing = false
+	
+	Storage.inventory.append(inventory_item)
+	GameUi.call_deferred("play_dialogue", dialogue_when_pick.data)
+	GameUi.dialogue_ended.connect(pick_item_dialogue_ended)
+	return
+
+func pick_item_dialogue_ended() -> void:
+	GameUi.dialogue_ended.disconnect(pick_item_dialogue_ended)
+	
+	GameUi.call_deferred("hide_interact_instructions")
+	
+	var tween = create_tween()
+	tween.tween_property(main_camera.attributes, "dof_blur_far_distance", 7, 0.5)
+	
+	tween.finished.connect(
+		func():
+			super.on_cancel()
+			pickable_item.queue_free()
+			self.queue_free()
+	)
+	return
+
 func on_interact() -> void:
-	super.on_interact()
+	GameUi.play_transition()
+	
+	_interactable_shader.set_shader_parameter("is_active", false)
+	
+	player.can_move = false
 	
 	pickable_item.scale = Vector3.ZERO
 	pickable_item.global_position = look_item_location.global_position
@@ -25,9 +63,11 @@ func on_interact() -> void:
 	tween.finished.connect(
 		func():
 			_enable_input = true
+			_viewing = true
 	)
 	
-	GameUi.show_interact_instructions()
+	GameUi.call_deferred("show_interact_instructions")
+	
 	return
 
 func _physics_process(delta: float) -> void:
