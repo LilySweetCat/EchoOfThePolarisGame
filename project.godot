@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 GameUi="*res://UI/game_ui.tscn"
 Storage="*res://Scripts/singletons/storage.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 ui_accept={
@@ -95,4 +99,3 @@ interact={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"

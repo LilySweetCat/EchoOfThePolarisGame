@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://31rsi148qcby"]
+
+[ext_resource type="Theme" uid="uid://h3v1h0ggeghj" path="res://Themes/inventory.tres" id="1_3btcv"]
+
+[node name="InventoryButton" type="Button"]
+anchors_preset = -1
+anchor_right = 0.118
+anchor_bottom = 0.21
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_3btcv")
+icon_alignment = 1

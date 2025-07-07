@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://mefno6fehk7k"]
+[gd_scene load_steps=4 format=3 uid="uid://mefno6fehk7k"]
 
 [ext_resource type="Theme" uid="uid://q8hccahawy3s" path="res://Themes/DocumentTheme.tres" id="1_ydefs"]
-[ext_resource type="Theme" uid="uid://h3v1h0ggeghj" path="res://Themes/inventory.tres" id="2_7d37g"]
+[ext_resource type="Script" uid="uid://bsihhxstigs43" path="res://UI/pause_ui.gd" id="2_hq2fy"]
+[ext_resource type="Theme" uid="uid://neesdxvxgxjo" path="res://Themes/UITheme.tres" id="3_hq2fy"]
 
 [node name="pause_ui" type="Control"]
 layout_mode = 3
@@ -11,150 +12,106 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ydefs")
+script = ExtResource("2_hq2fy")
+
+[node name="Background" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Exit" type="Button" parent="."]
+unique_name_in_owner = true
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.9
-anchor_top = 0.03
-anchor_right = 0.95
-anchor_bottom = 0.095
-offset_left = 0.0720215
-offset_top = -0.200001
-offset_right = -0.00805664
-offset_bottom = -0.208
+anchor_left = 0.839
+anchor_top = 0.097
+anchor_right = 0.888
+anchor_bottom = 0.162
+offset_left = -0.528076
+offset_top = 0.143997
+offset_right = 0.543945
+offset_bottom = 0.136002
+theme = ExtResource("3_hq2fy")
 text = "X"
 
 [node name="HSeparator" type="HSeparator" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.1
+anchor_left = 0.049
+anchor_top = 0.168
 anchor_right = 0.95
-anchor_bottom = 0.1
-offset_left = -0.472004
-offset_top = 0.0159988
-offset_right = 0.471924
-offset_bottom = -0.240005
+anchor_bottom = 0.168
+offset_left = 0.551998
+offset_top = 0.135994
+offset_right = 0.343872
+offset_bottom = 6.13599
 grow_horizontal = 2
 theme = ExtResource("1_ydefs")
 
 [node name="Main" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.75
-anchor_top = 0.128
-anchor_right = 0.951
+anchor_left = 0.613
+anchor_top = 0.201
+anchor_right = 0.87
 anchor_bottom = 0.95
-offset_left = -65.0
-offset_top = 0.0559998
-offset_right = -0.552002
+offset_left = -0.176025
+offset_top = -0.248001
+offset_right = -0.240051
 offset_bottom = 0.400024
 grow_horizontal = 0
 grow_vertical = 2
 
 [node name="Current_Possessions" type="Button" parent="Main"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Current possessions"
+theme = ExtResource("3_hq2fy")
+text = "Найденные вещи"
+alignment = 2
 
 [node name="Mental_notes" type="Button" parent="Main"]
 layout_mode = 2
-text = "Mental notes"
+theme = ExtResource("3_hq2fy")
+text = "Прочитанное"
+alignment = 2
 
 [node name="Personal_history" type="Button" parent="Main"]
 layout_mode = 2
-text = "Personal history"
+theme = ExtResource("3_hq2fy")
+text = "Личная история"
+alignment = 2
 
 [node name="Possessions" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.12
-anchor_right = 0.65
+anchor_left = 0.3
+anchor_top = 0.201
+anchor_right = 0.7
 anchor_bottom = 0.95
-offset_left = -0.448002
-offset_top = -0.0560074
-offset_right = 0.0479736
-offset_bottom = 0.231995
+offset_left = -0.600006
+offset_top = -0.248001
+offset_right = -0.400024
+offset_bottom = 0.400024
 
 [node name="Items" type="GridContainer" parent="Possessions"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 columns = 5
 
-[node name="1" type="Button" parent="Possessions/Items"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_7d37g")
-text = "item"
-
-[node name="2" type="Button" parent="Possessions/Items"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_7d37g")
-text = "item"
-
-[node name="3" type="Button" parent="Possessions/Items"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_7d37g")
-text = "item"
-
-[node name="4" type="Button" parent="Possessions/Items"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_7d37g")
-text = "item"
-
-[node name="5" type="Button" parent="Possessions/Items"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_7d37g")
-text = "item"
-
-[node name="6" type="Button" parent="Possessions/Items"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_7d37g")
-text = "item"
-
-[node name="7" type="Button" parent="Possessions/Items"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_7d37g")
-text = "item"
-
-[node name="8" type="Button" parent="Possessions/Items"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_7d37g")
-text = "item"
-
-[node name="9" type="Button" parent="Possessions/Items"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_7d37g")
-text = "item"
-
-[node name="10" type="Button" parent="Possessions/Items"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("2_7d37g")
-text = "item"
-
 [node name="ItemName" type="Label" parent="Possessions"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Item name"
 
@@ -163,6 +120,7 @@ layout_mode = 2
 theme = ExtResource("1_ydefs")
 
 [node name="ItemDescription" type="RichTextLabel" parent="Possessions"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true

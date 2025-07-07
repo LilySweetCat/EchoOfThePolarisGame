@@ -8,7 +8,6 @@ func on_interact() -> void:
 	#print(dialogue.data[0]["text"])
 	GameUi.play_dialogue(dialogue.data)
 	GameUi.dialogue_ended.connect(on_dialogue_ended)
-	
 	return
 
 func on_dialogue_ended() -> void:
