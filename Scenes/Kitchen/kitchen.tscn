@@ -185,27 +185,25 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.0124746, 0.936294, -0.000445813)
-bones/1/rotation = Quaternion(-0.00748507, 0.0123419, -0.0479321, 0.998746)
-bones/2/rotation = Quaternion(-0.0589441, -0.0133468, 0.0242944, 0.997876)
-bones/3/rotation = Quaternion(-0.00140745, -0.00608297, 0.0514226, 0.998658)
-bones/4/rotation = Quaternion(-0.00142102, -0.00067039, 0.0512964, 0.998682)
-bones/5/rotation = Quaternion(0.0754298, -0.000974075, -0.0190559, 0.996969)
-bones/6/rotation = Quaternion(0.0180396, 0.00643314, -0.0689885, 0.997434)
-bones/8/rotation = Quaternion(-0.606889, -0.432618, 0.457655, -0.48485)
-bones/9/rotation = Quaternion(0.654052, 0.0750725, -0.0828603, 0.748141)
-bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/12/rotation = Quaternion(0.566436, -0.483468, 0.498033, 0.444265)
-bones/13/rotation = Quaternion(0.541388, -0.0918312, 0.00355682, 0.835736)
-bones/14/rotation = Quaternion(-0.0104072, 0.0150287, -0.152972, 0.988061)
-bones/16/rotation = Quaternion(0.114969, 0.173807, 0.969525, -0.128819)
-bones/17/rotation = Quaternion(-0.284845, -0.0774469, 0.0282284, 0.955023)
-bones/18/rotation = Quaternion(0.520151, -0.0957922, -0.0138151, 0.848573)
-bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0428307, 0.0154352, 0.995063, -0.0881874)
-bones/22/rotation = Quaternion(-0.152149, 0.0423109, 0.033711, 0.986876)
-bones/23/rotation = Quaternion(0.558454, 0.00574029, -0.125432, 0.819977)
-bones/24/rotation = Quaternion(0.323774, 0.0225059, -0.00747601, 0.945837)
+bones/1/position = Vector3(0.00948356, 0.935719, -0.00217742)
+bones/1/rotation = Quaternion(-0.00628079, 0.0119727, -0.0467702, 0.998814)
+bones/2/rotation = Quaternion(-0.0561403, -0.012647, 0.02464, 0.998039)
+bones/3/rotation = Quaternion(0.00573975, -0.00497445, 0.0515807, 0.99864)
+bones/4/rotation = Quaternion(0.00580384, -0.000311902, 0.0514068, 0.998661)
+bones/5/rotation = Quaternion(0.074833, -0.00113022, -0.0190716, 0.997013)
+bones/6/rotation = Quaternion(0.0130889, 0.00568584, -0.0708027, 0.997388)
+bones/8/rotation = Quaternion(-0.633441, -0.392635, 0.50003, -0.441091)
+bones/9/rotation = Quaternion(0.591825, 0.0689609, -0.0775244, 0.799361)
+bones/12/rotation = Quaternion(0.589427, -0.440106, 0.540383, 0.408497)
+bones/13/rotation = Quaternion(0.477672, -0.0896299, 0.00254431, 0.873951)
+bones/14/rotation = Quaternion(-0.0104602, 0.0150268, -0.153748, 0.987941)
+bones/16/rotation = Quaternion(0.114625, 0.175471, 0.969294, -0.128609)
+bones/17/rotation = Quaternion(-0.283231, -0.0778803, 0.0285488, 0.955458)
+bones/18/rotation = Quaternion(0.518683, -0.0959314, -0.0149508, 0.849436)
+bones/21/rotation = Quaternion(-0.0430436, 0.0200521, 0.994911, -0.0888699)
+bones/22/rotation = Quaternion(-0.157197, 0.0422925, 0.0338439, 0.986081)
+bones/23/rotation = Quaternion(0.559578, 0.00510174, -0.1271, 0.818958)
+bones/24/rotation = Quaternion(0.323202, 0.0224191, -0.00745657, 0.946035)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
 stream = SubResource("AudioStreamPolyphonic_y5von")
@@ -334,9 +332,6 @@ transform = Transform3D(-1, -0.000435147, -0.000226815, -0.000435257, 1, 0.00049
 attributes = SubResource("CameraAttributesPractical_1u351")
 current = true
 fov = 72.0
-
-[node name="RayCast3D" type="RayCast3D" parent="Cameras/MainCamera"]
-target_position = Vector3(0, 0, -2)
 
 [node name="LookItemLocation" type="Node3D" parent="Cameras/MainCamera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
@@ -514,10 +509,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0304108, 0, 0)
 shape = SubResource("BoxShape3D_d5v74")
 
 [node name="Kitchen" type="Node3D" parent="Interactions/DoorToStorage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97937, -1.35388, -0.134026)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.97937, -1.35388, -0.134026)
 
 [node name="Storage" type="Node3D" parent="Interactions/DoorToStorage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83784, -1.47586, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.83784, -1.47586, 0)
 
 [node name="DoorToExit" type="Area3D" parent="Interactions" node_paths=PackedStringArray("location_in", "inspectable_mesh", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0599107, 1.54314, -0.83906)
@@ -537,7 +532,7 @@ player = NodePath("../../Player")
 shape = SubResource("BoxShape3D_y5von")
 
 [node name="Target" type="Node3D" parent="Interactions/DoorToExit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4308, -1.03679, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.4308, -1.03679, 0)
 
 [node name="DoorToKitchen" type="Area3D" parent="Interactions" node_paths=PackedStringArray("location_in", "inspectable_mesh", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86242, 1.58106, -0.394533)
@@ -557,7 +552,7 @@ player = NodePath("../../Player")
 shape = SubResource("BoxShape3D_bf6x7")
 
 [node name="Target" type="Node3D" parent="Interactions/DoorToKitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1838, -1.1094, -0.755087)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.1838, -1.1094, -0.755087)
 
 [node name="DoorToToilet" type="Area3D" parent="Interactions" node_paths=PackedStringArray("location_in", "location_out", "inspectable_mesh", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8959, 1.74366, -0.632095)
@@ -577,10 +572,10 @@ player = NodePath("../../Player")
 shape = SubResource("BoxShape3D_iy72m")
 
 [node name="In" type="Node3D" parent="Interactions/DoorToToilet"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26932, -1.29881, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.26932, -1.29881, 0)
 
 [node name="Out" type="Node3D" parent="Interactions/DoorToToilet"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17308, -1.29881, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.17308, -1.29881, 0)
 
 [node name="Knife" type="Area3D" parent="Interactions" node_paths=PackedStringArray("pickable_item", "look_item_location", "main_camera", "inspectable_mesh", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.18855, 0.416875, -7.8186)
