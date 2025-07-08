@@ -1,13 +1,13 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bkvof2dupuamp"]
 
-[ext_resource type="Shader" uid="uid://cq48lxr3088uy" path="res://Shaders/interactable.gdshader" id="1_0g8np"]
+[ext_resource type="Shader" uid="uid://dpcdyvak21s5y" path="res://Shaders/portal_to_mind_place.gdshader" id="1_0g8np"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_0g8np")
 shader_parameter/base_color = Color(0.329112, 0.0503116, 0.0782161, 1)
 shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/use_emission = true
+shader_parameter/emission_power = 1.0
 shader_parameter/pulse_speed = 2.0
 shader_parameter/pulse_strength = 0.5
 shader_parameter/is_active = false

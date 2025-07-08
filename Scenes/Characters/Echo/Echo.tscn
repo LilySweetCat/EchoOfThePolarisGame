@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://by633ihas1xel" path="res://Scenes/Characters/Echo/echo.gd" id="1_fb086"]
 [ext_resource type="PackedScene" uid="uid://5o1k6glgr8tr" path="res://Models/Props/mask.blend" id="2_4qwgm"]
-[ext_resource type="Shader" uid="uid://cq48lxr3088uy" path="res://Shaders/interactable.gdshader" id="4_k834d"]
+[ext_resource type="Shader" uid="uid://dpcdyvak21s5y" path="res://Shaders/portal_to_mind_place.gdshader" id="4_k834d"]
 [ext_resource type="Texture2D" uid="uid://r0f1dqsaiog6" path="res://Textures/fx_cloudalphas/FX_CloudAlpha06.png" id="5_fhmpl"]
 [ext_resource type="Texture2D" uid="uid://0q8t052xuo5g" path="res://Textures/fx_cloudalphas/FX_CloudAlpha03.png" id="5_k834d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fb086"]
-size = Vector3(1, 1, 1.51123)
+size = Vector3(1, 1, 1.09253)
 
 [sub_resource type="Gradient" id="Gradient_4qwgm"]
 offsets = PackedFloat32Array(0, 0.05, 0.454545, 0.790909, 1)
@@ -59,10 +59,11 @@ render_priority = 0
 shader = ExtResource("4_k834d")
 shader_parameter/base_color = Color(0, 0, 1, 1)
 shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/use_emission = true
+shader_parameter/emission_power = 1.0
 shader_parameter/pulse_speed = 2.0
 shader_parameter/pulse_strength = 0.5
 shader_parameter/is_active = false
+shader_parameter/highlight_as_base_color = false
 
 [sub_resource type="Gradient" id="Gradient_xfhhs"]
 offsets = PackedFloat32Array(0, 0.122727, 0.563636, 0.986364)
@@ -119,7 +120,7 @@ action_name = "Поговорить"
 inspectable_mesh = NodePath("mask2/mask")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.255615)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0462645)
 shape = SubResource("BoxShape3D_fb086")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]

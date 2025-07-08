@@ -138,7 +138,13 @@ _subresources={
 }
 },
 "nodes": {
+"PATH:desk": {
+"generate/physics": true
+},
 "PATH:ground": {
+"generate/physics": true
+},
+"PATH:leather_chair": {
 "generate/physics": true
 }
 }

@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://0vnil6gf068a"]
+
+[ext_resource type="Shader" uid="uid://dpcdyvak21s5y" path="res://Shaders/portal_to_mind_place.gdshader" id="1_f8nc7"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_f8nc7")
+shader_parameter/base_color = Color(0.2, 0.2, 0.2, 1)
+shader_parameter/highlight_color = Color(1, 0, 0, 1)
+shader_parameter/emission_power = 1.0
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_strength = 0.5
+shader_parameter/is_active = false
+shader_parameter/highlight_as_base_color = false

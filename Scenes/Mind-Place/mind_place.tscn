@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cyum1wqdb2w4q"]
+[gd_scene load_steps=18 format=3 uid="uid://cyum1wqdb2w4q"]
 
 [ext_resource type="PackedScene" uid="uid://llq8nxgnw0mh" path="res://Scenes/Mind-Place/mind_place.blend" id="1_6rn3h"]
 [ext_resource type="LightmapGIData" uid="uid://cb1j25ppisqpv" path="res://Scenes/Mind-Place/mind_place.lmbake" id="1_88h3v"]
+[ext_resource type="Script" uid="uid://ljp0xgetp3x1" path="res://Scenes/Mind-Place/mind_place.gd" id="1_i47gs"]
 [ext_resource type="PackedScene" uid="uid://4midgp1nsr81" path="res://Scenes/Characters/Morrigan/morrigan-player.tscn" id="2_tb22e"]
 [ext_resource type="Texture2D" uid="uid://cgcgy2hd435ph" path="res://Textures/leaf.png" id="4_7m4ot"]
 [ext_resource type="AudioStream" uid="uid://d4f7a10yx8dam" path="res://Audio/Sounds/555092__klankbeeld__calm-autumn-forest-short-05-nl-201106_0204.wav" id="5_54j2y"]
@@ -74,6 +75,7 @@ material = SubResource("StandardMaterial3D_liaac")
 size = Vector2(0.5, 0.5)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_i47gs")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 light_data = ExtResource("1_88h3v")
@@ -83,14 +85,44 @@ environment = SubResource("Environment_7m4ot")
 
 [node name="mind_place" parent="." instance=ExtResource("1_6rn3h")]
 
-[node name="Player" parent="." instance=ExtResource("2_tb22e")]
+[node name="Player" parent="." node_paths=PackedStringArray("current_camera") instance=ExtResource("2_tb22e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.339052, 5.9116e-06, -0.0544086)
+current_camera = NodePath("../Camera3D")
+
+[node name="Skeleton3D" parent="Player/morrigan" index="0"]
+bones/1/position = Vector3(0.00905014, 0.935741, -0.00166254)
+bones/1/rotation = Quaternion(-0.00741406, 0.0118467, -0.0465739, 0.998817)
+bones/2/rotation = Quaternion(-0.0564036, -0.012521, 0.0247859, 0.998022)
+bones/3/rotation = Quaternion(0.00468775, -0.00515012, 0.0516132, 0.998643)
+bones/4/rotation = Quaternion(0.00473883, -0.00036836, 0.0514474, 0.998664)
+bones/5/rotation = Quaternion(0.0744755, -0.00115695, -0.0188624, 0.997044)
+bones/6/rotation = Quaternion(0.0137491, 0.00570829, -0.070549, 0.997397)
+bones/8/rotation = Quaternion(-0.628124, -0.401471, 0.490809, -0.450986)
+bones/9/rotation = Quaternion(0.606122, 0.0705684, -0.0796093, 0.788225)
+bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
+bones/12/rotation = Quaternion(0.584362, -0.450239, 0.531688, 0.41607)
+bones/13/rotation = Quaternion(0.491772, -0.0904164, 0.00264898, 0.866013)
+bones/14/rotation = Quaternion(-0.0104556, 0.0150269, -0.15368, 0.987951)
+bones/16/rotation = Quaternion(0.115362, 0.173967, 0.969415, -0.12908)
+bones/17/rotation = Quaternion(-0.282667, -0.0778794, 0.0281712, 0.955636)
+bones/18/rotation = Quaternion(0.519116, -0.0960686, -0.0148861, 0.849157)
+bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
+bones/21/rotation = Quaternion(-0.04301, 0.0180835, 0.994958, -0.0887838)
+bones/22/rotation = Quaternion(-0.156133, 0.0421063, 0.0340638, 0.98625)
+bones/23/rotation = Quaternion(0.559659, 0.00488436, -0.127637, 0.818821)
+bones/24/rotation = Quaternion(0.323189, 0.0224171, -0.00745612, 0.94604)
+
+[node name="FootstepPlayer" parent="Player" index="5"]
+bus = &"Master"
+playback_type = 0
+doppler_tracking = 0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.73259, 0)
 cast_shadow = 0
 amount = 50
 lifetime = 3.0
+preprocess = 1.0
 visibility_aabb = AABB(-24.446, -25.5648, -18.1463, 51.0231, 31.0075, 44.5697)
 process_material = SubResource("ParticleProcessMaterial_i3i56")
 draw_pass_1 = SubResource("QuadMesh_p83rn")
@@ -103,3 +135,9 @@ autoplay = true
 stream = ExtResource("6_54j2y")
 autoplay = true
 parameters/looping = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.810063, -0.125888, 0.57267, 0, 0.97668, 0.214699, -0.586343, -0.17392, 0.791172, 4.49159, 2.93985, 0.962872)
+
+[editable path="Player"]
+[editable path="Player/morrigan"]

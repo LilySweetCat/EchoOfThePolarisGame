@@ -13,10 +13,17 @@ extends BaseInteractable
 var _target_rotation_x: float = 0.0
 var _target_rotation_y: float = 0.0
 
-var _enable_input: bool
+var _rotate: bool
 var _initial_rotation_differs: bool
 
 var _viewing: bool
+
+func _ready() -> void:
+	if Storage.inventory.has(inventory_item):
+		self.queue_free()
+		return
+	super._ready()
+	return
 
 func _input(event: InputEvent) -> void:
 	super._input(event)
@@ -63,7 +70,7 @@ func on_interact() -> void:
 	tween.tween_property(main_camera.attributes, "dof_blur_far_distance", DoF_distance, 0.5)
 	tween.finished.connect(
 		func():
-			_enable_input = true
+			_rotate = true
 			_viewing = true
 	)
 	
@@ -72,13 +79,10 @@ func on_interact() -> void:
 	return
 
 func _physics_process(delta: float) -> void:
-	if !_enable_input:
+	if !_rotate:
 		return
-		
-	var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	
-	if input_dir == Vector2.ZERO:
-		input_dir = Vector2(0.1, 0.1)
+	var input_dir: Vector2 = Vector2(0.1, 0.1)
 	
 	# Целевые углы вращения
 	_target_rotation_x = input_dir.y * rotation_speed * delta

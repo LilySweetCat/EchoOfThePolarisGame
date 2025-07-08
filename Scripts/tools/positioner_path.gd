@@ -1,8 +1,9 @@
 @tool
 class_name Positioner
-extends Node3D
+extends Path3D
 
 @export var viewport: int = 0
+@export var curve_point: int = 0
 
 @export var execute: bool:
 	set(new_value):
@@ -16,5 +17,5 @@ func _on_execute_set():
 	var editor_viewport = EditorInterface.get_editor_viewport_3d(viewport)
 	var editor_camera : Camera3D = editor_viewport.get_camera_3d()
 	
-	transform = editor_camera.transform
+	self.curve.set_point_position(curve_point, editor_camera.position)
 	return

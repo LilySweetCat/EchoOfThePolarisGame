@@ -4,13 +4,7 @@ extends Control
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-@onready var search_cursor: Control = $AnimationPlayer/SearchCursor
-@onready var search_cursor_texts : Array[RichTextLabel] = [
-	$AnimationPlayer/SearchCursor/TopLeft,
-	$AnimationPlayer/SearchCursor/TopRight,
-	$AnimationPlayer/SearchCursor/BottomLeft,
-	$AnimationPlayer/SearchCursor/BottomRight
-]
+@onready var search_cursor: Control = $Cursor
 
 @onready var typewriter: AudioStreamPlayer = $Typewriter
 @onready var page_turn: AudioStreamPlayer = $KoopsPageTurn24
@@ -57,14 +51,16 @@ func show_interact_instructions() -> void:
 	tween.tween_property(interact_instructions, "visible_ratio", 1.0, 0.5)
 	return
 	
-func blackout() -> Tween:
+func blackout(custom_color: Color = Color.BLACK, custom_time: float = 0.2) -> Tween:
 	var tween = create_tween()
-	tween.tween_property(background, "color", Color.BLACK, 0.2)
+	if custom_color != Color.BLACK:
+		background.self_modulate = Color.WHITE
+	tween.tween_property(background, "color", custom_color, custom_time)
 	return tween
 	
-func disable_blackout() -> Tween:
+func disable_blackout(custom_time: float = 0.2) -> Tween:
 	var tween = create_tween()
-	tween.tween_property(background, "color", Color.TRANSPARENT, 0.2)
+	tween.tween_property(background, "color", Color.TRANSPARENT, custom_time)
 	return tween
 	
 func play_previous_dialogue_line() -> void:
@@ -200,19 +196,33 @@ func show_actions(actions: Dictionary, free_after_press: bool) -> void:
 		new_action_button.grab_focus()
 	return
 
-func show_cursor_data(texts: Array[String]) -> void:
-	for index in range(search_cursor_texts.size()):
-		search_cursor_texts[index].text = texts[index]
-		
-	animation_player.queue("show_search_cursor_data")
-	return
-
 func play_transition() -> void:
 	animation_player.queue("glitch")
 	return
 	
-func show_cursor() -> void:
-	animation_player.queue("show_search_cursor")
+func toggle_cursor() -> void:
+	print("toggle cursor")
+	if !search_cursor.visible:
+		search_cursor.process_mode = Node.PROCESS_MODE_INHERIT
+		search_cursor.modulate = Color.TRANSPARENT
+		search_cursor.scale = Vector2.ZERO
+		search_cursor.visible = true
+		
+		var tween = create_tween()
+		tween.set_parallel(true)
+		tween.tween_property(search_cursor, "modulate", Color.WHITE, 0.2)
+		tween.tween_property(search_cursor, "scale", Vector2.ONE, 0.2)
+	else:
+		var tween = create_tween()
+		tween.set_parallel(true)
+		tween.tween_property(search_cursor, "modulate", Color.TRANSPARENT, 0.2)
+		tween.tween_property(search_cursor, "scale", Vector2.ZERO, 0.2)
+		
+		tween.finished.connect(
+			func():
+				search_cursor.process_mode = Node.PROCESS_MODE_DISABLED
+				return
+		)
 	return
 
 func show_interactive_object_name(object_name: String) -> void:
