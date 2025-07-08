@@ -1,0 +1,105 @@
+[gd_scene load_steps=17 format=3 uid="uid://cyum1wqdb2w4q"]
+
+[ext_resource type="PackedScene" uid="uid://llq8nxgnw0mh" path="res://Scenes/Mind-Place/mind_place.blend" id="1_6rn3h"]
+[ext_resource type="LightmapGIData" uid="uid://cb1j25ppisqpv" path="res://Scenes/Mind-Place/mind_place.lmbake" id="1_88h3v"]
+[ext_resource type="PackedScene" uid="uid://4midgp1nsr81" path="res://Scenes/Characters/Morrigan/morrigan-player.tscn" id="2_tb22e"]
+[ext_resource type="Texture2D" uid="uid://cgcgy2hd435ph" path="res://Textures/leaf.png" id="4_7m4ot"]
+[ext_resource type="AudioStream" uid="uid://d4f7a10yx8dam" path="res://Audio/Sounds/555092__klankbeeld__calm-autumn-forest-short-05-nl-201106_0204.wav" id="5_54j2y"]
+[ext_resource type="AudioStream" uid="uid://cvskyijqt6lnh" path="res://Audio/Music/universfield__midnight-secrets.ogg" id="6_54j2y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tb22e"]
+sky_top_color = Color(0.604782, 0.505034, 0.408993, 1)
+sky_horizon_color = Color(1, 0.485875, 0.203256, 1)
+
+[sub_resource type="Sky" id="Sky_88h3v"]
+sky_material = SubResource("ProceduralSkyMaterial_tb22e")
+
+[sub_resource type="Environment" id="Environment_7m4ot"]
+background_mode = 2
+sky = SubResource("Sky_88h3v")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 4
+ssao_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.598497, 0.405425, 0.327414, 1)
+adjustment_enabled = true
+adjustment_saturation = 1.5
+
+[sub_resource type="Curve" id="Curve_sfa5k"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.256098, 1), 0.0, 0.0, 0, 0, Vector2(0.743902, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_54j2y"]
+width = 64
+curve = SubResource("Curve_sfa5k")
+
+[sub_resource type="Curve" id="Curve_i47gs"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.243902, 1), 0.0, 0.0, 0, 0, Vector2(0.739837, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_v3oiq"]
+width = 128
+curve = SubResource("Curve_i47gs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i3i56"]
+emission_shape = 3
+emission_box_extents = Vector3(15, 5, 15)
+direction = Vector3(3, 0, 3)
+initial_velocity_min = -3.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, -3, 0)
+scale_min = 0.2
+scale_curve = SubResource("CurveTexture_v3oiq")
+alpha_curve = SubResource("CurveTexture_54j2y")
+turbulence_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_liaac"]
+transparency = 2
+alpha_scissor_threshold = 0.55
+alpha_antialiasing_mode = 0
+shading_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_7m4ot")
+texture_filter = 0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_p83rn"]
+material = SubResource("StandardMaterial3D_liaac")
+size = Vector2(0.5, 0.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+light_data = ExtResource("1_88h3v")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7m4ot")
+
+[node name="mind_place" parent="." instance=ExtResource("1_6rn3h")]
+
+[node name="Player" parent="." instance=ExtResource("2_tb22e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.339052, 5.9116e-06, -0.0544086)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.73259, 0)
+cast_shadow = 0
+amount = 50
+lifetime = 3.0
+visibility_aabb = AABB(-24.446, -25.5648, -18.1463, 51.0231, 31.0075, 44.5697)
+process_material = SubResource("ParticleProcessMaterial_i3i56")
+draw_pass_1 = SubResource("QuadMesh_p83rn")
+
+[node name="555092KlankbeeldCalm-autumn-forest-short-05-nl-2011060204" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_54j2y")
+autoplay = true
+
+[node name="UniversfieldMidnight-secrets" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_54j2y")
+autoplay = true
+parameters/looping = true

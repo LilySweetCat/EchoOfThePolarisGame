@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://6o5idc1ayle0"]
+
+[ext_resource type="Texture2D" uid="uid://7wuxt2bieohn" path="res://Scenes/Mind-Place/tree28.png" id="1_77h1b"]
+
+[resource]
+resource_name = "tree06"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 2
+albedo_texture = ExtResource("1_77h1b")

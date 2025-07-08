@@ -38,7 +38,7 @@ func pick_item_dialogue_ended() -> void:
 	
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(pickable_item, "scale", Vector3.ZERO, 0.2)
-	tween.tween_property(main_camera.attributes, "dof_blur_far_distance", 7, 0.5)
+	tween.tween_property(main_camera.attributes, "dof_blur_far_distance", 10, 0.5)
 	
 	tween.finished.connect(
 		func():

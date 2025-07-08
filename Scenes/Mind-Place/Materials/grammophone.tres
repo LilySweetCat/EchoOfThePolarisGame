@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bvs2w1y6450f4"]
+
+[ext_resource type="Texture2D" uid="uid://balh1uk1obwi2" path="res://Scenes/Mind-Place/mind_place_grammophone.png" id="1_kwfhp"]
+
+[resource]
+resource_name = "grammophone"
+albedo_texture = ExtResource("1_kwfhp")
+texture_filter = 2

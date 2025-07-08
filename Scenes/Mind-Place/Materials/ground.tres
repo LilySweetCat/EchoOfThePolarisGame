@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://gyglgfbn8xls"]
+
+[ext_resource type="Texture2D" uid="uid://8sm26ddghi30" path="res://Scenes/Mind-Place/Texturelabs_Soil_149S.jpg" id="1_scakk"]
+
+[resource]
+resource_name = "ground"
+shading_mode = 2
+albedo_texture = ExtResource("1_scakk")
+texture_filter = 2

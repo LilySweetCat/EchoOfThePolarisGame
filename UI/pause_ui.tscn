@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://mefno6fehk7k"]
+[gd_scene load_steps=7 format=3 uid="uid://mefno6fehk7k"]
 
 [ext_resource type="Theme" uid="uid://q8hccahawy3s" path="res://Themes/DocumentTheme.tres" id="1_ydefs"]
 [ext_resource type="Script" uid="uid://bsihhxstigs43" path="res://UI/pause_ui.gd" id="2_hq2fy"]
 [ext_resource type="Theme" uid="uid://neesdxvxgxjo" path="res://Themes/UITheme.tres" id="3_hq2fy"]
+[ext_resource type="Script" uid="uid://chnxsfsw7oip8" path="res://Scripts/processing_by_visibility.gd" id="4_8jglv"]
 [ext_resource type="Script" uid="uid://dlr4bqta2w4x" path="res://Scripts/input_rotator.gd" id="4_wtodg"]
 
 [sub_resource type="Environment" id="Environment_hq2fy"]
@@ -252,7 +253,6 @@ text = "* Opened door
 
 [node name="itemInspector" type="SubViewportContainer" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -261,13 +261,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 stretch = true
+script = ExtResource("4_8jglv")
 
 [node name="SubViewport" type="SubViewport" parent="itemInspector"]
 own_world_3d = true
 handle_input_locally = false
 canvas_cull_mask = 4294967294
 size = Vector2i(1152, 648)
-render_target_update_mode = 0
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="itemInspector/SubViewport"]
 environment = SubResource("Environment_hq2fy")

@@ -1,0 +1,163 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://llq8nxgnw0mh"
+path="res://.godot/imported/mind_place.blend-4ebcd58f6c0c646a9591660903501a16.scn"
+
+[deps]
+
+source_file="res://Scenes/Mind-Place/mind_place.blend"
+dest_files=["res://.godot/imported/mind_place.blend-4ebcd58f6c0c646a9591660903501a16.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"background": {
+"use_external/enabled": true,
+"use_external/path": "res://Scenes/Mind-Place/Materials/background.tres"
+},
+"bush02": {
+"use_external/enabled": true,
+"use_external/path": "res://Scenes/Mind-Place/Materials/bush02.tres"
+},
+"desk_lamp": {
+"use_external/enabled": true,
+"use_external/path": "res://Scenes/Mind-Place/Materials/desk_lamp.tres"
+},
+"grammophone": {
+"use_external/enabled": true,
+"use_external/path": "res://Scenes/Mind-Place/Materials/grammophone.tres"
+},
+"ground": {
+"use_external/enabled": true,
+"use_external/path": "res://Scenes/Mind-Place/Materials/ground.tres"
+},
+"leather_chair": {
+"use_external/enabled": true,
+"use_external/path": "res://Scenes/Mind-Place/Materials/leather_chair.tres"
+},
+"tree06": {
+"use_external/enabled": true,
+"use_external/path": "res://Scenes/Mind-Place/Materials/tree06.tres"
+},
+"tree07": {
+"use_external/enabled": true,
+"use_external/path": "res://Scenes/Mind-Place/Materials/tree07.tres"
+},
+"wooden_office_desk": {
+"use_external/enabled": true,
+"use_external/path": "res://Scenes/Mind-Place/Materials/wooden_office_desk.tres"
+}
+},
+"meshes": {
+"mind_place_Cube": {
+"generate/lightmap_uv": 1,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": ""
+},
+"mind_place_Cube_001": {
+"generate/lightmap_uv": 1,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": ""
+},
+"mind_place_Plane": {
+"generate/lightmap_uv": 1,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": ""
+},
+"mind_place_Plane_001": {
+"generate/lightmap_uv": 1,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": ""
+},
+"mind_place_Plane_002": {
+"generate/lightmap_uv": 1,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": ""
+},
+"mind_place_Plane_003": {
+"generate/lightmap_uv": 1,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": ""
+},
+"mind_place_Plane_004": {
+"generate/lightmap_uv": 1,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": ""
+},
+"mind_place_Plane_005": {
+"generate/lightmap_uv": 1,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": ""
+}
+},
+"nodes": {
+"PATH:ground": {
+"generate/physics": true
+}
+}
+}
+blender/nodes/visible=0
+blender/nodes/active_collection_only=false
+blender/nodes/punctual_lights=true
+blender/nodes/cameras=true
+blender/nodes/custom_properties=true
+blender/nodes/modifiers=1
+blender/meshes/colors=false
+blender/meshes/uvs=true
+blender/meshes/normals=true
+blender/meshes/export_geometry_nodes_instances=false
+blender/meshes/tangents=true
+blender/meshes/skins=2
+blender/meshes/export_bones_deforming_mesh_only=false
+blender/materials/unpack_enabled=true
+blender/materials/export_materials=1
+blender/animation/limit_playback=true
+blender/animation/always_sample=true
+blender/animation/group_tracks=true
