@@ -11,3 +11,4 @@ shader_parameter/emission_power = 1.0
 shader_parameter/pulse_speed = 2.0
 shader_parameter/pulse_strength = 0.5
 shader_parameter/is_active = false
+shader_parameter/highlight_as_base_color = false
