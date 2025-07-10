@@ -212,27 +212,27 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.00488306, 0.935395, -0.00498201)
-bones/1/rotation = Quaternion(-0.00849373, 0.0136181, -0.0453103, 0.998844)
-bones/2/rotation = Quaternion(-0.0586269, -0.0127431, 0.023787, 0.997915)
-bones/3/rotation = Quaternion(8.91269e-05, -0.0058279, 0.051608, 0.99865)
-bones/4/rotation = Quaternion(8.98654e-05, -0.000558285, 0.0514742, 0.998674)
-bones/5/rotation = Quaternion(0.0742843, -0.00129792, -0.0191931, 0.997052)
-bones/6/rotation = Quaternion(0.013806, 0.00535551, -0.0721218, 0.997286)
-bones/8/rotation = Quaternion(-0.612167, -0.425328, 0.466059, -0.476589)
-bones/9/rotation = Quaternion(0.643367, 0.0744012, -0.081238, 0.757591)
+bones/1/position = Vector3(0.0068453, 0.935255, -0.00597753)
+bones/1/rotation = Quaternion(-0.00881104, 0.0134352, -0.0457969, 0.998822)
+bones/2/rotation = Quaternion(-0.0554631, -0.0127963, 0.0245743, 0.998076)
+bones/3/rotation = Quaternion(0.00569912, -0.0050057, 0.051685, 0.998635)
+bones/4/rotation = Quaternion(0.00576463, -0.000352422, 0.0515096, 0.998656)
+bones/5/rotation = Quaternion(0.0749212, -0.00126486, -0.0191012, 0.997006)
+bones/6/rotation = Quaternion(0.0127893, 0.00564571, -0.071463, 0.997345)
+bones/8/rotation = Quaternion(-0.631556, -0.395686, 0.497932, -0.443435)
+bones/9/rotation = Quaternion(0.596102, 0.0716488, -0.0788994, 0.795804)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/12/rotation = Quaternion(0.570954, -0.475547, 0.506659, 0.437223)
-bones/13/rotation = Quaternion(0.527263, -0.0924178, 0.00266088, 0.844657)
-bones/14/rotation = Quaternion(-0.0104664, 0.0150266, -0.153838, 0.987926)
-bones/16/rotation = Quaternion(0.115231, 0.173658, 0.969491, -0.129044)
-bones/17/rotation = Quaternion(-0.280055, -0.0772069, 0.0278385, 0.956469)
-bones/18/rotation = Quaternion(0.515735, -0.0959023, -0.0155236, 0.851222)
+bones/12/rotation = Quaternion(0.587467, -0.4436, 0.53855, 0.409958)
+bones/13/rotation = Quaternion(0.481241, -0.0890865, 0.00449376, 0.872038)
+bones/14/rotation = Quaternion(-0.0104694, 0.0150266, -0.153881, 0.98792)
+bones/16/rotation = Quaternion(0.114906, 0.174805, 0.969279, -0.129375)
+bones/17/rotation = Quaternion(-0.282481, -0.0766739, 0.0280693, 0.955792)
+bones/18/rotation = Quaternion(0.5165, -0.0960039, -0.0150958, 0.850755)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0429745, 0.020802, 0.994804, -0.0899177)
-bones/22/rotation = Quaternion(-0.159371, 0.0452374, 0.0330255, 0.985629)
-bones/23/rotation = Quaternion(0.559897, 0.00433366, -0.129066, 0.818437)
-bones/24/rotation = Quaternion(0.32326, 0.0224278, -0.00745854, 0.946015)
+bones/21/rotation = Quaternion(-0.0433057, 0.0219955, 0.994815, -0.0893574)
+bones/22/rotation = Quaternion(-0.161357, 0.0453211, 0.033486, 0.985286)
+bones/23/rotation = Quaternion(0.56034, 0.00459418, -0.128337, 0.818247)
+bones/24/rotation = Quaternion(0.323287, 0.022432, -0.00745949, 0.946006)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
 stream = SubResource("AudioStreamPolyphonic_cphbl")
@@ -683,6 +683,9 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 1.1
 spring_length = 0.01
 script = ExtResource("28_cphbl")
 target = NodePath("../../../LookAt")
+sensitivity = 0.2
+h_max = 100
+v_max = 60
 
 [node name="Camera3D" type="Camera3D" parent="Interactions/Body/Path3D/PathFollow3D/SpringArm3D"]
 transform = Transform3D(1.00001, 0, 0, 0, 1.00001, 0, 0, 0, 1, 0, 0, 0)
