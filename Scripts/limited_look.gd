@@ -1,6 +1,6 @@
 extends SpringArm3D
 
-@export var target : Node3D
+#@export var target : Node3D
 @export var sensitivity := 0.1
 @export var smooth_speed := 5.0 # чем больше — тем быстрее подстраивается
 
@@ -22,7 +22,7 @@ func _unhandled_input(event):
 		pitch = clampf(pitch, -v_max, v_max)
 
 func _physics_process(delta: float) -> void:
-	look_at(target.global_position, Vector3.UP)
+	#look_at(target.global_position, Vector3.UP)
 	base_rotation = rotation_degrees
 	# Применяем отклонение от базовой ориентации
 	#rotation_degrees = base_rotation + Vector3(pitch, yaw, 0)

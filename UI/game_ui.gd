@@ -21,6 +21,7 @@ extends Control
 
 # signals
 signal dialogue_ended
+signal dialogue_started
 
 # private
 var _tween : Tween
@@ -31,7 +32,7 @@ var _dialogue : Array
 var _current_dialogue_index : int = 0
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	return
 	
 func _input(event: InputEvent) -> void:
@@ -148,7 +149,8 @@ func play_dialogue_line() -> void:
 	#dialogue_text.text += words[idx]
 	#return
 
-func play_dialogue(dialogue: Array) -> void:
+func play_dialogue(dialogue: Array, event: String) -> void:
+	dialogue_started.emit(event)
 	blackout()
 	
 	_dialogue = dialogue

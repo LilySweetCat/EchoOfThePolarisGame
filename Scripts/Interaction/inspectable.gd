@@ -4,7 +4,7 @@ extends BaseInteractable
 @export var inspect_camera : Camera3D
 
 #@export var look_at: Node3D
-@export var path_follow: PathFollow3D
+@export var path_follow: FollowWithClues
 
 @export var move_speed: float = 1.0
 @export var smoothness: float = 5.0
@@ -45,7 +45,8 @@ func _physics_process(delta: float) -> void:
 	_target_progress = clamp(_target_progress - input.x * move_speed * delta, 0.0, 1.0)
 	
 	# Плавно интерполируем текущий прогресс к целевому
-	path_follow.progress_ratio = lerp(path_follow.progress_ratio, _target_progress, smoothness * delta)
+	var smooth_value = lerp(path_follow.progress_ratio, _target_progress, smoothness * delta)
+	path_follow.change_progress_ratio_and_notify(smooth_value)
 	
 	#inspect_camera.look_at(look_at.global_position)
 	return
