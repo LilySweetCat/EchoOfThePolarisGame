@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://ctdp85o7ltw6o"]
+[gd_scene load_steps=65 format=3 uid="uid://ctdp85o7ltw6o"]
 
 [ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
 [ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
@@ -27,10 +27,10 @@
 [ext_resource type="Script" uid="uid://b14h7ateqq2pt" path="res://Scripts/teleport_to_mind_palace.gd" id="24_iy72m"]
 [ext_resource type="PackedScene" uid="uid://cyum1wqdb2w4q" path="res://Scenes/Mind-Place/mind_place.tscn" id="26_wl3yd"]
 [ext_resource type="Script" uid="uid://1ejavo0tdki2" path="res://Scripts/Interaction/inspectable.gd" id="27_ap3gj"]
-[ext_resource type="Script" uid="uid://c1fwgs6yrhsrw" path="res://Scripts/Interaction/inspectable_point.gd" id="28_reacm"]
-[ext_resource type="Script" uid="uid://bgxlwfaocoqbn" path="res://Scripts/types/clue_point.gd" id="29_reacm"]
+[ext_resource type="Script" uid="uid://cq6rhin0e344y" path="res://Scripts/clue_detection.gd" id="28_oxwpg"]
+[ext_resource type="Script" uid="uid://c1fwgs6yrhsrw" path="res://Scripts/Interaction/clue_point.gd" id="29_reacm"]
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_oxwpg"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_reacm"]
 
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
@@ -186,27 +186,15 @@ size = Vector3(1.74683, 1.93359, 1.69333)
 size = Vector3(2.58133, 0.258408, 1.37213)
 
 [sub_resource type="Curve3D" id="Curve3D_oxwpg"]
-closed = true
-bake_interval = 30.0
+bake_interval = 10.0
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.441253, 0.523082, -0.244452, 0, 0, 0, 0, 0, 0, 0.0996819, 0.5767, 0.19408, 0, 0, 0, 0, 0, 0, 0.972766, 0.596626, 0.585807, 0, 0, 0, 0, 0, 0, 1.42873, 0.439879, 0.49561, 0, 0, 0, 0, 0, 0, 1.61613, 0.587984, 0.849489, 0, 0, 0, 0, 0, 0, 1.83831, 0.972906, 0.42898, 0, 0, 0, 0, 0, 0, 2.09071, 1.73052, 0.199013, 0, 0, 0, 0, 0, 0, 1.73851, 1.66653, -0.049067, 0, 0, 0, 0, 0, 0, 0, 0.463529, -0.641533),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.61904, 0.982565, -0.78209, 0, 0, 0, 0, 0, 0, 1.02018, 0.954271, -0.674355, 0, 0, 0, 0, 0, 0, 0.886917, 0.827405, -0.0453224, 0, 0, 0, 0, 0, 0, 1.36816, 0.525938, 0.387253, 0, 0, 0, 0, 0, 0, 1.95283, 0.353228, 0.913952, 0, 0, 0, 0, 0, 0, 2.08325, 0.968065, 0.909603, 0, 0, 0, 0, 0, 0, 2.13265, 1.3229, 0.918571),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 9
+point_count = 7
 
-[sub_resource type="Resource" id="Resource_cphbl"]
-script = ExtResource("29_reacm")
-path_ratio = 0.26
-delta = 0.1
-dialogue = ExtResource("21_gpren")
-metadata/_custom_type_script = "uid://bgxlwfaocoqbn"
-
-[sub_resource type="Resource" id="Resource_py26m"]
-script = ExtResource("29_reacm")
-path_ratio = 0.45
-delta = 0.1
-dialogue = ExtResource("21_gpren")
-metadata/_custom_type_script = "uid://bgxlwfaocoqbn"
+[sub_resource type="BoxShape3D" id="BoxShape3D_reacm"]
+size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Node3D" type="Node3D"]
 
@@ -224,30 +212,30 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.0108852, 0.935856, -0.00402928)
-bones/1/rotation = Quaternion(-0.0069697, 0.0128765, -0.0475759, 0.99876)
-bones/2/rotation = Quaternion(-0.0583723, -0.0133532, 0.0238993, 0.997919)
-bones/3/rotation = Quaternion(-5.95279e-05, -0.00584598, 0.0514096, 0.998661)
-bones/4/rotation = Quaternion(-5.38499e-05, -0.000609961, 0.0512723, 0.998685)
-bones/5/rotation = Quaternion(0.0745787, -0.00120136, -0.0192414, 0.997029)
-bones/6/rotation = Quaternion(0.0132594, 0.00509007, -0.0706207, 0.997402)
-bones/8/rotation = Quaternion(-0.613796, -0.423158, 0.468928, -0.473601)
-bones/9/rotation = Quaternion(0.639575, 0.0716216, -0.0816303, 0.76102)
+bones/1/position = Vector3(0.0081544, 0.935398, -0.00404214)
+bones/1/rotation = Quaternion(-0.00819329, 0.0137197, -0.0467415, 0.998779)
+bones/2/rotation = Quaternion(-0.0553523, -0.0122445, 0.0244024, 0.998094)
+bones/3/rotation = Quaternion(0.00575838, -0.00490376, 0.0516439, 0.998637)
+bones/4/rotation = Quaternion(0.00582529, -0.000265085, 0.0514684, 0.998658)
+bones/5/rotation = Quaternion(0.0754613, -0.000990503, -0.019125, 0.996965)
+bones/6/rotation = Quaternion(0.0127611, 0.00748889, -0.0716428, 0.997321)
+bones/8/rotation = Quaternion(-0.631372, -0.395455, 0.499409, -0.442239)
+bones/9/rotation = Quaternion(0.594801, 0.0708708, -0.078287, 0.796907)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/12/rotation = Quaternion(0.572399, -0.473143, 0.509653, 0.434452)
-bones/13/rotation = Quaternion(0.524345, -0.0883938, 0.00416422, 0.846895)
-bones/14/rotation = Quaternion(-0.0104628, 0.0150267, -0.153785, 0.987935)
-bones/16/rotation = Quaternion(0.114556, 0.175131, 0.969357, -0.128662)
-bones/17/rotation = Quaternion(-0.282809, -0.077633, 0.0285904, 0.955602)
-bones/18/rotation = Quaternion(0.518098, -0.0954236, -0.0148992, 0.849851)
+bones/12/rotation = Quaternion(0.589602, -0.440406, 0.53998, 0.408453)
+bones/13/rotation = Quaternion(0.478127, -0.0892841, 0.00538244, 0.873724)
+bones/14/rotation = Quaternion(-0.0104561, 0.0150272, -0.153688, 0.98795)
+bones/16/rotation = Quaternion(0.114384, 0.175788, 0.969187, -0.129192)
+bones/17/rotation = Quaternion(-0.283449, -0.076593, 0.0283884, 0.955502)
+bones/18/rotation = Quaternion(0.517662, -0.0961043, -0.0144107, 0.850048)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0429064, 0.021291, 0.994854, -0.0892881)
-bones/22/rotation = Quaternion(-0.157493, 0.0437883, 0.0330355, 0.985995)
-bones/23/rotation = Quaternion(0.559492, 0.00512039, -0.127039, 0.819026)
-bones/24/rotation = Quaternion(0.323226, 0.0224227, -0.00745739, 0.946027)
+bones/21/rotation = Quaternion(-0.0431541, 0.0201573, 0.994847, -0.0895048)
+bones/22/rotation = Quaternion(-0.158847, 0.0451449, 0.033493, 0.985702)
+bones/23/rotation = Quaternion(0.56027, 0.00495885, -0.127507, 0.818422)
+bones/24/rotation = Quaternion(0.3235, 0.0224643, -0.00746679, 0.945932)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_oxwpg")
+stream = SubResource("AudioStreamPolyphonic_reacm")
 
 [node name="EnviromentLightGeometry" type="Node" parent="."]
 
@@ -677,22 +665,18 @@ player = NodePath("../../Player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08586, -0.245155, 0.280854)
 shape = SubResource("BoxShape3D_oxwpg")
 
-[node name="LookAt" type="Node3D" parent="Interactions/Body"]
-transform = Transform3D(0.596593, 0.0266994, 0.802108, -9.91459e-10, 0.999447, -0.0332682, -0.802535, 0.0198476, 0.596263, 1.91338, 1.19209e-07, 4.76837e-07)
-
 [node name="Path3D" type="Path3D" parent="Interactions/Body"]
 transform = Transform3D(1.00001, 0, 0, 0, 1, 0, 0, 0, 1, 0.0483313, -0.42509, 0.0150418)
 curve = SubResource("Curve3D_oxwpg")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Interactions/Body/Path3D"]
-transform = Transform3D(-0.629712, 0, -0.776723, 0, 0.999923, 0, 0.776758, 0, -0.629683, -0.441253, 0.523082, -0.244452)
+transform = Transform3D(-0.997737, 0, -0.0657369, 0, 0.999921, 0, 0.0657382, 0, -0.997716, 0.974179, 0.75201, 0.0874307)
+progress = 1.46445
 rotation_mode = 1
 loop = false
-script = ExtResource("28_reacm")
-clue_points = Array[ExtResource("29_reacm")]([SubResource("Resource_cphbl"), SubResource("Resource_py26m")])
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Interactions/Body/Path3D/PathFollow3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.19209e-07, 0)
 spring_length = 0.01
 
 [node name="Camera3D" type="Camera3D" parent="Interactions/Body/Path3D/PathFollow3D/SpringArm3D"]
@@ -700,6 +684,50 @@ transform = Transform3D(1.00001, 0, 0, 0, 1.00001, 0, 0, 0, 1, 0, 0, 0)
 fov = 92.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Interactions/Body/Path3D/PathFollow3D/SpringArm3D"]
+target_position = Vector3(0, 0, -1)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("28_oxwpg")
+progress_speed = 0.5
+
+[node name="Clue" type="Area3D" parent="Interactions/Body"]
+transform = Transform3D(0.352026, 0.0415751, 0.935073, 0, 0.999018, -0.0444183, -0.935994, 0.0156363, 0.351678, 1.93571, 0.00665265, 0.110167)
+collision_layer = 4
+collision_mask = 4
+monitoring = false
+script = ExtResource("29_reacm")
+dialogue = ExtResource("21_gpren")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Body/Clue"]
+shape = SubResource("BoxShape3D_reacm")
+
+[node name="Clue2" type="Area3D" parent="Interactions/Body"]
+transform = Transform3D(-0.773197, 0.0392217, 0.632961, 0, 0.998091, -0.0618471, -0.634174, -0.0478196, -0.771715, 2.1315, -0.142258, 0.398337)
+collision_layer = 4
+collision_mask = 4
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Body/Clue2"]
+shape = SubResource("BoxShape3D_reacm")
+
+[node name="Clue3" type="Area3D" parent="Interactions/Body"]
+transform = Transform3D(-0.999478, -0.00224061, 0.0324147, 0, 0.997625, 0.068959, -0.032492, 0.0689225, -0.997097, 2.28665, 0.880937, 0.123816)
+collision_layer = 4
+collision_mask = 4
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Body/Clue3"]
+shape = SubResource("BoxShape3D_reacm")
+
+[node name="Clue4" type="Area3D" parent="Interactions/Body"]
+transform = Transform3D(-0.0154177, -0.121061, 0.992531, 0, 0.992648, 0.121076, -0.999885, 0.00186669, -0.0153042, 1.91979, 0.808369, -0.136446)
+collision_layer = 4
+collision_mask = 4
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Body/Clue4"]
+shape = SubResource("BoxShape3D_reacm")
 
 [editable path="Player"]
 [editable path="Player/morrigan"]

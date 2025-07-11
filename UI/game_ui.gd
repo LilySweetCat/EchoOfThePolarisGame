@@ -4,7 +4,7 @@ extends Control
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-@onready var search_cursor: Control = $Cursor
+@onready var cursor: ColorRect = $Cursor
 
 @onready var typewriter: AudioStreamPlayer = $Typewriter
 @onready var page_turn: AudioStreamPlayer = $KoopsPageTurn24
@@ -21,7 +21,6 @@ extends Control
 
 # signals
 signal dialogue_ended
-signal dialogue_started
 
 # private
 var _tween : Tween
@@ -32,7 +31,7 @@ var _dialogue : Array
 var _current_dialogue_index : int = 0
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	return
 	
 func _input(event: InputEvent) -> void:
@@ -149,8 +148,7 @@ func play_dialogue_line() -> void:
 	#dialogue_text.text += words[idx]
 	#return
 
-func play_dialogue(dialogue: Array, event: String) -> void:
-	dialogue_started.emit(event)
+func play_dialogue(dialogue: Array) -> void:
 	blackout()
 	
 	_dialogue = dialogue
@@ -204,26 +202,23 @@ func play_transition() -> void:
 	
 func toggle_cursor() -> void:
 	print("toggle cursor")
-	if !search_cursor.visible:
-		search_cursor.process_mode = Node.PROCESS_MODE_INHERIT
-		search_cursor.modulate = Color.TRANSPARENT
-		search_cursor.scale = Vector2.ZERO
-		search_cursor.visible = true
+	if !cursor.visible:
+		cursor.modulate = Color.TRANSPARENT
+		cursor.scale = Vector2.ZERO
+		cursor.visible = true
 		
 		var tween = create_tween()
 		tween.set_parallel(true)
-		tween.tween_property(search_cursor, "modulate", Color.WHITE, 0.2)
-		tween.tween_property(search_cursor, "scale", Vector2.ONE, 0.2)
+		tween.tween_property(cursor, "modulate", Color.WHITE, 0.2)
+		tween.tween_property(cursor, "scale", Vector2.ONE, 0.2)
 	else:
 		var tween = create_tween()
 		tween.set_parallel(true)
-		tween.tween_property(search_cursor, "modulate", Color.TRANSPARENT, 0.2)
-		tween.tween_property(search_cursor, "scale", Vector2.ZERO, 0.2)
-		
+		tween.tween_property(cursor, "modulate", Color.TRANSPARENT, 0.2)
+		tween.tween_property(cursor, "scale", Vector2.ZERO, 0.2)
 		tween.finished.connect(
 			func():
-				search_cursor.process_mode = Node.PROCESS_MODE_DISABLED
-				return
+				cursor.visible = false
 		)
 	return
 

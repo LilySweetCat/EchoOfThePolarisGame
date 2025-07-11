@@ -5,10 +5,9 @@
 [ext_resource type="Theme" uid="uid://q8hccahawy3s" path="res://Themes/DocumentTheme.tres" id="5_dbpsm"]
 [ext_resource type="AudioStream" uid="uid://f8mni3sdh5vi" path="res://Audio/Sounds/Typing/trollarch2__keyboard-typing.mp3" id="6_fy64h"]
 [ext_resource type="AudioStream" uid="uid://bm57ds3ca5yum" path="res://Audio/Sounds/koops__page_turn_24.ogg" id="7_v6n52"]
-[ext_resource type="Texture2D" uid="uid://c61y73lkwm0m5" path="res://Textures/circle.png" id="8_bjx7l"]
+[ext_resource type="Shader" uid="uid://d3vrf8tv2cdwn" path="res://Shaders/circle.gdshader" id="8_bjx7l"]
 [ext_resource type="PackedScene" uid="uid://mefno6fehk7k" path="res://UI/pause_ui.tscn" id="8_jd38o"]
 [ext_resource type="Shader" uid="uid://06e508g2xwwo" path="res://Shaders/combined_postprocesses.gdshader" id="8_ywmy4"]
-[ext_resource type="Script" uid="uid://bxxb0obn138is" path="res://UI/cursor.gd" id="9_jd38o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fy64h"]
 
@@ -118,6 +117,18 @@ shader_parameter/enable_crt = false
 shader_parameter/enable_scanlines = true
 shader_parameter/enable_fisheye = true
 shader_parameter/enable_pixelation = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oohqu"]
+shader = ExtResource("8_bjx7l")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.1
+shader_parameter/outline_smoothness = 0.1
+shader_parameter/fill_color = Color(0.76662, 0.76662, 0.76662, 1)
+shader_parameter/fill_amount = 0.0
+shader_parameter/fill_smoothness = 0.02
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.4
+shader_parameter/opacity = 0.9
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -267,9 +278,9 @@ parameters/looping = true
 [node name="KoopsPageTurn24" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_v6n52")
 
-[node name="Cursor" type="TextureRect" parent="."]
-process_mode = 4
+[node name="Cursor" type="ColorRect" parent="."]
 visible = false
+material = SubResource("ShaderMaterial_oohqu")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -282,9 +293,3 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(20, 20)
-mouse_filter = 2
-texture = ExtResource("8_bjx7l")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("9_jd38o")

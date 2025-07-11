@@ -16,5 +16,5 @@ func _on_execute_set():
 	var editor_viewport = EditorInterface.get_editor_viewport_3d(viewport)
 	var editor_camera : Camera3D = editor_viewport.get_camera_3d()
 	
-	transform = editor_camera.transform
+	global_transform = editor_camera.global_transform
 	return
