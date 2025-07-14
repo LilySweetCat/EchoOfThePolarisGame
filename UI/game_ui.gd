@@ -45,7 +45,9 @@ func hide_interact_instructions() -> void:
 	tween.tween_property(interact_instructions, "visible_ratio", 0, 0.5)
 	return
 	
-func show_interact_instructions() -> void:
+func show_interact_instructions(inst: String = "[WASD] - вращать | [E] - забрать") -> void:
+	interact_instructions.text = inst
+	
 	var tween = create_tween()
 	interact_instructions.visible_ratio = 0
 	tween.tween_property(interact_instructions, "visible_ratio", 1.0, 0.5)
