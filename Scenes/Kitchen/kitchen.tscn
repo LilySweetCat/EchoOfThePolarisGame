@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://ctdp85o7ltw6o"]
+[gd_scene load_steps=82 format=3 uid="uid://ctdp85o7ltw6o"]
 
 [ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
 [ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://btggpmagtigoc" path="res://Scripts/change_camera_trigger.gd" id="3_pd52i"]
 [ext_resource type="Script" uid="uid://ckfo4ectn2y3j" path="res://Scripts/flickering_light.gd" id="4_d5v74"]
 [ext_resource type="PackedScene" uid="uid://ca7gocj6jj8hs" path="res://Models/Props/book.blend" id="6_a8bds"]
+[ext_resource type="AudioStream" uid="uid://cetays8nusn68" path="res://Audio/Sounds/18831__futureprobe__flicker_006.wav" id="6_ayfp2"]
 [ext_resource type="Texture2D" uid="uid://dv8ofau56xdo7" path="res://Textures/fx_cloudalphas/FX_CloudAlpha02.png" id="6_ruj4t"]
 [ext_resource type="Material" uid="uid://bkvof2dupuamp" path="res://Materials/inspectable_red.tres" id="7_skia2"]
 [ext_resource type="PackedScene" uid="uid://di6n0d8v7wwsv" path="res://Models/Props/Knife.blend" id="7_tfhfy"]
@@ -16,6 +17,7 @@
 [ext_resource type="Material" uid="uid://0vnil6gf068a" path="res://Materials/portal_to_mind_place.tres" id="8_ug0ea"]
 [ext_resource type="AudioStream" uid="uid://cyfdptiohatxl" path="res://Audio/Sounds/Wind/pedaling-prince__windy-window.wav" id="12_cg2du"]
 [ext_resource type="AudioStream" uid="uid://bdbv3tspmnk13" path="res://Audio/Music/gustavo_alivera__gloomy-background-atmosphere-3.mp3" id="13_r1bav"]
+[ext_resource type="AudioStream" uid="uid://dwh3gybyl68xw" path="res://Audio/Sounds/237399__squareal__fridge-tone.wav" id="14_15hex"]
 [ext_resource type="Script" uid="uid://cp86nrwycs52w" path="res://Scripts/Interaction/dialogue.gd" id="17_a0rdj"]
 [ext_resource type="Script" uid="uid://ccmqin46oic1b" path="res://Scripts/Interaction/door.gd" id="17_d5v74"]
 [ext_resource type="JSON" uid="uid://bben8vlh81gnd" path="res://Dialogues/Kitchen/manual.tres" id="18_d5v74"]
@@ -36,8 +38,11 @@
 [ext_resource type="Script" uid="uid://bxj4bcnixavhs" path="res://Scripts/radio.gd" id="34_a6auu"]
 [ext_resource type="PackedScene" uid="uid://by004a78qwad2" path="res://Models/Props/radio.blend" id="34_scx76"]
 [ext_resource type="Shader" uid="uid://cq48lxr3088uy" path="res://Shaders/interactable.gdshader" id="36_utjrh"]
+[ext_resource type="JSON" path="res://Dialogues/Kitchen/radio.json" id="37_4hvls"]
+[ext_resource type="AudioStream" uid="uid://dmxenq6xndx7c" path="res://Audio/Sounds/joviansounds__radio-static.ogg" id="39_15hex"]
+[ext_resource type="AudioStream" uid="uid://3hru230m8ku7" path="res://Audio/Sounds/423387_johnnythesalesman_vhf-radio-emergancy-services-broadcast.wav" id="41_mu2vn"]
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_utjrh"]
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_mu2vn"]
 
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
@@ -246,30 +251,30 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.00751344, 0.935279, -0.00535092)
-bones/1/rotation = Quaternion(-0.00838097, 0.0134703, -0.0462449, 0.998804)
-bones/2/rotation = Quaternion(-0.0549728, -0.0123673, 0.0246133, 0.998108)
-bones/3/rotation = Quaternion(0.00630292, -0.00487625, 0.0516685, 0.998633)
-bones/4/rotation = Quaternion(0.00637389, -0.000278648, 0.0514899, 0.998653)
-bones/5/rotation = Quaternion(0.0751508, -0.00117702, -0.0190519, 0.996989)
-bones/6/rotation = Quaternion(0.0133497, 0.00630023, -0.0712011, 0.997353)
-bones/8/rotation = Quaternion(-0.63307, -0.392993, 0.500559, -0.440704)
-bones/9/rotation = Quaternion(0.59224, 0.0711911, -0.077729, 0.798838)
+bones/1/position = Vector3(0.00785366, 0.935342, -0.00465623)
+bones/1/rotation = Quaternion(-0.00828135, 0.0136027, -0.0465085, 0.998791)
+bones/2/rotation = Quaternion(-0.0551742, -0.0123021, 0.0245014, 0.9981)
+bones/3/rotation = Quaternion(0.00601388, -0.00489085, 0.0516554, 0.998635)
+bones/4/rotation = Quaternion(0.0060827, -0.000271449, 0.0514785, 0.998656)
+bones/5/rotation = Quaternion(0.0753156, -0.00107802, -0.0190907, 0.996976)
+bones/6/rotation = Quaternion(0.0130715, 0.00703422, -0.0715111, 0.997329)
+bones/8/rotation = Quaternion(-0.632232, -0.394145, 0.500286, -0.441188)
+bones/9/rotation = Quaternion(0.593244, 0.0709067, -0.0779044, 0.798101)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/12/rotation = Quaternion(0.589744, -0.439659, 0.540699, 0.408101)
-bones/13/rotation = Quaternion(0.477004, -0.089485, 0.00536605, 0.874318)
-bones/14/rotation = Quaternion(-0.0104625, 0.015027, -0.153781, 0.987935)
-bones/16/rotation = Quaternion(0.114532, 0.175345, 0.969283, -0.128943)
-bones/17/rotation = Quaternion(-0.282666, -0.0766336, 0.0281343, 0.955738)
-bones/18/rotation = Quaternion(0.517104, -0.0964046, -0.0144279, 0.850354)
+bones/12/rotation = Quaternion(0.589689, -0.440018, 0.54035, 0.408256)
+bones/13/rotation = Quaternion(0.477542, -0.0893806, 0.00537073, 0.874034)
+bones/14/rotation = Quaternion(-0.0104591, 0.0150271, -0.153732, 0.987943)
+bones/16/rotation = Quaternion(0.114454, 0.17558, 0.969232, -0.129075)
+bones/17/rotation = Quaternion(-0.283061, -0.0766123, 0.028266, 0.955619)
+bones/18/rotation = Quaternion(0.5174, -0.0962452, -0.0144188, 0.850192)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0433795, 0.0215713, 0.994828, -0.0892724)
-bones/22/rotation = Quaternion(-0.160609, 0.0452649, 0.0335444, 0.985409)
-bones/23/rotation = Quaternion(0.560389, 0.00474726, -0.127988, 0.818267)
-bones/24/rotation = Quaternion(0.323368, 0.0224443, -0.00746233, 0.945978)
+bones/21/rotation = Quaternion(-0.0432842, 0.0206776, 0.994845, -0.0893438)
+bones/22/rotation = Quaternion(-0.159563, 0.0451786, 0.0335151, 0.985584)
+bones/23/rotation = Quaternion(0.560326, 0.00485957, -0.127733, 0.818349)
+bones/24/rotation = Quaternion(0.323438, 0.0224549, -0.00746469, 0.945953)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_utjrh")
+stream = SubResource("AudioStreamPolyphonic_mu2vn")
 
 [node name="EnviromentLightGeometry" type="Node" parent="."]
 
@@ -296,21 +301,33 @@ shadow_enabled = true
 spot_range = 10.0
 spot_angle = 80.0
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="EnviromentLightGeometry"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.0789, 3.89078, -6.91924e-09)
-light_size = 0.1
-light_bake_mode = 1
-shadow_enabled = true
-spot_range = 10.0
-spot_angle = 80.0
-
-[node name="SpotLight3D4" type="SpotLight3D" parent="EnviromentLightGeometry"]
+[node name="SpotLight3D4" type="SpotLight3D" parent="EnviromentLightGeometry" node_paths=PackedStringArray("audio_player")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.0789, 3.89078, -6.55712)
 light_size = 0.1
 shadow_enabled = true
 spot_range = 10.0
 spot_angle = 80.0
 script = ExtResource("4_d5v74")
+audio_player = NodePath("AudioStreamPlayer3D")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="EnviromentLightGeometry/SpotLight3D4"]
+stream = ExtResource("6_ayfp2")
+max_distance = 5.0
+bus = &"Echoes"
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="EnviromentLightGeometry" node_paths=PackedStringArray("audio_player")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.0789, 3.89078, -0.120015)
+light_size = 0.1
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 80.0
+script = ExtResource("4_d5v74")
+audio_player = NodePath("AudioStreamPlayer3D")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="EnviromentLightGeometry/SpotLight3D6"]
+stream = ExtResource("6_ayfp2")
+max_distance = 5.0
+bus = &"Echoes"
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="EnviromentLightGeometry"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 14.3039, 3.89078, -6.91924e-09)
@@ -382,6 +399,12 @@ volume_db = -8.0
 pitch_scale = 0.8
 autoplay = true
 parameters/looping = true
+
+[node name="237399SquarealFridge-tone" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6396, 0.987376, -6.49647)
+stream = ExtResource("14_15hex")
+autoplay = true
+max_distance = 5.0
 
 [node name="Cameras" type="Node" parent="."]
 
@@ -769,16 +792,18 @@ dialogue = ExtResource("33_utjrh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Body/Clue4"]
 shape = SubResource("BoxShape3D_reacm")
 
-[node name="Radio" type="Area3D" parent="Interactions" node_paths=PackedStringArray("main_camera", "target_camera", "tuner", "freq", "inspectable_mesh", "player")]
+[node name="Radio" type="Area3D" parent="Interactions" node_paths=PackedStringArray("main_camera", "target_camera", "static_audio", "dialogue_audio", "tuner", "freq", "inspectable_mesh", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.83169, 0.821816, -3.03076)
 collision_layer = 2
 collision_mask = 2
 input_ray_pickable = false
 monitorable = false
 script = ExtResource("34_a6auu")
-dialogue = ExtResource("21_gpren")
+dialogue = ExtResource("37_4hvls")
 main_camera = NodePath("../../Cameras/MainCamera")
 target_camera = NodePath("Camera3D")
+static_audio = NodePath("static_sound")
+dialogue_audio = NodePath("dialogue_sound")
 tuner = NodePath("radio3/radio_tuner_r")
 freq = NodePath("radio3/radio_freq")
 object_display_name = "Радио"
@@ -824,6 +849,19 @@ layers = 2
 
 [node name="freq" parent="Interactions/Radio/radio3" index="5"]
 layers = 2
+
+[node name="static_sound" type="AudioStreamPlayer3D" parent="Interactions/Radio"]
+stream = ExtResource("39_15hex")
+autoplay = true
+max_distance = 5.0
+parameters/looping = true
+
+[node name="dialogue_sound" type="AudioStreamPlayer3D" parent="Interactions/Radio"]
+stream = ExtResource("41_mu2vn")
+unit_size = 5.0
+max_db = 1.0
+pitch_scale = 0.8
+max_distance = 5.0
 
 [editable path="Player"]
 [editable path="Player/morrigan"]

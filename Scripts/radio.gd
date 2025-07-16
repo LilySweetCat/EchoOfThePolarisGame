@@ -5,6 +5,9 @@ extends BaseInteractable
 @export var main_camera: Camera3D
 @export var target_camera: Camera3D
 
+@export var static_audio: AudioStreamPlayer3D
+@export var dialogue_audio: AudioStreamPlayer3D
+
 @export var tuner: Node3D
 @export var freq: Node3D
 
@@ -25,7 +28,35 @@ func on_interact() -> void:
 	
 	GameUi.show_interact_instructions("[AD] - изменить частоту | [E] - выйти")
 	target_camera.current = true
+	
+	dialogue_audio.volume_linear = 0
+	dialogue_audio.play()
+	
 	_focused = true
+
+func check_proximity(new_value: float, previous_value: float, delta: float):
+	# Вычисляем разницу между предыдущим и текущим значением относительно цели
+	var previous_diff = abs(previous_value - target_freq)
+	var current_diff = abs(new_value - target_freq)
+	
+	# Сохраняем новое значение как текущее
+	current_freq = new_value
+	# Если это первый вызов, просто сохраняем значение
+	if previous_value == 0:
+		previous_value = new_value
+		return
+		
+		# Сравниваем разницы
+	if current_diff < previous_diff:
+		print("Теплее!", delta)
+		dialogue_audio.volume_linear = clampf(dialogue_audio.volume_linear + delta, 0, 1)
+	elif current_diff > previous_diff:
+		#print("Холоднее!")
+		dialogue_audio.volume_linear = clampf(dialogue_audio.volume_linear - delta, 0, 1)
+		
+	# Обновляем предыдущее значение
+	static_audio.volume_linear = clamp(1.0 - dialogue_audio.volume_linear, 0, 1)
+	previous_value = new_value
 
 func _physics_process(delta: float) -> void:
 	if not _focused:
@@ -46,7 +77,9 @@ func _physics_process(delta: float) -> void:
 	if freq.position.z + clamped_translate_diff >= clamp_move or freq.position.z + clamped_translate_diff <= -clamp_move:
 		return
 	freq.translate(Vector3(0, 0, clamped_translate_diff))
-	current_freq += diff_x
+	var new_current_freq = current_freq + diff_x
+	
+	check_proximity(new_current_freq, current_freq, delta)
 	
 	if current_freq >= target_freq - delta_freq and current_freq <= target_freq + delta_freq:
 		_focused = false
