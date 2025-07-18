@@ -34,6 +34,22 @@ func on_interact() -> void:
 		node_to_disable.set_process_unhandled_input(false)
 	return
 
+func custom_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact") and _enable_camera_movement:
+		current_camera.current = true
+		_enable_camera_movement = false
+		
+		GameUi.toggle_cursor()
+		
+		for node_to_disable in disable_nodes:
+			node_to_disable.visible = true
+			node_to_disable.set_process(true)
+			node_to_disable.set_process_input(true)
+			node_to_disable.set_process_unhandled_input(true)
+			
+		call_deferred("on_cancel")
+	return
+
 func _physics_process(delta: float) -> void:
 	if !_enable_camera_movement:
 		return

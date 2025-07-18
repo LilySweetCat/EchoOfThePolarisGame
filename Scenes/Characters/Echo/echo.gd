@@ -43,8 +43,12 @@ func on_interact() -> void:
 	for option in dialogue.data:
 		var option_text = option["option"]
 		var option_responses = option["responses"]
+		var require_flag = option.get("require_flag")
 		
-		#print(option_responses)
+		if require_flag and !Storage.story_flags.has(require_flag):
+			continue
+		
+		print(option_responses)
 		actions[option_text] = func(): GameUi.call_deferred("play_dialogue", option_responses)
 	
 	actions["Отойти"] = on_cancel

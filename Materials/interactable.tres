@@ -5,7 +5,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_fyk5d")
-shader_parameter/base_color = Color(0.537011, 0.537011, 0.537011, 1)
+shader_parameter/base_color = Color(0.423651, 0.423651, 0.423651, 1)
 shader_parameter/highlight_color = Color(1, 1, 1, 1)
 shader_parameter/use_emission = false
 shader_parameter/pulse_speed = 2.0

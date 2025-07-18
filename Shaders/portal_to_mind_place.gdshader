@@ -13,7 +13,7 @@ uniform bool highlight_as_base_color = false;
 
 void fragment() {
     vec4 color = base_color;
-	
+
 	if(highlight_as_base_color){
 		color = highlight_color;
 	}

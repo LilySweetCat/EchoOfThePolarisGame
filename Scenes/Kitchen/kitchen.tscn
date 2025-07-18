@@ -1,11 +1,11 @@
-[gd_scene load_steps=82 format=3 uid="uid://ctdp85o7ltw6o"]
+[gd_scene load_steps=93 format=3 uid="uid://ctdp85o7ltw6o"]
 
 [ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
 [ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
 [ext_resource type="Material" uid="uid://b3tgja02t47ot" path="res://Materials/interactable.tres" id="2_r8i07"]
-[ext_resource type="JSON" uid="uid://cnhjwj60dc781" path="res://Dialogues/Kitchen/echo_near_body.tres" id="2_skia2"]
 [ext_resource type="PackedScene" uid="uid://4midgp1nsr81" path="res://Scenes/Characters/Morrigan/morrigan-player.tscn" id="3_i4o3x"]
 [ext_resource type="Script" uid="uid://btggpmagtigoc" path="res://Scripts/change_camera_trigger.gd" id="3_pd52i"]
+[ext_resource type="JSON" path="res://Dialogues/Kitchen/echo_near_body.json" id="3_yuuw2"]
 [ext_resource type="Script" uid="uid://ckfo4ectn2y3j" path="res://Scripts/flickering_light.gd" id="4_d5v74"]
 [ext_resource type="PackedScene" uid="uid://ca7gocj6jj8hs" path="res://Models/Props/book.blend" id="6_a8bds"]
 [ext_resource type="AudioStream" uid="uid://cetays8nusn68" path="res://Audio/Sounds/18831__futureprobe__flicker_006.wav" id="6_ayfp2"]
@@ -39,10 +39,15 @@
 [ext_resource type="PackedScene" uid="uid://by004a78qwad2" path="res://Models/Props/radio.blend" id="34_scx76"]
 [ext_resource type="Shader" uid="uid://cq48lxr3088uy" path="res://Shaders/interactable.gdshader" id="36_utjrh"]
 [ext_resource type="JSON" path="res://Dialogues/Kitchen/radio.json" id="37_4hvls"]
+[ext_resource type="Environment" uid="uid://cue4hkp7cratx" path="res://Enviroments/puzzle_env.tres" id="38_6trxn"]
 [ext_resource type="AudioStream" uid="uid://dmxenq6xndx7c" path="res://Audio/Sounds/joviansounds__radio-static.ogg" id="39_15hex"]
 [ext_resource type="AudioStream" uid="uid://3hru230m8ku7" path="res://Audio/Sounds/423387_johnnythesalesman_vhf-radio-emergancy-services-broadcast.wav" id="41_mu2vn"]
-
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_mu2vn"]
+[ext_resource type="PackedScene" uid="uid://djy6fpohd6skf" path="res://Models/Props/electric_shield.blend" id="42_jolu5"]
+[ext_resource type="Script" uid="uid://dxy3kboumpxr4" path="res://Scripts/electic_shield.gd" id="43_yuuw2"]
+[ext_resource type="JSON" path="res://Dialogues/Kitchen/electic_shield_note.json" id="44_d5pls"]
+[ext_resource type="Material" uid="uid://bkiyv827ru6uk" path="res://Materials/accent.tres" id="46_fub2w"]
+[ext_resource type="JSON" path="res://Dialogues/Kitchen/note_in_trashbin.json" id="47_itbgw"]
+[ext_resource type="JSON" path="res://Dialogues/Kitchen/note_in_storage.json" id="48_y7d5j"]
 
 [sub_resource type="Environment" id="Environment_i4o3x"]
 background_mode = 1
@@ -58,6 +63,8 @@ volumetric_fog_emission = Color(0.641934, 0.641934, 0.641934, 1)
 adjustment_enabled = true
 adjustment_brightness = 0.95
 adjustment_saturation = 0.8
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_fub2w"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a0rdj"]
 size = Vector3(44, 10, 30)
@@ -151,10 +158,10 @@ auto_exposure_scale = 0.05
 dof_blur_far_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ruj4t"]
-size = Vector3(11.6654, 1.70068, 7.47678)
+size = Vector3(11.6654, 0.835203, 7.47678)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0rdj"]
-size = Vector3(3.03546, 1, 4.97174)
+size = Vector3(3.03546, 0.327637, 4.97174)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0tag2"]
 size = Vector3(2.59424, 0.708984, 3.92157)
@@ -163,10 +170,13 @@ size = Vector3(2.59424, 0.708984, 3.92157)
 size = Vector3(2.86145, 1, 4.77649)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gpren"]
-size = Vector3(11.5072, 1, 5.79688)
+size = Vector3(11.5072, 0.303223, 5.25489)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jolu5"]
+size = Vector3(1.63632, 0.230042, 1.49878)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ug0ea"]
-size = Vector3(3.14202, 1, 7.66217)
+size = Vector3(2.66026, 0.522339, 6.27298)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_skia2"]
 size = Vector3(0.701172, 1, 0.664063)
@@ -210,21 +220,6 @@ size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a6auu"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a6auu"]
-sky_top_color = Color(0, 0, 0, 1)
-sky_horizon_color = Color(0.807751, 0.813901, 0.823613, 1)
-ground_bottom_color = Color(0, 0, 0, 1)
-ground_horizon_color = Color(0, 0, 0, 1)
-ground_energy_multiplier = 0.0
-energy_multiplier = 2.0
-
-[sub_resource type="Sky" id="Sky_utjrh"]
-sky_material = SubResource("ProceduralSkyMaterial_a6auu")
-
-[sub_resource type="Environment" id="Environment_lkvpe"]
-background_mode = 2
-sky = SubResource("Sky_utjrh")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lkvpe"]
 render_priority = 0
 shader = ExtResource("36_utjrh")
@@ -235,11 +230,64 @@ shader_parameter/pulse_speed = 2.0
 shader_parameter/pulse_strength = 0.5
 shader_parameter/is_active = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yuuw2"]
+size = Vector3(0.704651, 0.671387, 0.747864)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6trxn"]
+render_priority = 0
+shader = ExtResource("36_utjrh")
+shader_parameter/base_color = Color(0.197937, 0.197937, 0.197937, 1)
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/use_emission = false
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_strength = 0.5
+shader_parameter/is_active = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yuuw2"]
+render_priority = 0
+shader = ExtResource("36_utjrh")
+shader_parameter/base_color = Color(0.537011, 0.537011, 0.537011, 1)
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/use_emission = false
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_strength = 0.5
+shader_parameter/is_active = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d5pls"]
+render_priority = 0
+shader = ExtResource("36_utjrh")
+shader_parameter/base_color = Color(0.537011, 0.537011, 0.537011, 1)
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/use_emission = false
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_strength = 0.5
+shader_parameter/is_active = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fub2w"]
+render_priority = 0
+shader = ExtResource("36_utjrh")
+shader_parameter/base_color = Color(0.537011, 0.537011, 0.537011, 1)
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/use_emission = false
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_strength = 0.5
+shader_parameter/is_active = false
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fub2w"]
+size = Vector3(0.699707, 0.536987, 0.654785)
+
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i4o3x")
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+interior = true
+light_data = ExtResource("2_77rxy")
 
 [node name="Echo" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_skia2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6129, 1.74712, -4.43483)
-dialogue = ExtResource("2_skia2")
+dialogue = ExtResource("3_yuuw2")
 player_detection_radius = 4.0
 player = NodePath("../Player")
 
@@ -251,41 +299,34 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.00785366, 0.935342, -0.00465623)
-bones/1/rotation = Quaternion(-0.00828135, 0.0136027, -0.0465085, 0.998791)
-bones/2/rotation = Quaternion(-0.0551742, -0.0123021, 0.0245014, 0.9981)
-bones/3/rotation = Quaternion(0.00601388, -0.00489085, 0.0516554, 0.998635)
-bones/4/rotation = Quaternion(0.0060827, -0.000271449, 0.0514785, 0.998656)
-bones/5/rotation = Quaternion(0.0753156, -0.00107802, -0.0190907, 0.996976)
-bones/6/rotation = Quaternion(0.0130715, 0.00703422, -0.0715111, 0.997329)
-bones/8/rotation = Quaternion(-0.632232, -0.394145, 0.500286, -0.441188)
-bones/9/rotation = Quaternion(0.593244, 0.0709067, -0.0779044, 0.798101)
+bones/1/position = Vector3(0.00998215, 0.935827, -0.00232228)
+bones/1/rotation = Quaternion(-0.00608302, 0.0139297, -0.0476065, 0.998751)
+bones/2/rotation = Quaternion(-0.0561851, -0.0122364, 0.0241309, 0.998054)
+bones/3/rotation = Quaternion(0.00341854, -0.00514259, 0.0515891, 0.998649)
+bones/4/rotation = Quaternion(0.00346356, -0.000287253, 0.0514293, 0.998671)
+bones/5/rotation = Quaternion(0.0769662, -0.000502385, -0.0196237, 0.996841)
+bones/6/rotation = Quaternion(0.0137301, 0.00838435, -0.0721586, 0.997263)
+bones/8/rotation = Quaternion(-0.62542, -0.405389, 0.488367, -0.45388)
+bones/9/rotation = Quaternion(0.610293, 0.0702595, -0.0802597, 0.784962)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/12/rotation = Quaternion(0.589689, -0.440018, 0.54035, 0.408256)
-bones/13/rotation = Quaternion(0.477542, -0.0893806, 0.00537073, 0.874034)
-bones/14/rotation = Quaternion(-0.0104591, 0.0150271, -0.153732, 0.987943)
-bones/16/rotation = Quaternion(0.114454, 0.17558, 0.969232, -0.129075)
-bones/17/rotation = Quaternion(-0.283061, -0.0766123, 0.028266, 0.955619)
-bones/18/rotation = Quaternion(0.5174, -0.0962452, -0.0144188, 0.850192)
+bones/12/rotation = Quaternion(0.58412, -0.451984, 0.528568, 0.418486)
+bones/13/rotation = Quaternion(0.495982, -0.0886381, 0.00658938, 0.863772)
+bones/14/rotation = Quaternion(-0.0104395, 0.0150278, -0.153445, 0.987988)
+bones/16/rotation = Quaternion(0.113887, 0.177, 0.969086, -0.128738)
+bones/17/rotation = Quaternion(-0.284925, -0.0767694, 0.0286611, 0.955041)
+bones/18/rotation = Quaternion(0.518279, -0.0961625, -0.013896, 0.849674)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0432842, 0.0206776, 0.994845, -0.0893438)
-bones/22/rotation = Quaternion(-0.159563, 0.0451786, 0.0335151, 0.985584)
-bones/23/rotation = Quaternion(0.560326, 0.00485957, -0.127733, 0.818349)
-bones/24/rotation = Quaternion(0.323438, 0.0224549, -0.00746469, 0.945953)
+bones/21/rotation = Quaternion(-0.0429035, 0.0201305, 0.994868, -0.0893932)
+bones/22/rotation = Quaternion(-0.1553, 0.0451995, 0.0330458, 0.986279)
+bones/23/rotation = Quaternion(0.559517, 0.00539786, -0.126396, 0.819106)
+bones/24/rotation = Quaternion(0.323843, 0.0225164, -0.00747841, 0.945813)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_mu2vn")
+stream = SubResource("AudioStreamPolyphonic_fub2w")
 
-[node name="EnviromentLightGeometry" type="Node" parent="."]
+[node name="Light" type="Node" parent="."]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="EnviromentLightGeometry"]
-environment = SubResource("Environment_i4o3x")
-
-[node name="LightmapGI" type="LightmapGI" parent="EnviromentLightGeometry"]
-interior = true
-light_data = ExtResource("2_77rxy")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="EnviromentLightGeometry"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Light"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.22144, 3.89078, -6.91924e-09)
 light_size = 0.1
 light_bake_mode = 1
@@ -293,7 +334,7 @@ shadow_enabled = true
 spot_range = 10.0
 spot_angle = 80.0
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="EnviromentLightGeometry"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Light"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8.44051, 3.89078, -6.91924e-09)
 light_size = 0.1
 light_bake_mode = 1
@@ -301,7 +342,7 @@ shadow_enabled = true
 spot_range = 10.0
 spot_angle = 80.0
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="EnviromentLightGeometry" node_paths=PackedStringArray("audio_player")]
+[node name="SpotLight3D4" type="SpotLight3D" parent="Light" node_paths=PackedStringArray("audio_player")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.0789, 3.89078, -6.55712)
 light_size = 0.1
 shadow_enabled = true
@@ -310,12 +351,12 @@ spot_angle = 80.0
 script = ExtResource("4_d5v74")
 audio_player = NodePath("AudioStreamPlayer3D")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="EnviromentLightGeometry/SpotLight3D4"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Light/SpotLight3D4"]
 stream = ExtResource("6_ayfp2")
 max_distance = 5.0
 bus = &"Echoes"
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="EnviromentLightGeometry" node_paths=PackedStringArray("audio_player")]
+[node name="SpotLight3D6" type="SpotLight3D" parent="Light" node_paths=PackedStringArray("audio_player")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.0789, 3.89078, -0.120015)
 light_size = 0.1
 shadow_enabled = true
@@ -324,12 +365,12 @@ spot_angle = 80.0
 script = ExtResource("4_d5v74")
 audio_player = NodePath("AudioStreamPlayer3D")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="EnviromentLightGeometry/SpotLight3D6"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Light/SpotLight3D6"]
 stream = ExtResource("6_ayfp2")
 max_distance = 5.0
 bus = &"Echoes"
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="EnviromentLightGeometry"]
+[node name="SpotLight3D5" type="SpotLight3D" parent="Light"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 14.3039, 3.89078, -6.91924e-09)
 light_size = 0.1
 light_bake_mode = 1
@@ -337,23 +378,32 @@ shadow_enabled = true
 spot_range = 10.0
 spot_angle = 80.0
 
-[node name="Geometry" type="Node" parent="EnviromentLightGeometry"]
+[node name="DirectionalLightForPuzzles" type="DirectionalLight3D" parent="Light"]
+transform = Transform3D(0.978825, 2.32831e-10, -0.204701, 0.204673, 0.0166671, 0.978689, 0.00341178, -0.999861, 0.0163142, -2.15504, 0, 0)
+layers = 2
+light_bake_mode = 1
+shadow_enabled = true
 
-[node name="Kitchen" type="Node" parent="EnviromentLightGeometry/Geometry"]
+[node name="Geometry" type="Node" parent="."]
 
-[node name="kitchen" parent="EnviromentLightGeometry/Geometry/Kitchen" instance=ExtResource("1_j055r")]
+[node name="Kitchen" type="Node" parent="Geometry"]
+
+[node name="kitchen" parent="Geometry/Kitchen" instance=ExtResource("1_j055r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.723568, 0.372988, -0.649199)
 
-[node name="body" parent="EnviromentLightGeometry/Geometry/Kitchen/kitchen" index="1"]
+[node name="body" parent="Geometry/Kitchen/kitchen" index="1"]
 surface_material_override/0 = ExtResource("2_r8i07")
 
-[node name="doors" parent="EnviromentLightGeometry/Geometry/Kitchen/kitchen" index="5"]
+[node name="doors" parent="Geometry/Kitchen/kitchen" index="5"]
 surface_material_override/0 = ExtResource("2_r8i07")
 
-[node name="mirror" parent="EnviromentLightGeometry/Geometry/Kitchen/kitchen" index="23"]
+[node name="trash_bins" parent="Geometry/Kitchen/kitchen" index="15"]
+surface_material_override/0 = ExtResource("2_r8i07")
+
+[node name="mirror" parent="Geometry/Kitchen/kitchen" index="23"]
 surface_material_override/0 = ExtResource("8_ug0ea")
 
-[node name="background" type="MeshInstance3D" parent="EnviromentLightGeometry/Geometry/Kitchen"]
+[node name="background" type="MeshInstance3D" parent="Geometry/Kitchen"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1305, 0, -4.52515)
 mesh = SubResource("BoxMesh_a0rdj")
 
@@ -434,7 +484,7 @@ main_camera = NodePath("../../MainCamera")
 virtual_camera = NodePath("Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/TablesArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75602, 0.350342, 0.607497)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75602, -0.0823963, 0.607497)
 shape = SubResource("BoxShape3D_ruj4t")
 debug_color = Color(2.88785e-06, 0.819078, 0.952524, 0.42)
 
@@ -457,7 +507,7 @@ Echo = NodePath("../../../Echo")
 EchoLocation = NodePath("EchoLocation")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/KitchenEntranceArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.166168, 0, -0.0462952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.166168, -0.336182, -0.0462952)
 shape = SubResource("BoxShape3D_a0rdj")
 
 [node name="EchoLocation" type="Node3D" parent="Cameras/CameraTriggers/KitchenEntranceArea"]
@@ -467,7 +517,7 @@ transform = Transform3D(0.703866, 0, -0.710333, 0, 1, 0, 0.710333, 0, 0.703866, 
 transform = Transform3D(0.935173, -0.0505439, 0.350567, 0, 0.989766, 0.142702, -0.354192, -0.133451, 0.925602, 1.85353, 1.76115, 3.55644)
 visible = false
 
-[node name="BodyArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera", "Echo", "EchoLocation")]
+[node name="BodyArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera", "Echo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.07503, 0.464043, -7.40603)
 collision_layer = 2
 collision_mask = 2
@@ -478,7 +528,6 @@ player = NodePath("../../../Player")
 main_camera = NodePath("../../MainCamera")
 virtual_camera = NodePath("Camera3D3")
 Echo = NodePath("../../../Echo")
-EchoLocation = NodePath("EchoLocation")
 
 [node name="Camera3D3" type="Camera3D" parent="Cameras/CameraTriggers/BodyArea"]
 transform = Transform3D(0.10224, -0.187775, -0.976876, 0.0213069, 0.982211, -0.18657, 0.994532, -0.00173927, 0.104422, -3.96191, 0.383543, 0.91022)
@@ -521,11 +570,30 @@ main_camera = NodePath("../../MainCamera")
 virtual_camera = NodePath("Camera3D5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/ExitArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21002, 0, 0.650391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21002, -0.348389, 0.379394)
 shape = SubResource("BoxShape3D_gpren")
 
 [node name="Camera3D5" type="Camera3D" parent="Cameras/CameraTriggers/ExitArea"]
 transform = Transform3D(-0.579291, 0.0831097, 0.810873, 0, 0.994789, -0.10196, -0.815121, -0.0590645, -0.576272, 1.0701, 0.010637, -2.0442)
+visible = false
+
+[node name="ElecticShieldArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9864, 0.828894, 4.54584)
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+script = ExtResource("3_pd52i")
+is_tracking = false
+player = NodePath("../../../Player")
+main_camera = NodePath("../../MainCamera")
+virtual_camera = NodePath("Camera3D5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/ElecticShieldArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17125, -0.384979, -1.17566)
+shape = SubResource("BoxShape3D_jolu5")
+
+[node name="Camera3D5" type="Camera3D" parent="Cameras/CameraTriggers/ElecticShieldArea"]
+transform = Transform3D(-0.938955, 0.119801, -0.322507, 7.45058e-09, 0.937413, 0.348219, 0.344039, 0.326962, -0.880189, 1.5464, 2.59332, -2.92505)
 visible = false
 
 [node name="ToiletArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera")]
@@ -541,7 +609,7 @@ main_camera = NodePath("../../MainCamera")
 virtual_camera = NodePath("Camera3D6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/ToiletArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108099, 0, 0.590912)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154538, -0.238831, 1.28551)
 shape = SubResource("BoxShape3D_ug0ea")
 
 [node name="Camera3D6" type="Camera3D" parent="Cameras/CameraTriggers/ToiletArea"]
@@ -585,7 +653,7 @@ location_in = NodePath("Storage")
 location_out = NodePath("Kitchen")
 object_display_name = "Дверь"
 action_name = "Войти"
-inspectable_mesh = NodePath("../../EnviromentLightGeometry/Geometry/Kitchen/kitchen/doors")
+inspectable_mesh = NodePath("../../Geometry/Kitchen/kitchen/doors")
 player = NodePath("../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/DoorToStorage"]
@@ -609,7 +677,7 @@ use_only_in = true
 location_in = NodePath("Target")
 object_display_name = "Дверь"
 action_name = "Войти"
-inspectable_mesh = NodePath("../../EnviromentLightGeometry/Geometry/Kitchen/kitchen/doors")
+inspectable_mesh = NodePath("../../Geometry/Kitchen/kitchen/doors")
 player = NodePath("../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/DoorToExit"]
@@ -629,7 +697,7 @@ use_only_in = true
 location_in = NodePath("Target")
 object_display_name = "Дверь"
 action_name = "Войти"
-inspectable_mesh = NodePath("../../EnviromentLightGeometry/Geometry/Kitchen/kitchen/doors")
+inspectable_mesh = NodePath("../../Geometry/Kitchen/kitchen/doors")
 player = NodePath("../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/DoorToKitchen"]
@@ -649,7 +717,7 @@ location_in = NodePath("In")
 location_out = NodePath("Out")
 object_display_name = "Дверь"
 action_name = "Войти"
-inspectable_mesh = NodePath("../../EnviromentLightGeometry/Geometry/Kitchen/kitchen/doors")
+inspectable_mesh = NodePath("../../Geometry/Kitchen/kitchen/doors")
 player = NodePath("../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/DoorToToilet"]
@@ -696,14 +764,14 @@ script = ExtResource("24_iy72m")
 mind_palace = ExtResource("26_wl3yd")
 object_display_name = "Треснувшее зеркало"
 action_name = "Всмотреться"
-inspectable_mesh = NodePath("../../EnviromentLightGeometry/Geometry/Kitchen/kitchen/mirror")
+inspectable_mesh = NodePath("../../Geometry/Kitchen/kitchen/mirror")
 player = NodePath("../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/ToMindPalace"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0970459, -0.466797, 0.602524)
 shape = SubResource("BoxShape3D_ap3gj")
 
-[node name="Body" type="Area3D" parent="Interactions" node_paths=PackedStringArray("current_camera", "inspect_camera", "path_follow", "disable_nodes", "inspectable_mesh", "player")]
+[node name="Body" type="Area3D" parent="Interactions" node_paths=PackedStringArray("current_camera", "inspect_camera", "path_follow", "inspectable_mesh", "player")]
 transform = Transform3D(0.999994, 0, 0, 0, 0.999995, 0, 0, 0, 0.999996, -6.88267, 0.722762, -6.44663)
 collision_layer = 2
 collision_mask = 2
@@ -714,9 +782,9 @@ current_camera = NodePath("../../Cameras/MainCamera")
 inspect_camera = NodePath("Path3D/PathFollow3D/SpringArm3D/Camera3D")
 path_follow = NodePath("Path3D/PathFollow3D")
 move_speed = 0.5
-disable_nodes = [NodePath("../../Echo")]
 object_display_name = "Тело"
-inspectable_mesh = NodePath("../../EnviromentLightGeometry/Geometry/Kitchen/kitchen/body")
+story_flag = "увидела тело Марии"
+inspectable_mesh = NodePath("../../Geometry/Kitchen/kitchen/body")
 player = NodePath("../../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Body"]
@@ -816,7 +884,7 @@ shape = SubResource("BoxShape3D_a6auu")
 [node name="Camera3D" type="Camera3D" parent="Interactions/Radio"]
 transform = Transform3D(0.800028, 0.194875, -0.567432, 0, 0.945779, 0.324812, 0.599963, -0.259859, 0.756649, -0.406524, 1.23117, 0.00545192)
 cull_mask = 2
-environment = SubResource("Environment_lkvpe")
+environment = ExtResource("38_6trxn")
 projection = 1
 size = 0.5
 far = 50.0
@@ -863,10 +931,104 @@ max_db = 1.0
 pitch_scale = 0.8
 max_distance = 5.0
 
+[node name="ElecticShield" type="Area3D" parent="Interactions" node_paths=PackedStringArray("main_camera", "target_camera", "handles", "inspectable_mesh", "player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0318, 2.12714, 3.06548)
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("43_yuuw2")
+dialogue_note = ExtResource("44_d5pls")
+main_camera = NodePath("../../Cameras/MainCamera")
+target_camera = NodePath("Camera3D")
+handles = [NodePath("electric_shield_puzzle/handle_top_left"), NodePath("electric_shield_puzzle/handle_top_right"), NodePath("electric_shield_puzzle/handle_bottom_left"), NodePath("electric_shield_puzzle/handle_bottom_right")]
+object_display_name = "Щиток"
+inspectable_mesh = NodePath("electric_shield/shield_door")
+player = NodePath("../../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/ElecticShield"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.167633, -0.164307, 0.0528259)
+shape = SubResource("BoxShape3D_yuuw2")
+
+[node name="electric_shield" parent="Interactions/ElecticShield" instance=ExtResource("42_jolu5")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.205503, -0.273367, 0.159887)
+
+[node name="electric_shield" parent="Interactions/ElecticShield/electric_shield" index="0"]
+surface_material_override/0 = ExtResource("46_fub2w")
+
+[node name="shield_door" parent="Interactions/ElecticShield/electric_shield" index="1"]
+transform = Transform3D(0.987743, 0, -0.15609, 0, 1, 0, 0.15609, 0, 0.987743, 0.2, 0, 0.5)
+surface_material_override/0 = ExtResource("2_r8i07")
+
+[node name="wires" parent="Interactions/ElecticShield/electric_shield" index="7"]
+surface_material_override/0 = ExtResource("46_fub2w")
+
+[node name="electric_shield_puzzle" parent="Interactions/ElecticShield" instance=ExtResource("42_jolu5")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.205503, -0.273367, 0.159887)
+
+[node name="electric_shield" parent="Interactions/ElecticShield/electric_shield_puzzle" index="0"]
+layers = 2
+
+[node name="shield_door" parent="Interactions/ElecticShield/electric_shield_puzzle" index="1"]
+transform = Transform3D(-0.993609, 0, -0.112874, 0, 1, 0, 0.112874, 0, -0.993609, 0.2, 0, 0.5)
+layers = 2
+
+[node name="panel" parent="Interactions/ElecticShield/electric_shield_puzzle" index="2"]
+layers = 2
+
+[node name="handle_top_left" parent="Interactions/ElecticShield/electric_shield_puzzle" index="3"]
+layers = 2
+surface_material_override/0 = SubResource("ShaderMaterial_6trxn")
+
+[node name="handle_top_right" parent="Interactions/ElecticShield/electric_shield_puzzle" index="4"]
+layers = 2
+surface_material_override/0 = SubResource("ShaderMaterial_yuuw2")
+
+[node name="handle_bottom_left" parent="Interactions/ElecticShield/electric_shield_puzzle" index="5"]
+layers = 2
+surface_material_override/0 = SubResource("ShaderMaterial_d5pls")
+
+[node name="handle_bottom_right" parent="Interactions/ElecticShield/electric_shield_puzzle" index="6"]
+layers = 2
+surface_material_override/0 = SubResource("ShaderMaterial_fub2w")
+
+[node name="wires" parent="Interactions/ElecticShield/electric_shield_puzzle" index="7"]
+layers = 2
+
+[node name="Camera3D" type="Camera3D" parent="Interactions/ElecticShield"]
+transform = Transform3D(-0.106654, 0.222897, -0.96899, 0, 0.974549, 0.224176, 0.994296, 0.0239092, -0.103939, -0.664541, -0.0153944, -0.0377219)
+cull_mask = 2
+
+[node name="NoteInTrashbin" type="Area3D" parent="Interactions" node_paths=PackedStringArray("inspectable_mesh", "player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4777, 1.31303, -3.46025)
+script = ExtResource("17_a0rdj")
+dialogue = ExtResource("47_itbgw")
+object_display_name = "Скомканная записка"
+inspectable_mesh = NodePath("../../Geometry/Kitchen/kitchen/trash_bins")
+player = NodePath("../../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/NoteInTrashbin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150146, -0.231506, 0.172607)
+shape = SubResource("BoxShape3D_fub2w")
+
+[node name="NoteInStorage" type="Area3D" parent="Interactions" node_paths=PackedStringArray("inspectable_mesh", "player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9808, 2.09074, -4.71433)
+script = ExtResource("17_a0rdj")
+dialogue = ExtResource("48_y7d5j")
+object_display_name = "Скомканная записка"
+inspectable_mesh = NodePath("../../Geometry/Kitchen/kitchen/trash_bins")
+player = NodePath("../../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/NoteInStorage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150146, -0.231506, 0.172607)
+shape = SubResource("BoxShape3D_fub2w")
+
 [editable path="Player"]
 [editable path="Player/morrigan"]
-[editable path="EnviromentLightGeometry/Geometry/Kitchen/kitchen"]
+[editable path="Geometry/Kitchen/kitchen"]
 [editable path="Interactions/Manual/book"]
 [editable path="Interactions/Knife/Knife"]
 [editable path="Interactions/Radio/radio2"]
 [editable path="Interactions/Radio/radio3"]
+[editable path="Interactions/ElecticShield/electric_shield"]
+[editable path="Interactions/ElecticShield/electric_shield_puzzle"]
