@@ -136,14 +136,6 @@ _subresources={
 "save_to_file/enabled": false,
 "save_to_file/path": ""
 },
-"kitchen_Cube_026": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
 "kitchen_Cube_042": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
@@ -200,14 +192,6 @@ _subresources={
 "save_to_file/enabled": false,
 "save_to_file/path": ""
 },
-"kitchen_Cube_060": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
 "kitchen_Cube_108": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
@@ -245,9 +229,6 @@ _subresources={
 "PATH:body": {
 "generate/physics": true
 },
-"PATH:boxes": {
-"generate/physics": true
-},
 "PATH:cooking_area": {
 "generate/physics": true
 },
@@ -266,7 +247,7 @@ _subresources={
 "PATH:shelfs": {
 "generate/physics": true
 },
-"PATH:sink_and_mirror": {
+"PATH:sink": {
 "generate/physics": true
 },
 "PATH:toilet": {

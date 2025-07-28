@@ -13,16 +13,18 @@ extends Area3D
 var _interactable_shader : ShaderMaterial
 var _can_be_activated : bool
 
-var _options : Dictionary = {
-		action_name : on_interact,
-		"Отмена": on_cancel
-	}
+var _options : Dictionary
 
 func _ready() -> void:
 	_interactable_shader = inspectable_mesh.get_active_material(0)
 	
 	connect("body_entered", _on_body_entered)
 	connect("body_exited", _on_body_exited)
+	
+	_options = {
+		action_name : on_interact,
+		"Отмена": on_cancel
+	}
 	return
 	
 func _on_body_entered(body: Node3D) -> bool:

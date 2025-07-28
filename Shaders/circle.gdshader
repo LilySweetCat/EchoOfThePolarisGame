@@ -18,24 +18,24 @@ uniform float opacity : hint_range(0, 1) = 1.0;
 void fragment() {
     // Нормализованное расстояние от центра
     float dist = distance(UV, center) / radius;
-    
+
     // 1. Контур (с плавными краями)
-    float outline = smoothstep(1.0 - outline_width - outline_smoothness, 
-                             1.0 - outline_width, dist) - 
-                   smoothstep(1.0 - outline_width, 
+    float outline = smoothstep(1.0 - outline_width - outline_smoothness,
+                             1.0 - outline_width, dist) -
+                   smoothstep(1.0 - outline_width,
                              1.0 - outline_width + outline_smoothness, dist);
-    
+
     // 2. Внутренний круг
     float fill = 1.0 - smoothstep(fill_amount - fill_smoothness,
                                  fill_amount + fill_smoothness,
                                  dist);
-    
+
     // 3. Комбинируем с учетом приоритета заполнения
     float alpha = clamp(outline + fill, 0.0, 1.0);
-    
+
     // 4. Смешиваем цвета (если есть и контур и заполнение - приоритет у заполнения)
     vec3 final_color = mix(outline_color.rgb, fill_color.rgb, fill);
-    
+
     // 5. Применяем прозрачность
     COLOR = vec4(final_color, alpha * opacity);
 }
