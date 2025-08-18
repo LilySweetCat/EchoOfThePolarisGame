@@ -3,26 +3,26 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://de5sh7w2lw6dn"
-path="res://.godot/imported/Wooden_Office_Desk.blend-dda186ab88b993273c30a47bac4a42d2.scn"
+uid="uid://dcfcn10f0vtg1"
+path="res://.godot/imported/wooden_fence.blend-2786f1878788e032303cf899314cd1a2.scn"
 
 [deps]
 
-source_file="res://Models/Props/from proj detective/office_tables/Wooden_Office_Desk.blend"
-dest_files=["res://.godot/imported/Wooden_Office_Desk.blend-dda186ab88b993273c30a47bac4a42d2.scn"]
+source_file="res://Models/Props/wooden_fence.blend"
+dest_files=["res://.godot/imported/wooden_fence.blend-2786f1878788e032303cf899314cd1a2.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.4
+nodes/root_scale=0.8
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
-meshes/light_baking=1
+meshes/light_baking=2
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
@@ -34,7 +34,7 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"Wooden_Office_Desk_Cube": {
+"wooden_fence_Cube": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -44,7 +44,7 @@ _subresources={
 }
 },
 "nodes": {
-"PATH:desk": {
+"PATH:fence": {
 "generate/physics": true
 }
 }

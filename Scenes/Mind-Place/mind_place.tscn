@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://cyum1wqdb2w4q"]
+[gd_scene load_steps=43 format=4 uid="uid://cyum1wqdb2w4q"]
 
 [ext_resource type="PackedScene" uid="uid://llq8nxgnw0mh" path="res://Scenes/Mind-Place/mind_place.blend" id="1_6rn3h"]
 [ext_resource type="LightmapGIData" uid="uid://cb1j25ppisqpv" path="res://Scenes/Mind-Place/mind_place.lmbake" id="1_88h3v"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b3j64dh3va0k6" path="res://Models/Props/from proj detective/leather_chair/leather_chair.png" id="13_u0nub"]
 [ext_resource type="Texture2D" uid="uid://cgeomhtnbo0yy" path="res://Models/Props/from proj detective/office_tables/wooden_office_desk.png" id="15_uvq3l"]
 [ext_resource type="PackedScene" uid="uid://c8blt3q5hwptk" path="res://Models/Props/computer.blend" id="16_u0nub"]
+[ext_resource type="PackedScene" uid="uid://dcfcn10f0vtg1" path="res://Models/Props/wooden_fence.blend" id="17_uvq3l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tb22e"]
 sky_top_color = Color(0.604782, 0.505034, 0.408993, 1)
@@ -32,23 +33,13 @@ reflected_light_source = 2
 tonemap_mode = 4
 ssao_enabled = true
 glow_enabled = true
-glow_strength = 2.0
 glow_blend_mode = 0
 fog_enabled = true
 fog_light_color = Color(0.598497, 0.405425, 0.327414, 1)
 adjustment_enabled = true
 adjustment_saturation = 1.5
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_u0nub"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_liaac"]
-size = Vector3(6.28375, 1.73975, 23.3702)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_p83rn"]
-size = Vector3(6.28375, 1.73975, 32.8136)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_i3i56"]
-size = Vector3(16.9298, 1.73975, 20.7783)
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_uvq3l"]
 
 [sub_resource type="Curve" id="Curve_sfa5k"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.256098, 1), 0.0, 0.0, 0, 0, Vector2(0.743902, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -95,6 +86,15 @@ particles_anim_loop = false
 [sub_resource type="QuadMesh" id="QuadMesh_p83rn"]
 material = SubResource("StandardMaterial3D_liaac")
 size = Vector2(0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_liaac"]
+size = Vector3(6.28375, 1.73975, 23.3702)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p83rn"]
+size = Vector3(6.28375, 1.73975, 32.8136)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i3i56"]
+size = Vector3(16.9298, 1.73975, 20.7783)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3i56"]
 albedo_color = Color(1, 0, 0, 1)
@@ -245,96 +245,59 @@ input_ray_pickable = false
 current_camera = NodePath("../MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.0113557, 0.935858, -0.00257343)
-bones/1/rotation = Quaternion(-0.00550478, 0.0123061, -0.0482522, 0.998744)
-bones/2/rotation = Quaternion(-0.0566893, -0.0123784, 0.024074, 0.998025)
+bones/1/position = Vector3(0.0112802, 0.935989, -0.00136153)
+bones/1/rotation = Quaternion(-0.00790262, 0.0117898, -0.047389, 0.998776)
+bones/2/rotation = Quaternion(-0.05804, -0.0131411, 0.0245153, 0.997927)
 bones/3/position = Vector3(0, 0.103905, -2.77556e-17)
-bones/3/rotation = Quaternion(0.00124491, -0.00548125, 0.0514943, 0.998658)
-bones/4/rotation = Quaternion(0.0012672, -0.000404936, 0.0513489, 0.99868)
-bones/5/rotation = Quaternion(0.0780733, -0.000506447, -0.0196448, 0.996754)
-bones/6/rotation = Quaternion(0.0151819, 0.00806718, -0.0710411, 0.997325)
-bones/8/rotation = Quaternion(-0.619341, -0.414916, 0.47711, -0.465432)
+bones/3/rotation = Quaternion(0.00145677, -0.00570185, 0.0515474, 0.998653)
+bones/4/rotation = Quaternion(0.0014722, -0.000575058, 0.0514037, 0.998677)
+bones/5/rotation = Quaternion(0.0744966, -0.00111531, -0.0188136, 0.997043)
+bones/6/rotation = Quaternion(0.0160529, 0.00645224, -0.0694285, 0.997437)
+bones/8/rotation = Quaternion(-0.616929, -0.418529, 0.473316, -0.469259)
 bones/9/position = Vector3(-4.16334e-17, 0.102497, -2.22045e-16)
-bones/9/rotation = Quaternion(0.626258, 0.070664, -0.0816743, 0.772099)
+bones/9/rotation = Quaternion(0.632271, 0.0731638, -0.0812867, 0.766989)
 bones/10/position = Vector3(0, 0.252016, 4.44089e-16)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
 bones/11/position = Vector3(-2.77556e-17, 0.246386, 0)
 bones/11/rotation = Quaternion(-2.37223e-16, 6.59195e-17, -2.77556e-17, 1)
-bones/12/rotation = Quaternion(0.578255, -0.463319, 0.517122, 0.428417)
+bones/12/rotation = Quaternion(0.574999, -0.468319, 0.513773, 0.431382)
 bones/13/position = Vector3(2.77556e-17, 0.102497, -2.22045e-16)
-bones/13/rotation = Quaternion(0.513298, -0.0886529, 0.00720992, 0.853589)
+bones/13/rotation = Quaternion(0.518682, -0.0913251, 0.00298376, 0.850071)
 bones/14/position = Vector3(0, 0.252094, 6.66134e-16)
-bones/14/rotation = Quaternion(-0.010428, 0.0150281, -0.153277, 0.988014)
+bones/14/rotation = Quaternion(-0.010431, 0.0150278, -0.153321, 0.988007)
 bones/15/position = Vector3(9.02056e-17, 0.246876, -4.44089e-16)
 bones/15/rotation = Quaternion(-4.03323e-17, -1.73472e-17, -1.38778e-17, 1)
-bones/16/rotation = Quaternion(0.11415, 0.17769, 0.968902, -0.128938)
+bones/16/rotation = Quaternion(0.115372, 0.173414, 0.969512, -0.12909)
 bones/17/position = Vector3(0, 0.427752, 0)
-bones/17/rotation = Quaternion(-0.285605, -0.0770242, 0.028415, 0.954825)
+bones/17/rotation = Quaternion(-0.284046, -0.0776262, 0.0282458, 0.955246)
 bones/18/position = Vector3(1.11022e-16, 0.400439, -1.38778e-17)
-bones/18/rotation = Quaternion(0.519236, -0.0966913, -0.013361, 0.849038)
+bones/18/rotation = Quaternion(0.519803, -0.0958617, -0.0143365, 0.84877)
 bones/19/position = Vector3(-5.55112e-17, 0.145615, 0)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0428279, 0.020493, 0.994887, -0.0891408)
+bones/21/rotation = Quaternion(-0.0431461, 0.016948, 0.995043, -0.0879781)
 bones/22/position = Vector3(2.77556e-17, 0.427712, -1.73472e-18)
-bones/22/rotation = Quaternion(-0.155844, 0.0431897, 0.0339108, 0.986254)
+bones/22/rotation = Quaternion(-0.155132, 0.0417621, 0.0341654, 0.986419)
 bones/23/position = Vector3(8.32667e-17, 0.40043, 1.38778e-17)
-bones/23/rotation = Quaternion(0.559402, 0.00553523, -0.125947, 0.819253)
+bones/23/rotation = Quaternion(0.559323, 0.00530855, -0.1265, 0.819223)
 bones/24/position = Vector3(2.77556e-17, 0.145188, -6.93889e-18)
-bones/24/rotation = Quaternion(0.324081, 0.0225525, -0.00748648, 0.945731)
+bones/24/rotation = Quaternion(0.323469, 0.0224595, -0.00746563, 0.945943)
 
 [node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_u0nub")
+stream = SubResource("AudioStreamPolyphonic_uvq3l")
 bus = &"Master"
 playback_type = 0
 doppler_tracking = 0
 
-[node name="555092KlankbeeldCalm-autumn-forest-short-05-nl-2011060204" type="AudioStreamPlayer" parent="."]
+[node name="Audio" type="Node" parent="."]
+
+[node name="555092KlankbeeldCalm-autumn-forest-short-05-nl-2011060204" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("5_54j2y")
 autoplay = true
 
-[node name="UniversfieldMidnight-secrets" type="AudioStreamPlayer" parent="."]
+[node name="UniversfieldMidnight-secrets" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("6_54j2y")
 autoplay = true
 parameters/looping = true
-
-[node name="EntranceArea" parent="." node_paths=PackedStringArray("player", "main_camera") instance=ExtResource("9_i3i56")]
-transform = Transform3D(1, 7.45058e-09, 5.96046e-08, -1.49012e-08, 1, 1.49012e-08, -2.98023e-08, 0, 1, 0.59553, 0.0854766, 32.4978)
-player = NodePath("../Player")
-main_camera = NodePath("../MainCamera")
-
-[node name="CollisionShape3D" parent="EntranceArea" index="0"]
-transform = Transform3D(1, 0, 0, 4.4409e-16, 1, 1.77636e-15, 0, 0, 1, -0.653833, 0.97064, -4.56977)
-shape = SubResource("BoxShape3D_liaac")
-
-[node name="Camera3D" parent="EntranceArea" index="1"]
-transform = Transform3D(-0.886186, -0.0375412, 0.461806, -6.30105e-09, 0.996712, 0.0810248, -0.46333, 0.071803, -0.883272, 1.7444, 2.10603, -6.4795)
-cull_mask = 1
-
-[node name="ToTheDungeonsArea" parent="." node_paths=PackedStringArray("player", "main_camera") instance=ExtResource("9_i3i56")]
-transform = Transform3D(1, 7.45058e-09, 5.96046e-08, -1.49012e-08, 1, 1.49012e-08, -2.98023e-08, 0, 1, 0.59553, 0.0854766, -23.8808)
-player = NodePath("../Player")
-main_camera = NodePath("../MainCamera")
-
-[node name="CollisionShape3D" parent="ToTheDungeonsArea" index="0"]
-transform = Transform3D(1, 0, 0, 4.4409e-16, 1, 1.77636e-15, 0, 0, 1, -0.653833, 0.97064, -2.74456)
-shape = SubResource("BoxShape3D_p83rn")
-
-[node name="Camera3D" parent="ToTheDungeonsArea" index="1"]
-transform = Transform3D(-0.987968, -0.0191227, -0.153469, -1.70264e-08, 0.992326, -0.123647, 0.154656, -0.122159, -0.980387, -3.14654, 1.91195, -1.23697)
-cull_mask = 1
-
-[node name="DeductionArea" parent="." node_paths=PackedStringArray("player", "main_camera") instance=ExtResource("9_i3i56")]
-transform = Transform3D(1, 7.45058e-09, 5.96046e-08, -1.49012e-08, 1, 1.49012e-08, -2.98023e-08, 0, 1, 0.59553, 0.0854766, 0.149929)
-player = NodePath("../Player")
-main_camera = NodePath("../MainCamera")
-
-[node name="CollisionShape3D" parent="DeductionArea" index="0"]
-transform = Transform3D(1, 0, 0, 4.4409e-16, 1, 1.77636e-15, 0, 0, 1, -0.51314, 0.97064, 2.8846)
-shape = SubResource("BoxShape3D_i3i56")
-
-[node name="Camera3D" parent="DeductionArea" index="1"]
-transform = Transform3D(-0.781489, 0.0609114, 0.620939, -2.34797e-09, 0.995223, -0.0976271, -0.623919, -0.0762945, -0.777756, 4.42815, 1.637, 2.0567)
-cull_mask = 1
 
 [node name="MainCamera" type="Camera3D" parent="."]
 current = true
@@ -349,56 +312,222 @@ visibility_aabb = AABB(-24.446, -25.5648, -18.1463, 51.0231, 31.0075, 44.5697)
 process_material = SubResource("ParticleProcessMaterial_i3i56")
 draw_pass_1 = SubResource("QuadMesh_p83rn")
 
-[node name="mind_place" parent="." instance=ExtResource("1_6rn3h")]
+[node name="Triggers" type="Node" parent="."]
 
-[node name="mirror2" parent="." instance=ExtResource("8_v3oiq")]
+[node name="EntranceArea" parent="Triggers" node_paths=PackedStringArray("player", "main_camera") instance=ExtResource("9_i3i56")]
+transform = Transform3D(1, 7.45058e-09, 5.96046e-08, -1.49012e-08, 1, 1.49012e-08, -2.98023e-08, 0, 1, 0.59553, 0.0854766, 32.4978)
+player = NodePath("../../Player")
+main_camera = NodePath("../../MainCamera")
+
+[node name="CollisionShape3D" parent="Triggers/EntranceArea" index="0"]
+transform = Transform3D(1, 0, 0, 4.4409e-16, 1, 1.77636e-15, 0, 0, 1, -0.653833, 0.97064, -4.56977)
+shape = SubResource("BoxShape3D_liaac")
+
+[node name="Camera3D" parent="Triggers/EntranceArea" index="1"]
+transform = Transform3D(-0.886186, -0.0375412, 0.461806, -6.30105e-09, 0.996712, 0.0810248, -0.46333, 0.071803, -0.883272, 1.7444, 2.10603, -6.4795)
+cull_mask = 1
+
+[node name="ToTheDungeonsArea" parent="Triggers" node_paths=PackedStringArray("player", "main_camera") instance=ExtResource("9_i3i56")]
+transform = Transform3D(1, 7.45058e-09, 5.96046e-08, -1.49012e-08, 1, 1.49012e-08, -2.98023e-08, 0, 1, 0.59553, 0.0854766, -23.8808)
+player = NodePath("../../Player")
+main_camera = NodePath("../../MainCamera")
+
+[node name="CollisionShape3D" parent="Triggers/ToTheDungeonsArea" index="0"]
+transform = Transform3D(1, 0, 0, 4.4409e-16, 1, 1.77636e-15, 0, 0, 1, -0.653833, 0.97064, -2.74456)
+shape = SubResource("BoxShape3D_p83rn")
+
+[node name="Camera3D" parent="Triggers/ToTheDungeonsArea" index="1"]
+transform = Transform3D(-0.987968, -0.0191227, -0.153469, -1.70264e-08, 0.992326, -0.123647, 0.154656, -0.122159, -0.980387, -3.14654, 1.91195, -1.23697)
+cull_mask = 1
+
+[node name="DeductionArea" parent="Triggers" node_paths=PackedStringArray("player", "main_camera") instance=ExtResource("9_i3i56")]
+transform = Transform3D(1, 7.45058e-09, 5.96046e-08, -1.49012e-08, 1, 1.49012e-08, -2.98023e-08, 0, 1, 0.59553, 0.0854766, 0.149929)
+player = NodePath("../../Player")
+main_camera = NodePath("../../MainCamera")
+
+[node name="CollisionShape3D" parent="Triggers/DeductionArea" index="0"]
+transform = Transform3D(1, 0, 0, 4.4409e-16, 1, 1.77636e-15, 0, 0, 1, -0.51314, 0.97064, 2.8846)
+shape = SubResource("BoxShape3D_i3i56")
+
+[node name="Camera3D" parent="Triggers/DeductionArea" index="1"]
+transform = Transform3D(-0.781489, 0.0609114, 0.620939, -2.34797e-09, 0.995223, -0.0976271, -0.623919, -0.0762945, -0.777756, 4.45489, 2.07396, 2.0232)
+cull_mask = 1
+
+[node name="Geometry" type="Node" parent="."]
+
+[node name="mind_place" parent="Geometry" instance=ExtResource("1_6rn3h")]
+
+[node name="mirror2" parent="Geometry" instance=ExtResource("8_v3oiq")]
 transform = Transform3D(0.0863385, 0, 0.996266, 0, 1, 0, -0.996266, 0, 0.0863385, -0.37432, 3.3234, 64.8505)
 
-[node name="mirror" parent="mirror2" index="0"]
+[node name="mirror" parent="Geometry/mirror2" index="0"]
 transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 28.4989, -0.864782, -2.46977)
 
-[node name="crack" parent="mirror2" index="1"]
+[node name="crack" parent="Geometry/mirror2" index="1"]
 transform = Transform3D(1, 0, 2.23517e-08, 0, 1, 0, -2.23517e-08, 0, 1, 28.5105, -0.845458, -2.46296)
 cast_shadow = 0
 surface_material_override/0 = SubResource("StandardMaterial3D_i3i56")
 
-[node name="gazebo" parent="." instance=ExtResource("10_liaac")]
-transform = Transform3D(-1.91454, 0, 0.578398, 0, 1.2, 0, -0.578398, 0, -1.91454, 0.657596, 0.157533, 0.791645)
+[node name="gazebo" parent="Geometry" instance=ExtResource("10_liaac")]
+transform = Transform3D(-1.91454, 0, 0.578398, 0, 1.4, 0, -0.578398, 0, -1.91454, 0.657596, 0.157533, 0.791645)
 
-[node name="Gazebo" parent="gazebo" index="0"]
+[node name="Gazebo" parent="Geometry/gazebo" index="0"]
 mesh = SubResource("ArrayMesh_k0e6i")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="gazebo"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/gazebo"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="gazebo/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/gazebo/StaticBody3D"]
 transform = Transform3D(0.93764, 0, 0.347607, 0, 1, 0, -0.347607, 0, 0.93764, -1.02967, -0.2005, -2.69008)
 shape = SubResource("BoxShape3D_8cdby")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="gazebo/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Geometry/gazebo/StaticBody3D"]
 transform = Transform3D(0.93764, 0, 0.347607, 0, 1, 0, -0.347607, 0, 0.93764, 1.35848, -0.2005, 3.06427)
 shape = SubResource("BoxShape3D_8cdby")
 
-[node name="leather_chair2" parent="." instance=ExtResource("12_fxl0i")]
-transform = Transform3D(-0.535842, 0, -0.844319, 0, 1, 0, 0.844319, 0, -0.535842, -2.34277, 0.266972, 2.08434)
+[node name="leather_chair2" parent="Geometry" instance=ExtResource("12_fxl0i")]
+transform = Transform3D(-0.535842, 0, -0.844319, 0, 1, 0, 0.844319, 0, -0.535842, -1.95632, 0.266972, 1.97694)
 
-[node name="leather_chair" parent="leather_chair2" index="0"]
+[node name="leather_chair" parent="Geometry/leather_chair2" index="0"]
 mesh = SubResource("ArrayMesh_0eu58")
 
-[node name="Wooden_Office_Desk" parent="." instance=ExtResource("8_8cdby")]
-transform = Transform3D(-0.0399225, -2.26374e-08, 0.999203, 2.66454e-15, 1, 1.38778e-15, -0.999203, 8.05141e-09, -0.0399225, -3.5685, 0.26336, 1.37786)
+[node name="Wooden_Office_Desk" parent="Geometry" instance=ExtResource("8_8cdby")]
+transform = Transform3D(-0.0399225, -2.26374e-08, 0.999203, 2.66454e-15, 1, 1.38778e-15, -0.999203, 8.05141e-09, -0.0399225, -3.37202, 0.26336, 1.37001)
 
-[node name="desk" parent="Wooden_Office_Desk" index="0"]
+[node name="desk" parent="Geometry/Wooden_Office_Desk" index="0"]
 mesh = SubResource("ArrayMesh_hmgv2")
 
-[node name="computer" parent="." instance=ExtResource("16_u0nub")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94379, 1.46261, 1.36472)
+[node name="computer" parent="Geometry" instance=ExtResource("16_u0nub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.79571, 1.46261, 1.36472)
+
+[node name="wooden_fence" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32988, 0.0558262, 33.5802)
+
+[node name="wooden_fence15" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32988, 0.0558262, 37.4268)
+
+[node name="wooden_fence16" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.73972, 0.0558262, 37.4268)
+
+[node name="wooden_fence17" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(0.00294956, 0, 0.999996, 0, 1, 0, -0.999996, 0, 0.00294956, -0.175948, 0.0558262, 39.0572)
+
+[node name="wooden_fence2" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8557, 0.0558262, 33.5802)
+
+[node name="wooden_fence18" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32988, 0.357988, -11.8051)
+
+[node name="wooden_fence41" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(0.625883, 0.0911963, 0.774567, -3.72529e-09, 0.99314, -0.116931, -0.779917, 0.0731849, 0.621589, 4.53457, 0.550795, -8.23375)
+
+[node name="wooden_fence19" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(0.897374, 0, -0.441271, 0, 1, 0, 0.441271, 0, 0.897374, -3.74684, 0.0558262, -10.4386)
+
+[node name="wooden_fence20" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 0.991135, -0.132862, 0, 0.132862, 0.991135, 2.32988, 0.341517, -15.7463)
+
+[node name="wooden_fence21" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 0.991135, -0.132862, 0, 0.132862, 0.991135, -2.8557, 0.341517, -15.7463)
+
+[node name="wooden_fence22" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32988, 0.592991, -19.7621)
+
+[node name="wooden_fence23" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8557, 0.592991, -19.7621)
+
+[node name="wooden_fence24" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 0.997018, 0.0771715, 0, -0.0771715, 0.997018, 2.32988, 0.499575, -23.61)
+
+[node name="wooden_fence25" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 0.997018, 0.0771715, 0, -0.0771715, 0.997018, -2.8557, 0.499575, -23.61)
+
+[node name="wooden_fence26" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 0.996676, 0.0814688, 0, -0.0814688, 0.996676, 2.32988, 0.134429, -27.623)
+
+[node name="wooden_fence27" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 0.996676, 0.0814688, 0, -0.0814688, 0.996676, -2.8557, 0.134429, -27.623)
+
+[node name="wooden_fence28" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32988, 0.0558262, -31.5612)
+
+[node name="wooden_fence29" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8557, 0.0558262, -31.5612)
+
+[node name="wooden_fence30" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32988, 0.0558262, -35.502)
+
+[node name="wooden_fence31" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8557, 0.0558262, -35.502)
+
+[node name="wooden_fence32" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32988, 0.0558262, -40.2975)
+
+[node name="wooden_fence33" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8557, 0.0558262, -40.2975)
+
+[node name="wooden_fence34" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32988, 0.0558262, -45.3228)
+
+[node name="wooden_fence35" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8557, 0.0558262, -45.3228)
+
+[node name="wooden_fence3" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2953, 0.0558262, 29.5127)
+
+[node name="wooden_fence4" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(0.994861, 0, -0.101247, 0, 1, 0, 0.101247, 0, 0.994861, -2.51004, 0.0558262, 29.5127)
+
+[node name="wooden_fence5" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 0.995224, -0.0976176, 0, 0.0976176, 0.995224, 2.19763, 0.608437, 25.5857)
+
+[node name="wooden_fence6" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(0.996063, 0, 0.0886509, 0, 1, 0, -0.0886509, 0, 0.996063, -2.3128, 0.291799, 25.4991)
+
+[node name="wooden_fence7" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15133, 0.820988, 21.6265)
+
+[node name="wooden_fence8" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41668, 0.344363, 21.6265)
+
+[node name="wooden_fence9" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 0.997155, -0.075379, 0, 0.075379, 0.997155, 2.27017, 1.01065, 17.3861)
+
+[node name="wooden_fence10" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41747, 0.4946, 17.3861)
+
+[node name="wooden_fence11" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 0.997291, 0.0735515, 0, -0.0735515, 0.997291, 2.45583, 1.14739, 13.3733)
+
+[node name="wooden_fence12" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29393, 0.494486, 13.3733)
+
+[node name="wooden_fence13" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(0.621134, 0.0168229, -0.783524, 1.49012e-08, 0.99977, 0.0214659, 0.783704, -0.0133332, 0.620991, 3.38231, 0.911838, 9.14351)
+
+[node name="wooden_fence40" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(0.754802, 0.0168229, -0.655737, -0.00395308, 0.99977, 0.0210988, 0.65594, -0.0133332, 0.754695, 6.0798, 0.832081, 6.56649)
+
+[node name="wooden_fence14" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(0.456819, 0, 0.88956, 0, 1, 0, -0.88956, 0, 0.456819, -3.47508, 0.62237, 8.58216)
+
+[node name="wooden_fence36" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(0.885483, 0, 0.464672, 0, 1, 0, -0.464672, 0, 0.885483, -6.64347, 0.622371, 5.92621)
+
+[node name="wooden_fence37" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(0.998362, 0, 0.0572155, 0, 1, 0, -0.0572155, 0, 0.998362, -7.76413, 0.260885, 2.15792)
+
+[node name="wooden_fence38" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(0.988959, 0, -0.148189, 0, 1, 0, 0.148189, 0, 0.988959, -7.65203, 0.260885, -2.1491)
+
+[node name="wooden_fence39" parent="Geometry" instance=ExtResource("17_uvq3l")]
+transform = Transform3D(0.872453, 0, -0.488697, 0, 1, 0, 0.488697, 0, 0.872453, -5.90219, 0.270631, -6.51776)
 
 [editable path="Player"]
 [editable path="Player/morrigan"]
-[editable path="EntranceArea"]
-[editable path="ToTheDungeonsArea"]
-[editable path="DeductionArea"]
-[editable path="mirror2"]
-[editable path="gazebo"]
-[editable path="leather_chair2"]
-[editable path="Wooden_Office_Desk"]
+[editable path="Triggers/EntranceArea"]
+[editable path="Triggers/ToTheDungeonsArea"]
+[editable path="Triggers/DeductionArea"]
+[editable path="Geometry/mirror2"]
+[editable path="Geometry/gazebo"]
+[editable path="Geometry/leather_chair2"]
+[editable path="Geometry/Wooden_Office_Desk"]
