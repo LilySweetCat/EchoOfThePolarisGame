@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/mind_place.blend-4ebcd58f6c0c646a959166090350
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.5
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
@@ -42,21 +42,9 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://Scenes/Mind-Place/Materials/bush02.tres"
 },
-"desk_lamp": {
-"use_external/enabled": true,
-"use_external/path": "res://Scenes/Mind-Place/Materials/desk_lamp.tres"
-},
-"grammophone": {
-"use_external/enabled": true,
-"use_external/path": "res://Scenes/Mind-Place/Materials/grammophone.tres"
-},
 "ground": {
 "use_external/enabled": true,
 "use_external/path": "res://Scenes/Mind-Place/Materials/ground.tres"
-},
-"leather_chair": {
-"use_external/enabled": true,
-"use_external/path": "res://Scenes/Mind-Place/Materials/leather_chair.tres"
 },
 "tree06": {
 "use_external/enabled": true,
@@ -65,29 +53,9 @@ _subresources={
 "tree07": {
 "use_external/enabled": true,
 "use_external/path": "res://Scenes/Mind-Place/Materials/tree07.tres"
-},
-"wooden_office_desk": {
-"use_external/enabled": true,
-"use_external/path": "res://Scenes/Mind-Place/Materials/wooden_office_desk.tres"
 }
 },
 "meshes": {
-"mind_place_Cube": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"mind_place_Cube_001": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
 "mind_place_Plane": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
@@ -105,23 +73,7 @@ _subresources={
 "save_to_file/path": ""
 },
 "mind_place_Plane_002": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"mind_place_Plane_003": {
-"generate/lightmap_uv": 1,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": false,
-"save_to_file/path": ""
-},
-"mind_place_Plane_004": {
-"generate/lightmap_uv": 1,
+"generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
@@ -129,7 +81,7 @@ _subresources={
 "save_to_file/path": ""
 },
 "mind_place_Plane_005": {
-"generate/lightmap_uv": 1,
+"generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
@@ -138,14 +90,26 @@ _subresources={
 }
 },
 "nodes": {
-"PATH:desk": {
+"PATH:background": {
 "generate/physics": true
+},
+"PATH:bush08": {
+"import/skip_import": true
 },
 "PATH:ground": {
 "generate/physics": true
 },
-"PATH:leather_chair": {
+"PATH:ground_002": {
 "generate/physics": true
+},
+"PATH:ground_003": {
+"generate/physics": true
+},
+"PATH:tree03": {
+"import/skip_import": true
+},
+"PATH:tree08": {
+"import/skip_import": true
 }
 }
 }

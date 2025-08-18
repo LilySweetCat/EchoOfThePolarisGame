@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://ctdp85o7ltw6o"]
+[gd_scene load_steps=105 format=3 uid="uid://ctdp85o7ltw6o"]
 
 [ext_resource type="PackedScene" uid="uid://cx33noypotgah" path="res://Scenes/Kitchen/kitchen.blend" id="1_j055r"]
 [ext_resource type="LightmapGIData" uid="uid://bpip2j85dmv8l" path="res://Scenes/Kitchen/kitchen.lmbake" id="2_77rxy"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://cp86nrwycs52w" path="res://Scripts/Interaction/dialogue.gd" id="17_a0rdj"]
 [ext_resource type="Script" uid="uid://ccmqin46oic1b" path="res://Scripts/Interaction/door.gd" id="17_d5v74"]
 [ext_resource type="JSON" uid="uid://bben8vlh81gnd" path="res://Dialogues/Kitchen/manual.tres" id="18_d5v74"]
+[ext_resource type="PackedScene" uid="uid://drfmtjj34643g" path="res://Prefabs/change_camera_trigger.tscn" id="19_78phk"]
 [ext_resource type="PackedScene" uid="uid://d38oxddcdcafm" path="res://Scenes/Characters/Echo/Echo.tscn" id="19_skia2"]
 [ext_resource type="Script" uid="uid://cyoeq5gu3ahsa" path="res://Scripts/Interaction/pickable_item.gd" id="20_1u351"]
 [ext_resource type="JSON" uid="uid://blox0bnafgymt" path="res://Dialogues/Kitchen/pickable_item.tres" id="21_gpren"]
@@ -70,7 +71,25 @@ adjustment_enabled = true
 adjustment_brightness = 0.95
 adjustment_saturation = 0.8
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_6cueg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6cueg"]
+render_priority = 0
+shader = ExtResource("36_utjrh")
+shader_parameter/base_color = Color(0.423651, 0.423651, 0.423651, 1)
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/use_emission = false
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_strength = 0.5
+shader_parameter/is_active = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_78phk"]
+render_priority = 0
+shader = ExtResource("36_utjrh")
+shader_parameter/base_color = Color(0.423651, 0.423651, 0.423651, 1)
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/use_emission = false
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_strength = 0.5
+shader_parameter/is_active = false
 
 [sub_resource type="BoxMesh" id="BoxMesh_a0rdj"]
 size = Vector3(44, 10, 30)
@@ -170,9 +189,6 @@ material = SubResource("ShaderMaterial_yxbj3")
 auto_exposure_scale = 0.05
 dof_blur_far_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ruj4t"]
-size = Vector3(11.6654, 0.835203, 7.47678)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0rdj"]
 size = Vector3(3.03546, 0.327637, 4.97174)
 
@@ -233,6 +249,16 @@ size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a6auu"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oky25"]
+render_priority = 0
+shader = ExtResource("36_utjrh")
+shader_parameter/base_color = Color(0.423651, 0.423651, 0.423651, 1)
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/use_emission = false
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_strength = 0.5
+shader_parameter/is_active = false
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lkvpe"]
 render_priority = 0
 shader = ExtResource("36_utjrh")
@@ -291,6 +317,16 @@ size = Vector3(0.699707, 0.536987, 0.654785)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_06kcq"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_whku0"]
+render_priority = 0
+shader = ExtResource("36_utjrh")
+shader_parameter/base_color = Color(0.423651, 0.423651, 0.423651, 1)
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/use_emission = false
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_strength = 0.5
+shader_parameter/is_active = false
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -314,30 +350,27 @@ input_ray_pickable = false
 current_camera = NodePath("../Cameras/MainCamera")
 
 [node name="Skeleton3D" parent="Player/morrigan" index="0"]
-bones/1/position = Vector3(0.00911719, 0.935738, -0.00174219)
-bones/1/rotation = Quaternion(-0.00717197, 0.0118185, -0.0465206, 0.998822)
-bones/2/rotation = Quaternion(-0.056006, -0.0125048, 0.0248356, 0.998043)
-bones/3/rotation = Quaternion(0.00515449, -0.00508481, 0.05162, 0.998641)
-bones/4/rotation = Quaternion(0.0052108, -0.000352194, 0.0514508, 0.998662)
-bones/5/rotation = Quaternion(0.0745308, -0.00115282, -0.0188948, 0.997039)
-bones/6/rotation = Quaternion(0.0136519, 0.0055706, -0.0705651, 0.997398)
-bones/8/rotation = Quaternion(-0.629516, -0.399228, 0.493047, -0.448589)
-bones/9/rotation = Quaternion(0.602603, 0.0702349, -0.0791191, 0.790997)
+bones/1/position = Vector3(0.00923219, 0.935647, -0.00292034)
+bones/1/rotation = Quaternion(-0.007151, 0.0137744, -0.0476158, 0.998745)
+bones/2/rotation = Quaternion(-0.0558907, -0.0121535, 0.0241642, 0.99807)
+bones/3/rotation = Quaternion(0.0045901, -0.00500182, 0.0516135, 0.998644)
+bones/4/rotation = Quaternion(0.00464634, -0.00025667, 0.051446, 0.998665)
+bones/5/rotation = Quaternion(0.0759423, -0.000701501, -0.0192382, 0.996926)
+bones/6/rotation = Quaternion(0.0130021, 0.00812861, -0.0721347, 0.997277)
+bones/8/rotation = Quaternion(-0.628528, -0.400353, 0.49364, -0.448318)
+bones/9/rotation = Quaternion(0.602285, 0.0709487, -0.0792759, 0.79116)
 bones/10/rotation = Quaternion(-0.00163278, -0.012797, 0.126247, 0.991915)
-bones/12/rotation = Quaternion(0.585589, -0.447778, 0.533922, 0.414135)
-bones/13/rotation = Quaternion(0.488256, -0.0903789, 0.00243451, 0.868004)
-bones/14/rotation = Quaternion(-0.010459, 0.0150268, -0.153731, 0.987943)
-bones/16/rotation = Quaternion(0.115325, 0.17414, 0.969392, -0.129055)
-bones/17/rotation = Quaternion(-0.282724, -0.0778834, 0.0282231, 0.955618)
-bones/18/rotation = Quaternion(0.518972, -0.0961438, -0.0149596, 0.849235)
+bones/12/rotation = Quaternion(0.586677, -0.446462, 0.534629, 0.413103)
+bones/13/rotation = Quaternion(0.487185, -0.0885771, 0.00571707, 0.868776)
+bones/14/rotation = Quaternion(-0.0104462, 0.0150275, -0.153544, 0.987972)
+bones/16/rotation = Quaternion(0.114107, 0.176496, 0.969089, -0.129209)
+bones/17/rotation = Quaternion(-0.285293, -0.0766065, 0.0288217, 0.954939)
+bones/18/rotation = Quaternion(0.518049, -0.0961185, -0.014116, 0.849816)
 bones/19/rotation = Quaternion(0.321358, -0.0222122, 0.00737609, 0.946669)
-bones/21/rotation = Quaternion(-0.0430331, 0.0186696, 0.994949, -0.0887435)
-bones/22/rotation = Quaternion(-0.156343, 0.0421065, 0.0340483, 0.986217)
-bones/23/rotation = Quaternion(0.559646, 0.004918, -0.127554, 0.818842)
-bones/24/rotation = Quaternion(0.323191, 0.0224174, -0.00745619, 0.946039)
-
-[node name="FootstepPlayer" parent="Player" index="5"]
-stream = SubResource("AudioStreamPolyphonic_6cueg")
+bones/21/rotation = Quaternion(-0.042954, 0.0198849, 0.994857, -0.0895472)
+bones/22/rotation = Quaternion(-0.156972, 0.0456709, 0.0328851, 0.985998)
+bones/23/rotation = Quaternion(0.559687, 0.00528606, -0.126722, 0.818941)
+bones/24/rotation = Quaternion(0.323704, 0.0224953, -0.0074737, 0.945861)
 
 [node name="Light" type="Node" parent="."]
 
@@ -435,13 +468,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.723568, 0.372988, -0.64919
 surface_material_override/0 = ExtResource("2_r8i07")
 
 [node name="trash_bins" parent="Geometry/kitchen" index="14"]
-surface_material_override/0 = ExtResource("2_r8i07")
+surface_material_override/0 = SubResource("ShaderMaterial_6cueg")
 
 [node name="mirror" parent="Geometry/kitchen" index="21"]
 surface_material_override/0 = ExtResource("7_skia2")
 
 [node name="doors" parent="Geometry/kitchen" index="22"]
-surface_material_override/0 = ExtResource("2_r8i07")
+surface_material_override/0 = SubResource("ShaderMaterial_78phk")
 
 [node name="background" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1305, 0, -4.52515)
@@ -566,26 +599,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="CameraTriggers" type="Node" parent="Cameras"]
 
-[node name="TablesArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera")]
+[node name="TablesArea" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera") instance=ExtResource("19_78phk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.411543, 0)
-collision_layer = 2
-collision_mask = 2
-input_ray_pickable = false
-monitorable = false
-script = ExtResource("3_pd52i")
 player = NodePath("../../../Player")
 main_camera = NodePath("../../MainCamera")
-virtual_camera = NodePath("Camera3D")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/CameraTriggers/TablesArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75602, -0.0823963, 0.607497)
-shape = SubResource("BoxShape3D_ruj4t")
-debug_color = Color(2.88785e-06, 0.819078, 0.952524, 0.42)
-
-[node name="Camera3D" type="Camera3D" parent="Cameras/CameraTriggers/TablesArea"]
-process_mode = 4
-transform = Transform3D(0.636974, -0.0149439, 0.77074, -0.0334058, 0.998338, 0.0469648, -0.770161, -0.0556626, 0.635416, 0.55284, 3.09107, 3.93927)
-visible = false
 
 [node name="KitchenEntranceArea" type="Area3D" parent="Cameras/CameraTriggers" node_paths=PackedStringArray("player", "main_camera", "virtual_camera", "Echo", "EchoLocation")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.93462, 0.786079, -6.68969)
@@ -994,7 +1011,7 @@ transform = Transform3D(-0.236465, 0, -0.97164, 0, 1, 0, 0.97164, 0, -0.236465, 
 
 [node name="radio" parent="Interactions/Radio/radio3" index="0"]
 layers = 2
-surface_material_override/0 = ExtResource("2_r8i07")
+surface_material_override/0 = SubResource("ShaderMaterial_oky25")
 
 [node name="radio_freq" parent="Interactions/Radio/radio3" index="1"]
 layers = 2
@@ -1124,7 +1141,7 @@ shape = SubResource("BoxShape3D_06kcq")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.15032, 0.0368402, 0.0211382)
 
 [node name="paper_tablet" parent="Interactions/NoteOnWall/paper_tablet2" index="0"]
-surface_material_override/0 = ExtResource("2_r8i07")
+surface_material_override/0 = SubResource("ShaderMaterial_whku0")
 
 [node name="cup2" parent="." instance=ExtResource("51_4k5np")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87257, 1.49081, 1.98891)
@@ -1138,6 +1155,7 @@ transform = Transform3D(0.448804, 0, 0.89363, 0, 1, 0, -0.89363, 0, 0.448804, -1
 [editable path="Player"]
 [editable path="Player/morrigan"]
 [editable path="Geometry/kitchen"]
+[editable path="Cameras/CameraTriggers/TablesArea"]
 [editable path="Interactions/Manual/book"]
 [editable path="Interactions/Knife/Knife"]
 [editable path="Interactions/Radio/radio2"]

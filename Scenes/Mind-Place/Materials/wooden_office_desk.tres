@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ddpwqe7xat7m3"]
-
-[ext_resource type="Texture2D" uid="uid://cqgo3khfsbxax" path="res://Scenes/Mind-Place/mind_place_wooden_office_table.png" id="1_3nlg8"]
-
-[resource]
-resource_name = "wooden_office_desk"
-albedo_texture = ExtResource("1_3nlg8")
-texture_filter = 2

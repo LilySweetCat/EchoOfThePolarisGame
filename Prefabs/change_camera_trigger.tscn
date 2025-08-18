@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://drfmtjj34643g"]
+
+[ext_resource type="Script" uid="uid://btggpmagtigoc" path="res://Scripts/change_camera_trigger.gd" id="1_ch0qe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ruj4t"]
+size = Vector3(11.6654, 0.835203, 7.47678)
+
+[node name="TablesArea" type="Area3D" node_paths=PackedStringArray("player", "main_camera", "virtual_camera")]
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("1_ch0qe")
+player = NodePath("")
+main_camera = NodePath("")
+virtual_camera = NodePath("Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75602, -0.0823963, 0.607497)
+shape = SubResource("BoxShape3D_ruj4t")
+debug_color = Color(2.88785e-06, 0.819078, 0.952524, 0.42)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+process_mode = 4
+transform = Transform3D(0.636974, -0.0149439, 0.77074, -0.0334058, 0.998338, 0.0469648, -0.770161, -0.0556626, 0.635416, 0.55284, 3.09107, 3.93927)
+visible = false
