@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://bblk7ag55p1wa"]
+[gd_scene load_steps=18 format=3 uid="uid://bblk7ag55p1wa"]
 
 [ext_resource type="Script" uid="uid://byap0g2hl77cm" path="res://UI/game_ui.gd" id="1_ywmy4"]
 [ext_resource type="Texture2D" uid="uid://b1p3xnnmc3h6y" path="res://Textures/crt.png" id="3_dbpsm"]
 [ext_resource type="Theme" uid="uid://q8hccahawy3s" path="res://Themes/DocumentTheme.tres" id="5_dbpsm"]
 [ext_resource type="AudioStream" uid="uid://f8mni3sdh5vi" path="res://Audio/Sounds/Typing/trollarch2__keyboard-typing.mp3" id="6_fy64h"]
+[ext_resource type="Shader" uid="uid://8gk7i3edqlcq" path="res://Shaders/psx.gdshader" id="6_jd38o"]
 [ext_resource type="AudioStream" uid="uid://bm57ds3ca5yum" path="res://Audio/Sounds/koops__page_turn_24.ogg" id="7_v6n52"]
 [ext_resource type="Shader" uid="uid://d3vrf8tv2cdwn" path="res://Shaders/circle.gdshader" id="8_bjx7l"]
 [ext_resource type="PackedScene" uid="uid://mefno6fehk7k" path="res://UI/pause_ui.tscn" id="8_jd38o"]
@@ -114,9 +115,18 @@ shader_parameter/fish_intensity = 1.2
 shader_parameter/pixel_size = 1
 shader_parameter/enable_vignette = true
 shader_parameter/enable_crt = false
-shader_parameter/enable_scanlines = true
+shader_parameter/enable_scanlines = false
 shader_parameter/enable_fisheye = true
 shader_parameter/enable_pixelation = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bjx7l"]
+shader = ExtResource("6_jd38o")
+shader_parameter/texture_offset = Vector2(0, 0)
+shader_parameter/texture_scale = Vector2(1, 1)
+shader_parameter/texture_rotation = 0.0
+shader_parameter/color_steps = 16.0
+shader_parameter/dither_strength = 0.05
+shader_parameter/pixel_size = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oohqu"]
 shader = ExtResource("8_bjx7l")
@@ -244,6 +254,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="AnimationPlayer"]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer/CanvasLayer"]
+material = SubResource("ShaderMaterial_bjx7l")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="InteractiveObjectName" type="RichTextLabel" parent="."]
 clip_contents = false

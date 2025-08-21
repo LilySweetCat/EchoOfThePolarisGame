@@ -1,57 +1,43 @@
 shader_type canvas_item;
 
-uniform int levels : hint_range(1, 16);
-uniform float threshold : hint_range(0.0, 1.0);
-uniform int colors : hint_range(1, 32);
-uniform int pixelate : hint_range(1, 10);
-uniform sampler2D dither_texture : filter_nearest;
+render_mode unshaded;
 
-float dither(float raw, float dither, int depth) {
-	
-	float div = 1.0 / float(depth);
-	float val = 0.0;
-	
-	for (int i = 0; i < depth; i++) {
-		if (raw <= div * (float(i + 1))) {
-			if ((raw * float(depth)) - float(i) <= dither * 0.999) {
-				val = div * float(i);
-			} else {
-				val = div * float(i + 1);
-			}
-			break;
-		}
-	}
-	if (raw >= 1.0) {
-		val = 1.0;
-	}
-	return val;
+uniform vec2 texture_offset = vec2(0.0, 0.0);
+uniform vec2 texture_scale = vec2(1.0, 1.0);
+uniform float texture_rotation = 0.0; // em radianos
+
+uniform float color_steps = 6.0;
+uniform float dither_strength = 0.25;
+uniform float pixel_size = 1.0;
+
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture;
+
+float bayer_dither(vec2 uv) {
+    int x = int(mod(uv.x, 4.0));
+    int y = int(mod(uv.y, 4.0));
+    float bayer[16] = float[16](
+         1.0,  9.0,  3.0, 11.0,
+        13.0,  5.0, 15.0,  7.0,
+         4.0, 12.0,  2.0, 10.0,
+        16.0,  8.0, 14.0,  6.0
+    );
+    return bayer[y * 4 + x] / 17.0;
 }
 
-void fragment()
-{
-	// Pixelate the screen
-	vec2 screen_size = vec2(textureSize(TEXTURE, 0)) / float(pixelate);
-	vec2 screen_sample_uv = floor(UV * screen_size) / screen_size;
+vec3 quantize_color(vec3 color, float steps) {
+    return floor(color * steps) / steps;
+}
 
-	// Map the dither texture onto the screen pixels with tiling and repeating
-	vec2 dither_size = vec2(textureSize(dither_texture, 0));
-	vec2 dither_uv = mod(UV * screen_size, dither_size) / dither_size;
-	
-	// Sample the screen pixel
-	vec3 screen_col = texture(TEXTURE, screen_sample_uv).rgb;
+void fragment() {
+	vec2 pixel_uv = floor(FRAGCOORD.xy / pixel_size);
+    float dither = bayer_dither(pixel_uv);
 
-	// Sample the corresponding dither pixel luminance
-	float dither_luminance = texture(dither_texture, dither_uv).r;
+    vec4 base_color;
 
-	// Dither each channel (r, g, and b) to the number of color quantizations via dither value
-	vec3 quantized_col;
-    for (int i = 0; i < 3; i++) {
-        float raw_channel = screen_col[i];
-        float dither_amount = threshold * dither_luminance;
-        float quantized_channel = dither(raw_channel, dither_amount, levels);
-        quantized_col[i] = floor(quantized_channel * float(colors)) / float(colors - 1);
-    }
-	
-	// Apply the dithered color
-	COLOR.rgb = quantized_col;
+    vec2 uv = SCREEN_UV;
+    base_color = texture(SCREEN_TEXTURE, uv);
+
+    vec3 quantized_rgb = quantize_color(base_color.rgb + dither * dither_strength, color_steps);
+
+    COLOR.rgb = quantized_rgb;
 }

@@ -10,3 +10,4 @@ alpha_antialiasing_mode = 0
 cull_mode = 2
 shading_mode = 2
 albedo_texture = ExtResource("1_77h1b")
+texture_filter = 2

@@ -35,33 +35,33 @@ void fragment() {
     vec2 uv = UV;
     vec2 screen_uv = SCREEN_UV;
     vec4 color;
-    
+
     // 1. Пикселизация (теперь применяется после рыбьего глаза, если он включен)
     if (enable_pixelation && !enable_fisheye) {
         vec2 pixel_scale = vec2(textureSize(SCREEN_TEXTURE, 0)) / float(pixel_size);
         screen_uv = floor(SCREEN_UV * pixel_scale) / pixel_scale;
     }
-    
+
     // 2. Эффект "рыбий глаз"
     if (enable_fisheye) {
         vec2 iResolution = vec2(textureSize(SCREEN_TEXTURE, 0));
         vec2 fuv = uv;
         fuv.y = 1.0 - fuv.y;
-        
+
         float aspectRatio = iResolution.x / iResolution.y;
         float strength = fish_intensity * 0.03;
         vec2 intensity = vec2(strength * aspectRatio, strength * aspectRatio);
-        
+
         vec2 coords = fuv;
         coords = (coords - 0.5) * 2.0;
-        
+
         vec2 realCoordOffs;
         realCoordOffs.x = (1.0 - coords.y * coords.y) * intensity.y * coords.x;
         realCoordOffs.y = (1.0 - coords.x * coords.x) * intensity.x * coords.y;
-        
+
         fuv = fuv - realCoordOffs;
         fuv.y = 1.0 - fuv.y;
-        
+
         if (fuv.x >= 0.0 && fuv.x <= 1.0 && fuv.y >= 0.0 && fuv.y <= 1.0) {
             // Применяем пикселизацию после рыбьего глаза, если нужно
             if (enable_pixelation) {
@@ -78,7 +78,7 @@ void fragment() {
     } else {
         color = texture(SCREEN_TEXTURE, screen_uv);
     }
-    
+
     // 3. CRT эффект
     if (enable_crt && crt_intensity > 0.0) {
         vec2 crt_uv = uv * screen_size;
@@ -91,7 +91,7 @@ void fragment() {
             crt_intensity
         );
     }
-    
+
     // 4. Сканирующие линии
     if (enable_scanlines) {
         vec2 scan_uv = FRAGCOORD.xy;
@@ -103,7 +103,7 @@ void fragment() {
         );
         color.rgb = mix(color.rgb, scanline_color.rgb, scanline * scanline_color.a);
     }
-    
+
     // 5. Виньетка
     if (enable_vignette) {
         vec2 vignette_uv = SCREEN_UV * 2.0 - 1.0;
@@ -111,6 +111,6 @@ void fragment() {
         float vignette = smoothstep(vignette_intensity, vignette_intensity - vignette_smoothness, dist);
         color = mix(color, vignette_color, vignette);
     }
-    
+
     COLOR = color;
 }
