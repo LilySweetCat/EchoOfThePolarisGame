@@ -16,13 +16,13 @@ dest_files=["res://.godot/imported/leather_chair.blend-a4ddf760ff95339f9603150c2
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.2
+nodes/root_scale=1.1
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
-meshes/light_baking=1
+meshes/light_baking=2
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
@@ -33,6 +33,12 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
+"materials": {
+"leather_chair": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Props/from proj detective/leather_chair/leather_chair.tres"
+}
+},
 "meshes": {
 "leather_chair_Plane": {
 "generate/lightmap_uv": 1,

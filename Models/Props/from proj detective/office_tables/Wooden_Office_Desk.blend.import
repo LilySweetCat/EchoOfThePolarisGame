@@ -22,7 +22,7 @@ nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
-meshes/light_baking=1
+meshes/light_baking=2
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
@@ -33,9 +33,15 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
+"materials": {
+"wooden_office_desk": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Props/from proj detective/office_tables/wooden_office_desk.tres"
+}
+},
 "meshes": {
 "Wooden_Office_Desk_Cube": {
-"generate/lightmap_uv": 1,
+"generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,

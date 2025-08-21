@@ -100,4 +100,4 @@ common/physics_interpolation=true
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-shading/overrides/force_vertex_shading=true
+renderer/rendering_method="mobile"

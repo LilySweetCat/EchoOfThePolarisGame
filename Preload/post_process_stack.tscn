@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3oet57f6gcef"]
+
+[ext_resource type="Shader" uid="uid://06e508g2xwwo" path="res://Shaders/combined_postprocesses.gdshader" id="1_jwsfj"]
+[ext_resource type="Texture2D" uid="uid://b1p3xnnmc3h6y" path="res://Textures/crt.png" id="2_6ot4a"]
+[ext_resource type="Shader" uid="uid://8gk7i3edqlcq" path="res://Shaders/dither.gdshader" id="3_hfluv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yc2x4"]
+shader = ExtResource("1_jwsfj")
+shader_parameter/vignette_intensity = 0.7
+shader_parameter/vignette_smoothness = -0.6
+shader_parameter/vignette_color = Color(0, 0, 0, 1)
+shader_parameter/pixel_texture = ExtResource("2_6ot4a")
+shader_parameter/screen_size = Vector2(128, 128)
+shader_parameter/crt_intensity = 1.0
+shader_parameter/scanline_color = Color(1, 1, 1, 0.0901961)
+shader_parameter/scanline_spacing = 4.0
+shader_parameter/scanline_width = 0.5
+shader_parameter/edge_softness = 0.6
+shader_parameter/fish_intensity = 1.2
+shader_parameter/pixel_size = 1
+shader_parameter/enable_vignette = true
+shader_parameter/enable_crt = false
+shader_parameter/enable_scanlines = false
+shader_parameter/enable_fisheye = true
+shader_parameter/enable_pixelation = false
+
+[sub_resource type="Shader" id="Shader_jwsfj"]
+code = "shader_type canvas_item;
+
+uniform float barrel_power : hint_range(0.9, 1.5) = 1.1;
+
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture;
+
+void fragment() {
+    vec2 uv = SCREEN_UV - 0.5;
+    
+    // Barrel distortion formula
+    float d = length(uv);
+    uv = normalize(uv) * atan(d * barrel_power) / (d * 1.5708);
+    
+    uv += 0.5;
+    
+    COLOR = texture(SCREEN_TEXTURE, uv);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ot4a"]
+shader = SubResource("Shader_jwsfj")
+shader_parameter/barrel_power = 1.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fwvyv"]
+shader = ExtResource("3_hfluv")
+shader_parameter/dither_strength = 0.05
+shader_parameter/pixel_size = 1.0
+
+[node name="PostProcessStack" type="Node"]
+
+[node name="CanvasLayer1" type="CanvasLayer" parent="."]
+
+[node name="PostProcess" type="ColorRect" parent="CanvasLayer1"]
+visible = false
+texture_filter = 1
+material = SubResource("ShaderMaterial_yc2x4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="fisheye" type="ColorRect" parent="CanvasLayer1"]
+visible = false
+material = SubResource("ShaderMaterial_6ot4a")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="dither_and_color_limit" type="ColorRect" parent="CanvasLayer3"]
+material = SubResource("ShaderMaterial_fwvyv")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "wow there is sooo much space to write
+lets write poem here
+a poem about a poet
+that really wanted to create his own poem"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

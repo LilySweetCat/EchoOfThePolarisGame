@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b1p3xnnmc3h6y" path="res://Textures/crt.png" id="3_dbpsm"]
 [ext_resource type="Theme" uid="uid://q8hccahawy3s" path="res://Themes/DocumentTheme.tres" id="5_dbpsm"]
 [ext_resource type="AudioStream" uid="uid://f8mni3sdh5vi" path="res://Audio/Sounds/Typing/trollarch2__keyboard-typing.mp3" id="6_fy64h"]
-[ext_resource type="Shader" uid="uid://8gk7i3edqlcq" path="res://Shaders/psx.gdshader" id="6_jd38o"]
+[ext_resource type="Shader" uid="uid://8gk7i3edqlcq" path="res://Shaders/dither.gdshader" id="6_jd38o"]
 [ext_resource type="AudioStream" uid="uid://bm57ds3ca5yum" path="res://Audio/Sounds/koops__page_turn_24.ogg" id="7_v6n52"]
 [ext_resource type="Shader" uid="uid://d3vrf8tv2cdwn" path="res://Shaders/circle.gdshader" id="8_bjx7l"]
 [ext_resource type="PackedScene" uid="uid://mefno6fehk7k" path="res://UI/pause_ui.tscn" id="8_jd38o"]
@@ -19,7 +19,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/PostProcess:material:shader_parameter/enable_fisheye")
+tracks/0/path = NodePath("AnimationPlayer/CanvasLayer1/PostProcess:material:shader_parameter/enable_fisheye")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -31,7 +31,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/PostProcess:material:shader_parameter/enable_pixelation")
+tracks/1/path = NodePath("AnimationPlayer/CanvasLayer1/PostProcess:material:shader_parameter/enable_pixelation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -43,7 +43,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/PostProcess:material:shader_parameter/pixel_size")
+tracks/2/path = NodePath("AnimationPlayer/CanvasLayer1/PostProcess:material:shader_parameter/pixel_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -59,7 +59,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/PostProcess:material:shader_parameter/enable_fisheye")
+tracks/0/path = NodePath("AnimationPlayer/CanvasLayer1/PostProcess:material:shader_parameter/enable_fisheye")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -71,7 +71,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/PostProcess:material:shader_parameter/enable_pixelation")
+tracks/1/path = NodePath("AnimationPlayer/CanvasLayer1/PostProcess:material:shader_parameter/enable_pixelation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -83,7 +83,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/PostProcess:material:shader_parameter/pixel_size")
+tracks/2/path = NodePath("AnimationPlayer/CanvasLayer1/PostProcess:material:shader_parameter/pixel_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -121,10 +121,6 @@ shader_parameter/enable_pixelation = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bjx7l"]
 shader = ExtResource("6_jd38o")
-shader_parameter/texture_offset = Vector2(0, 0)
-shader_parameter/texture_scale = Vector2(1, 1)
-shader_parameter/texture_rotation = 0.0
-shader_parameter/color_steps = 16.0
 shader_parameter/dither_strength = 0.05
 shader_parameter/pixel_size = 1.0
 
@@ -245,7 +241,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_bjx7l")
 }
 
-[node name="PostProcess" type="ColorRect" parent="AnimationPlayer"]
+[node name="CanvasLayer1" type="CanvasLayer" parent="AnimationPlayer"]
+visible = false
+
+[node name="PostProcess" type="ColorRect" parent="AnimationPlayer/CanvasLayer1"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_h0rig")
 anchors_preset = 15
@@ -254,17 +253,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="AnimationPlayer"]
+[node name="CanvasLayer3" type="CanvasLayer" parent="AnimationPlayer"]
 layer = 2
+visible = false
 
-[node name="ColorRect" type="ColorRect" parent="AnimationPlayer/CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer/CanvasLayer3"]
 material = SubResource("ShaderMaterial_bjx7l")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="InteractiveObjectName" type="RichTextLabel" parent="."]
 clip_contents = false

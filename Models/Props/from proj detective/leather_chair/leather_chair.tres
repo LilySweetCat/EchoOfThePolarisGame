@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c1bwxc7s6wcqa"]
+
+[ext_resource type="Texture2D" uid="uid://b3j64dh3va0k6" path="res://Models/Props/from proj detective/leather_chair/leather_chair.png" id="1_t3yfh"]
+
+[resource]
+resource_name = "leather_chair"
+shading_mode = 2
+albedo_texture = ExtResource("1_t3yfh")
+ao_enabled = true
+texture_filter = 2
