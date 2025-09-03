@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cugju613ffj1k"]
+
+[ext_resource type="Texture2D" uid="uid://cunpi4tv4j2km" path="res://Textures/Metal_Grill_024_basecolor.png" id="1_yy3ed"]
+[ext_resource type="Texture2D" uid="uid://1ywa5dqj1aav" path="res://Materials/chainmail_normal.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://byogm80eij1i4" path="res://Materials/chainmail_heightmap.png" id="4"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.06
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_yy3ed")
+normal_texture = ExtResource("3")
+heightmap_scale = 1.25
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("4")
+texture_filter = 2

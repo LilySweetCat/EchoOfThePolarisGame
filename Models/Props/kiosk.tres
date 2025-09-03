@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://0k8f1kx0jcdu"]
+
+[ext_resource type="Texture2D" uid="uid://dcjo0ios0efbt" path="res://Models/Props/kiosk.png" id="1_sdn0j"]
+
+[resource]
+resource_name = "kiosk"
+shading_mode = 2
+albedo_texture = ExtResource("1_sdn0j")
+texture_filter = 2
